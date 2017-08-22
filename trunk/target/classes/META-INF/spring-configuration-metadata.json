@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.cmcglobal.senseinfosys.configuration.SecurityConfiguration",
+      "sourceMethod": "public javax.sql.DataSource dataSource() "
+    },
+    {
+      "name": "spring.secondDatasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "com.cmcglobal.senseinfosys.configuration.QuartzSchedulerConfig",
+      "sourceMethod": "public javax.sql.DataSource secondaryDataSource() "
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

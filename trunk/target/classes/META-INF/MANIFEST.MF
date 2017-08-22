@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: IFN-API
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: osd1du3
+Implementation-Vendor-Id: com.cmcglobal.senseinfosys
+Build-Jdk: 1.8.0_131
+Implementation-URL: http://projects.spring.io/spring-boot/IFN-API/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
