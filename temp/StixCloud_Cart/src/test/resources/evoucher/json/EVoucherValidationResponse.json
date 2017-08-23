@@ -1,0 +1,39 @@
+{
+	"exceedMaxQtyAllowed": false,
+	"validationResultList": [
+		{
+			"eVoucherID": "a5pQCa9p",
+			"redeemValue": {
+				"amount": 10,
+				"currency": "SGD"
+			},
+			"evoucherType": "DBS_E_VOUCHER",
+			"validationResult": true,
+			"validationConstant": "VALIDATION_RULE_PASS"
+		},
+		{
+			"eVoucherID": "SHS0GWcSxr",
+			"redeemValue": {
+				"amount": 10,
+				"currency": "SGD"
+			},
+			"evoucherType": "DBS_E_VOUCHER",
+			"validationResult": false,
+			"validationConstant": "VALIDATION_RULE_FAILED"
+		},
+		{
+			"eVoucherID": "SHShbe0eCM",
+			"redeemValue": {
+				"amount": 10,
+				"currency": "SGD"
+			},
+			"evoucherType": "DBS_E_VOUCHER",
+			"validationResult": false,
+			"validationConstant": "VALIDATION_BASIC_EXPIRED"
+		}
+	],
+	"totalRedeemValue": {
+		"amount": 10,
+		"currency": "SGD"
+	}
+}

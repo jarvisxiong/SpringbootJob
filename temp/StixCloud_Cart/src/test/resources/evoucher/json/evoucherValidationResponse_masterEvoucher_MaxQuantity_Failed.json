@@ -1,0 +1,29 @@
+{
+	"exceedMaxQtyAllowed": false,
+	"validationResultList": [
+		{
+			"eVoucherID": "MCjT1H5GTU",
+			"redeemValue": {
+				"amount": 20,
+				"currency": "SGD"
+			},
+			"evoucherType": "MASTER_E_VOUCHER",
+			"validationResult": false,
+			"validationConstant": "VALIDATION_RULE_MAX_QTY_FAIL"
+		},
+		{
+			"eVoucherID": "MCjT1K5GTU",
+			"redeemValue": {
+				"amount": 20,
+				"currency": "SGD"
+			},
+			"evoucherType": "MASTER_E_VOUCHER",
+			"validationResult": false,
+			"validationConstant": "VALIDATION_RULE_MAX_QTY_FAIL"
+		}
+	],
+	"totalRedeemValue": {
+		"amount": 0,
+		"currency": "SGD"
+	}
+}

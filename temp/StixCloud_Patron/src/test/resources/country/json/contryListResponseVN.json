@@ -1,0 +1,29 @@
+{
+	"countryList": [
+		{
+			"countryName": "\u00C1p-ga-ni-xtan",
+			"countryCode": "AF",
+			"countryCallingCode": "93"
+		},
+		{
+			"countryName": "An-ba-ni",
+			"countryCode": "AL",
+			"countryCallingCode": "355"
+		},
+		{
+			"countryName": "\u00C1c-hen-ti-na",
+			"countryCode": "AR",
+			"countryCallingCode": "54"
+		},
+		{
+			"countryName": "Aruba",
+			"countryCode": "AW",
+			"countryCallingCode": "297"
+		},
+		{
+			"countryName": "Xin-ga-po",
+			"countryCode": "SG",
+			"countryCallingCode": "65"
+		}
+	]
+}

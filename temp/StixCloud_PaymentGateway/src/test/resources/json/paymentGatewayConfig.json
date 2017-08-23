@@ -1,0 +1,14 @@
+{
+  "paymentMethodCode": "MASTER_SEPANG",
+  "paymentGatewayConfig": {
+    "enableCSC": true,
+    "clientServer": "https://migs.mastercard.com.au/vpcdps",
+    "merchantId": "TEST20161116",
+    "secureType": "threeDSecure",
+    "secureCode": "15CA5304F58CCB9B6047972B1DD9FB8B",
+    "accessCode": "68D54E4F",
+    "returnUrl": "https://booking.sistic.stixcloud.com/SisticWebApp/redirect3D.jsp",
+    "redirectUrl": "/SisticWebApp/PostConfirmation.do",
+    "merchant.user.id": "SAWOPERATORAMA"
+  }
+}

@@ -1,0 +1,54 @@
+{
+	"email": "dbthan@cmc.com.vn",
+	"patronType" : "I",
+	"preferLanguage" : "en_SG",
+	"title": "MRS",
+	"firstName": "Than",
+	"lastName": "Ba Do",
+	"contacts": [
+		{
+			"contactType": "MOBILE",
+			"country": {
+				"code": "SG",
+				"callingCode": 65
+			},
+			"phoneNumber": "3333333"
+		},
+		{
+			"contactType": "HOME",
+			"country": {
+				"code": "SG",
+				"callingCode": 65
+			},
+			"phoneNumber": ""
+		},
+		{
+			"contactType": "OFFICE",
+			"country": {
+				"code": "SG",
+				"callingCode": 65
+			},
+			"phoneNumber": null
+		}
+	],
+	"yearOfBirth": 1990,
+	"nationality": "SG",
+	"countryOfResidence": "SG",
+	"identification": {
+		"type": "NRIC/FIN",
+		"no": "6966969"
+	},
+	"isBillingAddressSameAsMailing": false,
+	"addresses": [
+		{
+			"type": "Mailing Address",
+			"countryCode": "SG",
+			"addressLineOne": "Cau Giay",
+			"addressLineTwo": "99",
+			"addressLineThree": "CMC",
+			"postalCode": "99999"
+		}
+	],
+	"password": "password",
+	"newPassword": "password"
+}

@@ -1,0 +1,27 @@
+{ 
+   "mid":"20110811002",  
+   "ref":"20160620-002722",
+   "cur":"SGD",
+   "paytype":"5",
+   "amt":"425.25",
+  
+   "transtype":"sale",
+   "subTransType":"",
+                "ccnum":"375987000000005",
+                "ccdate":"1707",
+                "cccvv":"1234",
+               
+                "3ds":"N",
+                "3dsstatus":"Y",
+                "eci":"5",
+                "cavv":"AAABARdnQQIBYXIwB2dBEHbIELo",
+                "xid":"00160620190135564884",
+  
+   "recurrentid":"INIT",
+   "subsequentmid":"20110811002",
+  
+   "refundauthcode":"",
+   "originalref":"",
+   "postURL":"https://test.wirecard.com.sg/easypay2/paymentprocess.do"
+  
+}

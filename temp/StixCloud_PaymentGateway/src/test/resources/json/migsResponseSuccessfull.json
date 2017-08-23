@@ -1,0 +1,19 @@
+{
+  "vpc_OrderInfo": "JUnitTest1",
+  "vpc_TxnResponseCode": "0",
+  "vpc_AcqResponseCode": "20170216",
+  "vpc_TransactionNo": "2000000042",
+  "vpc_ShopTransactionNo": null,
+  "vpc_Amount": "50400",
+  "vpc_AuthorisedAmount": null,
+  "vpc_RefundedAmount": null,
+  "vpc_CapturedAmount": null,
+  "vpc_Message": "Approved",
+  "vpc_MerchTxnRef": null,
+  "vpc_AuthorizeId": "631018",
+  "vpc_BatchNo": null,
+  "vpc_CSCResultCode": "Unsupported",
+  "vpc_AcqCSCRespCode": "Unsupported",
+  "reqData": "vpc_AccessCode=E0FC60D7&vpc_Amount=50400&vpc_CardExp=1705&vpc_CardNum=545301xxxxxx4154&vpc_Command=pay&vpc_MerchTxnRef=JUnitTest1&vpc_Merchant=TEST001500059803&vpc_OrderInfo=JUnitTest1&vpc_Version=1",
+  "resData": "vpc_AVSRequestCode=Z&vpc_AVSResultCode=Unsupported&vpc_AcqAVSRespCode=Unsupported&vpc_AcqCSCRespCode=Unsupported&vpc_AcqResponseCode=00&vpc_Amount=50400&vpc_AuthorizeId=631018&vpc_BatchNo=20170216&vpc_CSCResultCode=Unsupported&vpc_Card=MC&vpc_Command=pay&vpc_Locale=en_SG&vpc_MerchTxnRef=JUnitTest1&vpc_Merchant=TEST001500059803&vpc_Message=Approved&vpc_OrderInfo=JUnitTest1&vpc_ReceiptNo=704720631018&vpc_TransactionNo=2000000042&vpc_TxnResponseCode=0&vpc_Version=1"
+}

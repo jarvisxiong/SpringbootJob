@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "charset": "UTF-8",
+  "signMethod": "SHA",
+  "signature": "7e9d45dca874cf1d57786d783aba4788d2ae40470a77a0bd4d53e5a9dabd44ee",
+  "respCode": "301",
+  "respMsg": "Merchant information do not exist",
+  "respTime": "20170217110950",
+  "reqData": "charset=UTF-8&merId=TEST875070200000015&merReserved=Sfsf&orderNumber=Sfsf&orderTime=Sfsf&signMethod=SHA&signature=Sfsf&transType=Sfsf&version=1.0.0",
+  "respData": "charset=UTF-8&cupReserved=&qid=&respCode=301&respMsg=Merchant information do not exist&respTime=20170217110950&signMethod=SHA&signature=7e9d45dca874cf1d57786d783aba4788d2ae40470a77a0bd4d53e5a9dabd44ee&version=1.0.0",
+  "responseValid": false
+}

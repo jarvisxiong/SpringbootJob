@@ -1,0 +1,18 @@
+{
+  "TM_MCode": "20110811002",
+  "TM_RefNo": "20160620-000722",
+  "TM_TrnType": "sale",
+  "TM_Status": "NO",
+  "TM_Error": "9506",
+  "TM_Currency": "SGD",
+  "TM_DebitAmt": "425.25",
+  "TM_PaymentType": "5",
+  "TM_BankRespCode": "12",
+  "TM_ErrorMsg": "TRANSACTION FAILED - Sorry, duplicate records found. Please try again. Message reference #9506",
+  "TM_CCLast4Digit": "0005",
+  "TM_RecurrentId": "INIT",
+  "TM_CCNum": "xxxxxxxxxxx0005",
+  "TM_ExpiryDate": "1707",
+  "reqData": "3ds=N&amt=425.25&cccvv=1234&ccdate=1707&ccnum=375987000000005&cur=SGD&mid=20110811002&paytype=5&recurrentid=INIT&ref=20160620-000722&subsequentmid=20110811002&transtype=sale",
+  "respData": "TM_MCode=20110811002&TM_RefNo=20160620-000722&TM_TrnType=sale&TM_SubTrnType=&TM_Status=NO&TM_Error=9506&TM_Currency=SGD&TM_DebitAmt=425.25&TM_PaymentType=5&TM_BankRespCode=12&TM_ApprovalCode=&TM_ErrorMsg=TRANSACTION FAILED - Sorry, duplicate records found. Please try again. Message reference #9506&TM_UserField1=&TM_UserField2=&TM_UserField3=&TM_UserField4=&TM_UserField5=&TM_Original_RefNo=&TM_CCLast4Digit=0005&TM_RecurrentId=INIT&TM_CCNum=xxxxxxxxxxx0005&TM_ExpiryDate=1707&TM_IPP_FirstPayment=&TM_IPP_LastPayment=&TM_IPP_MonthlyPayment=&TM_IPP_TransTenure=&TM_IPP_TotalInterest=&TM_IPP_DownPayment=&TM_IPP_MonthlyInterest=&TM_OriginalPayType=&TM_Signature="
+}

@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: stixcloud-eureka
+#  boot:
+#    admin:
+#      context-path: /admin
+#      routes:
+#        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,hystrix.stream
+#      turbine:
+#        url: http://localhost:9999/turbine.stream
+server:
+  display-name: stixcloud-eureka
+  port: 8761
+  tomcat:
+    basedir: /tomcat
+    accesslog:
+      enabled: true
+      directory: logs
+
+logging:
+  config: classpath:log4j2-live.xml
+  level:
+    org:
+      apache:
+        tomcat: DEBUG
+
+security:
+    basic:
+      enabled: false
+eureka:
+  instance:
+    prefer-ip-address: true

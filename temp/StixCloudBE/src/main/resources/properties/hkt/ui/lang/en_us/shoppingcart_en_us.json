@@ -1,0 +1,8 @@
+{
+  "label.shoppingcart.cart.label.title": "Shopping Cart",
+  "label.shoppingcart.cart.button.continue": "Continue Shopping",
+  "label.shoppingcart.header-item.number": "No.",
+  "label.shoppingcart.header-item.item": "Item",
+  "label.shoppingcart.header-item.tickettype": "Ticket Type",
+  "label.shoppingcart.header-item.qty": "Qty"
+}

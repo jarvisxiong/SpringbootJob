@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="900">
+    <Properties>
+        <Property name="log-path">./STIX/applogs</Property>
+    </Properties>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout>
+                <pattern>
+                    [%5p] [%t %d] (%F:%M:%L) %m%n
+                </pattern>>
+            </PatternLayout>
+        </Console>
+        <Console name="STDERR" target="SYSTEM_ERR">
+            <PatternLayout>
+                <pattern>
+                    [%5p] [%t %d] (%F:%M:%L) %m%n
+                </pattern>>
+            </PatternLayout>
+        </Console>
+        <RollingFile name="App-File-Appender" fileName="${log-path}/application.log"
+                     filePattern="${log-path}/application-%d{MM-dd-yyyy}.log">
+            <PatternLayout>
+                <pattern>
+                    [%t %d] [%5p] [%c:%M] - %m%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+        <RollingFile name="AspectJ-File-Appender" fileName="${log-path}/aspectJ.log"
+                     filePattern="${log-path}/aspectJ-%d{MM-dd-yyyy}.log">
+            <PatternLayout>
+                <pattern>
+                    [%t %d] [%5p] [%c:%M] - %m%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+        <RollingFile name="Product-File-Appender" fileName="${log-path}/application-product.log"
+                     filePattern="${log-path}/application-product-%d{MM-dd-yyyy}.log">
+            <PatternLayout>
+                <pattern>
+                    [%t %d] [%5p] [%c:%M] - %m%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+        <RollingFile name="Patron-File-Appender" fileName="${log-path}/application-patron.log"
+                     filePattern="${log-path}/application-patron-%d{MM-dd-yyyy}.log">
+            <PatternLayout>
+                <pattern>
+                    [%t %d] [%5p] [%c:%M] - %m%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+        <RollingFile name="Cart-File-Appender" fileName="${log-path}/application-cart.log"
+                     filePattern="${log-path}/application-cart-%d{MM-dd-yyyy}.log">
+            <PatternLayout>
+                <pattern>
+                    [%t %d] [%5p] [%c:%M] - %m%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+        <RollingFile name="PaymentGateway-File-Appender"
+                     fileName="${log-path}/application-paymentgateway.log"
+                     filePattern="${log-path}/application-paymentgateway-%d{MM-dd-yyyy}.log">
+            <PatternLayout>
+                <pattern>
+                    [%t %d] [%5p] [%c:%M] - %m%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.stixcloud" level="info" additivity="false">
+            <AppenderRef ref="App-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.product" level="info" additivity="false">
+            <AppenderRef ref="Product-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.seatmap" level="info" additivity="false">
+            <AppenderRef ref="Product-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.cart" level="info" additivity="false">
+            <AppenderRef ref="Cart-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.patron" level="info" additivity="false">
+            <AppenderRef ref="Patron-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.evoucher" level="info" additivity="false">
+            <AppenderRef ref="Cart-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.ticketprotector" level="info" additivity="false">
+            <AppenderRef ref="Cart-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.paymentgateway" level="info" additivity="false">
+            <AppenderRef ref="PaymentGateway-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.common.aspect.logging" level="info" additivity="false">
+            <AppenderRef ref="AspectJ-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+
+        <Logger name="org.hibernate" level="info"/>
+        <Logger name="org.springframework" level="info"/>
+        <Logger name="org.springframework.boot" level="info"/>
+        <Logger name="org.springframework.transaction" level="info"/>
+        <Logger name="org.springframework.test" level="info"/>
+
+        <Root level="info">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="App-File-Appender"/>
+        </Root>
+    </Loggers>
+</Configuration>

@@ -1,0 +1,32 @@
+[
+  {
+    "code": "cpigs0916",
+    "productid": 218976,
+    "productname": "The Three Little Pigs (Test)",
+    "startdate": "2016-08-31T10:00:00.000+08:00",
+    "venuename": "KC Arts Centre - Home of SRT",
+    "effectiveDate": "2016-04-12T10:00:00.000+08:00",
+    "expiryDate": "2016-09-02T10:00:00.000+08:00",
+    "profileInfoId": 11,
+    "availablityStatus": 16,
+    "summaryimagepath": "/STIX/public/SISTIC/08-06-2016/1465395622411/3LP_SISTIC_Booking-Summary-.jpg",
+    "icattributes": "512",
+    "promotion" : true,
+    "isValidPromotionCode" : false
+  },
+  {
+    "code": "cpigs0916",
+    "productid": 218977,
+    "productname": "The Three Little Pigs (Test)",
+    "startdate": "2016-09-01T10:00:00.000+08:00",
+    "venuename": "KC Arts Centre - Home of SRT",
+    "effectiveDate": "2016-04-14T14:44:00.000+08:00",
+    "expiryDate": "2016-09-01T11:00:00.000+08:00",
+    "profileInfoId": 11,
+    "availablityStatus": 18,
+    "summaryimagepath": "/STIX/public/SISTIC/08-06-2016/1465395622411/3LP_SISTIC_Booking-Summary-.jpg",
+    "icattributes": "512",
+    "promotion" : true,
+    "isValidPromotionCode" : false
+  }
+]

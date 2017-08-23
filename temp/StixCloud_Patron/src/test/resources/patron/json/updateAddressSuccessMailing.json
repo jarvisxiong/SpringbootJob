@@ -1,0 +1,15 @@
+{
+	"addressid": "2",
+	"addresstype": "Billing Address",
+	"lineone": "Duy Tan Billing Update",
+	"linetwo": "1000",
+	"linethree": "CMC 1000",
+	"city": null,
+	"state": null,
+	"country": "VN",
+	"postcode": "99999",
+	"created_by": 1,
+	"createddate": "2016-10-06T07:00:00Z",
+	"updated_by": 1,
+	"updateddate":"2016-10-06T07:00:00Z"
+}

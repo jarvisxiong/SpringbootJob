@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<object th:include="__${tenantTemplateCode}__/headerfooter/head-tag :: head-tag" th:remove="tag" />
+	<object th:include="fragment/general/head-tag :: head-tag" th:remove="tag" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link type="text/css" rel="stylesheet" th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/order-confirmation.css'}" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js" charset="utf-8"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.min.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.min.js" charset="utf-8"></script>
+
+	<!-- <script type="text/javascript" src="https://static.masterpass.com/dyn/js/switch/integration/MasterPass.client.js"></script> -->
+
+
+	<!-- Google Tag Manager -->
+	<script th:include="__${tenantTemplateCode}__/scripts/script_ga :: ga_headscript"></script>
+	<!-- End Google Tag Manager -->
+
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript th:include="__${tenantTemplateCode}__/scripts/script_ga :: ga_bodyscript"></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div class="col-xs-12 m-padding-side-zero" th:include="@{ ${tenantTemplateCode} + '/headerfooter/header'} :: header"></div>
+<div class="clearfix"></div>
+<div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+<div class="clearfix"></div>
+
+<div id="queue-lightbox"></div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 m-padding-side-zero col-centered">
+			<div class="header col-xs-12 ">
+				<div class="sc-title col-xs-7 col-md-9 shopping-cart-title">
+					<h3><span id="orderconfirm.title">Order Confirmed</span></h3>
+				</div>
+				<div class="continue col-xs-5 col-md-3">
+					<a href="#" id="print" class="order-print-wrapper" onclick="">
+						<i class="fa fa-print fa-2 order-print-icon" aria-hidden="true"></i>
+					</a>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+			<div class="content col-xs-12 order-confirmation-content">
+				<!-- Start of Success Message -->
+				<div id="text-to-print">
+					<div>
+						<p th:text="|Dear ${transactionOrder.firstName} ${transactionOrder.lastName},|">
+							<span id="orderconfirm.dear.label">Dear</span> FDASDA123124 ONGS SDF,
+						</p>
+						<p><span id="orderconfirm.text.01">Your email confirmation has been sent to</span>&nbsp;<span th:text="${transactionOrder.emailAddress}"></span><span id="orderconfirm.text.02">. Please use this email to log in on your next visit.</span></p>
+					</div>
+					<!-- End of Success Message -->
+
+					<!-- Start shopping cart item list -->
+					<div id="payment-form" novalidate="true"> <!-- th:action="@{/{tenant}/action/confirmorder (tenant=${tenantContext}) }" --> <!-- th:object="${confirmorderform}" -->
+						<div id="cart" class="cart">
+							<div class="order-data" th:include="fragment/cart/cart-item :: cart-item" th:with="shoppingcart=${transactionOrder.shoppingCartModel}"></div>
+							<div class="total row" th:include="fragment/cart/grand-total :: grand-total (isShoppingCart=false)" th:with="grandtotal=${transactionOrder}"></div>
+						</div>
+					</div>
+				</div>
+				<!-- End of shopping cart item list -->
+
+				<!-- Booking reference -->
+				<div class="tableDataBookingReference">
+					<table cellpadding="10" cellspacing="15" width="100%" class="reference_table">
+						<tbody>
+						<tr>
+							<td colspan="5" id="orderconfirm.bookref.title" class="reference_header">Booking Reference</td>
+						</tr>
+						<tr>
+							<td id="orderconfirm.bookref.transactno.label" class="reference_title">Transaction No.</td>
+							<td class="reference_value border-style" th:text="${transactionOrder.transactionRefNumber}">20170302-000346</td>
+							<td id="orderconfirm.bookref.name.label" class="reference_title">Name</td>
+							<td class="reference_value" th:text="|${transactionOrder.firstName} ${transactionOrder.lastName}|">FDASDA123124 ONGS SDF</td>
+						</tr>
+						<tr>
+							<td id="orderconfirm.bookref.date-purchase.label" class="reference_title">Date of Purchase</td>
+							<td class="reference_value border-style" th:text="${#temporals.format(transactionOrder.purchaseDate, 'dd MMM yyyy (E) hh:mm a')}">02 March 2017 (Thu) 11:57 AM</td>
+							<td id="orderconfirm.bookref.acc-no.label" class="reference_title">SISTIC Account No.</td>
+							<td class="reference_value" th:text="${transactionOrder.acctNum}">2838855</td>
+						</tr>
+						<tr>
+							<td class="reference_title empty-td">&nbsp;</td>
+							<td class="reference_value border-style empty-td">&nbsp;</td>
+							<td id="orderconfirm.bookref.pay-method.label" class="reference_title">Payment Method(s)</td>
+							<td class="reference_value mgb10">
+								<div th:each="transactionOrderPaymentDetails : ${transactionOrder.transactionOrderPaymentDetailsList}">
+									<div th:text="|${transactionOrderPaymentDetails.getPaymentTypeFormatted()} (${transactionOrderPaymentDetails.getCurrencyUnit()} ${transactionOrderPaymentDetails.getPaymentPriceFormatted()})|">
+										MASTER Card  (SGD 31.80)
+									</div>
+								</div>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- End of booking reference -->
+
+				<!-- Advertise banner -->
+				<div class="col-xs-12 no-side-padding" id="advertise-banner">
+					<a target="_blank" border="0" id="mcLink" href="https://www.sistic.com.sg/promotions?cid=2016octdec-shoppingcart-mcapplepromo&amp;?#3641">
+						<img src="/images/Booking-Page-Banner.jpg" id="masterBanner"/>
+					</a>
+				</div>
+				<!-- End of advertise banner -->
+
+				<!-- Ticket collection part -->
+				<div class="row" id="ticket-collections">
+					<div class="left-info col-xs-12 col-sm-9 col-md-9">
+						<div th:unless="${transactionOrder.deliveryMethod.code == 'NO_TICKETS_ISSUED'}">
+							<h3 id="orderconfirm.collection.title" class="left-info-title">TICKET(S) COLLECTION</h3>
+							<div class="left-info-content">
+								<div>
+									<div th:include="fragment/deliverymethod/collection-instructions :: ${transactionOrder.deliveryMethod.code}"></div>
+								</div>
+								<div class="line-gap"></div>
+								<div class="line-gap"></div>
+								<div id="orderconfirm.collection.note.title" class="left-info-note">Note:</div>
+								<div class="line-gap"></div>
+								<p id="orderconfirm.collection.note.text.01">For Verification purposes, kindly present the following upon collection:-</p>
+								<p id="orderconfirm.collection.note.item.01a">i. Credit card used in this transaction</p>
+								<p id="orderconfirm.collection.note.item.01b">ii. Your NRIC/Passport/FIN Card</p>
+								<p id="orderconfirm.collection.note.item.01c">iii. Clear print out of this email confirmation</p>
+								<div class="line-gap"></div>
+								<p id="orderconfirm.collection.note.text.02">For a proxy to collect on your behalf, he/she needs to present:-</p>
+								<p id="orderconfirm.collection.note.item.02a">i. This <a href="https://www.sistic.com.sg/portal/sistic/Letter%20Of%20Authorisation.pdf">Letter of Authorization</a> (duly completed and signed by Credit Cardholder)</p>
+								<p id="orderconfirm.collection.note.item.02b">ii. Clear photocopy of Credit Cardholder's photo identification card such as NRIC/Passport/FIN Card</p>
+								<p id="orderconfirm.collection.note.item.02c">iii. Clear photocopy of the front of Credit Card used for the purchase</p>
+								<p id="orderconfirm.collection.note.item.02d">iv. Proxy's original photo identification card such as NRIC/Passport/FIN Card</p>
+								<p></p>
+								<div class="line-gap"></div>
+								<p id="orderconfirm.collection.note.item.02.note">* Strictly no replacement of tickets for General Admission events</p>
+								<div class="line-gap"></div>
+								<div class="important-note">
+									<p id="orderconfirm.collection.important-note.title">Important Note:</p>
+									<p id="orderconfirm.collection.important-note.text">SISTIC reserve the right not to release tickets if the above documents are not in order.</p>
+								</div>
+							</div>
+						</div>
+						<div>
+							<h3 id="orderconfirm.refund.title" class="left-info-title">REFUND EXCHANGE POLICY</h3>
+							<div id="orderconfirm.refund.text" class="left-info-content">
+								No refund or exchange of tickets is allowed once booking is confirmed.
+							</div>
+						</div>
+					</div>
+
+					<div class="right-banner col-xs-12 col-sm-3 col-md-3">
+						<div class="banner-placeholder">
+							<img src="/images/Facebook-ConfirmationPage-L.jpg" />
+						</div>
+						<div class="banner-placeholder">
+							<img src="/images/Mobile-App-confirmation-LR.jpg" />
+						</div>
+					</div>
+				</div>
+				<!-- End of ticket collection part -->
+				<div id="orderconfirm.thanks.text" class="col-xs-12 thanks-text">Thank you for booking with SISTIC.</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<footer class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/footer'} :: footer">
+</footer>
+<div class="overlay-level-2" style="position:fixed;width:200px;float:right;bottom:20px;right:10px" id="timer-modal">
+</div>
+<div id="lightbox_wrapper"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.js" charset="utf-8"></script>
+<script src="/bin/orderconfirmation.js" charset="utf-8"></script>
+
+</body>
+</html>

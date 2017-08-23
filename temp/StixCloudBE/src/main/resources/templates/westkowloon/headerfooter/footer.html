@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SISTIC</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+
+</head>
+
+<body>
+
+<footer th:fragment="footer" id="footer" class="col-xs-12">
+	<div id="notification-modal"></div>
+    <div class="row">
+        <div class="footer-url-links">
+            <hr/>
+            <div class="footer-col-5">
+            	<div class="footer-links-header">
+                    <span id="footer.cs.title">Customer Service</span>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    <a href="https://www.sistic.com.sg/contact-us" class="footer-url-text"><span id="footer.cs.contact-us.link">Contact Us</span></a>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    <a href="https://www.sistic.com.sg/where-to-buy-tickets" class="footer-url-text"><span
+                            id="footer.cs.where-to-buy-tickets.link">Where To Buy Tickets</span></a>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    <a href="https://www.sistic.com.sg/terms-and-conditions" class="footer-url-text"><span
+                            id="footer.cs.tnc.link">Terms And Conditions</span></a>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    <a href="https://www.sistic.com.sg/faq/top-questions" class="footer-url-text"><span id="footer.cs.faq.link">FAQ</span></a>
+                    <hr/>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="footer-col-5">
+                <div class="footer-links-header no-footer-heading">
+                    &nbsp;
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    <a href="https://www.sistic.com.sg/agents" class="footer-url-text"><span id="footer.cs.locate-agent.link">Locate An Authorised Agent</span></a>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    <a href="https://www.sistic.com.sg/venues" class="footer-url-text"><span id="footer.cs.locate-venue.link">Locate A Venue</span></a>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    <a th:href="@{/{tenant}/loginredirect (tenant=${tenantContext}) }" class="footer-url-text"><span id="footer.acc.my-account">Your Account</span></a>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    &nbsp;
+                    <hr/>
+                </div>
+            	<div class="clearfix"></div>
+            </div>
+
+			<div class="footer-col-5">
+                <div class="footer-links-header">
+                    <span id="footer.tenant">Sistic</span>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    <a href="https://www.sistic.com.sg/about-us" class="footer-url-text"><span id="footer.tenant.about-us">About Us</span></a>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    <a href="https://www.sistic.com.sg/career" class="footer-url-text"><span id="footer.tenant.career">Career</span></a>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    <a href="https://www.sistic.com.sg/ticketing-technology" class="footer-url-text"><span
+                            id="footer.tenant.ticket-tech">Ticketing Technology</span></a>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    <a href="https://www.sistic.com.sg/sell-event-tickets" class="footer-url-text"><span
+                            id="footer.tenant.sell-through-us">Sell Event Ticket Through Us</span></a>
+                    <hr/>
+                </div>
+
+				<div class="clearfix"></div>
+			</div>
+	        <div class="footer-col-5">
+				<div class="footer-links-header no-footer-heading">
+                    <div id="change-language-dropdown"></div>
+                    <hr/>
+                </div>
+
+                <div class="footer-links-url">
+                    <a href="https://www.facebook.com/SISTICsingapore" class="footer-url-text"><span class="fa fa-thumbs-up"></span><span id="footer.tenant.like-us">SISTIC Facebook</span></a>
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    &nbsp;
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    &nbsp;
+                    <hr/>
+                </div>
+                <div class="footer-links-url">
+                    &nbsp;
+                    <hr/>
+                </div>
+				<div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="footer-row-2">
+           <div class="footer-logo col-xs-4 col-sm-4 col-md-6 paddingLeft-0">
+				<img src="/images/footer-stix-logo.gif"/>
+                <script type="text/javascript" th:src="${geoSealURL}"></script>
+                <a href="https://www.geotrust.com/ssl/" target="_blank"  style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;"></a>
+            </div>
+            <div th:replace="@{ ${tenantTemplateCode} + '/view/loadinganimation'} :: lang-light-box"></div>
+
+            <div class="footer-wall-of-text col-xs-8 col-sm-8 col-md-6">
+                <span id="footer.sistic.intro">
+                    SISTIC is the largest ticketing service and solution provider in Singapore. It sells tickets to events
+                    ranging from pop concerts, musicals, theatre, family entertainment to sports. SISTIC's Authorised Agents
+                    are now conveniently located in Singapore, Malaysia, Indonesia, India, Taiwan and Vietnam.
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="footer-copyright">
+            <div class="col-xs-12 text-center">
+                <span id="footer.copyright">
+                    Copyright ©1998 - 2017. SISTIC.com Pte Ltd. All Rights 2013 Reserved. Designated trademarks, pictures
+                    and brands are the property of their respective owners. Use of this Web site constitutes acceptance of
+                    the SISTIC's Conditions of Access and Privacy Policy.
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+</footer>
+<div class="clear"></div>
+</body>
+</html>

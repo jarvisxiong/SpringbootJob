@@ -1,0 +1,32 @@
+[
+  {
+    "salesseatinventoryid": 118488165,
+    "productId": 218977,
+    "rank": 263,
+    "seatsalesstatus": 0,
+    "ticketable": false,
+    "priceCatId": 10200,
+    "priceClassId": null,
+    "patronId": null,
+    "reserveexpirydate": "2017-09-02T23:55:55+08:00",
+    "systemSaleCodeId": null,
+    "holdBy": null,
+    "holddate": null,
+    "soldBy": null,
+    "solddate": null,
+    "updatedtime": "2016-09-02T23:55:55+08:00",
+    "updatedBy": 1,
+    "holdreason": null,
+    "holdexpirynotified": null,
+    "sectionrank": 0,
+    "spankey": "DBS Arts Centre - Home of SRTCenterStallQ9",
+    "venueSeatLcId": 2810396,
+    "venueSectionLcId": 51275,
+    "salescyclestarttime": null,
+    "packageId": null,
+    "packagerequirementId": null,
+    "pricevalue": null,
+    "sessionid": null,
+    "holdexpirydate": null
+  }
+]

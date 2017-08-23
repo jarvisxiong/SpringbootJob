@@ -1,0 +1,66 @@
+[
+  {
+    "priceClassCode": "D2",
+    "priceClassAlias": "20% NSF",
+    "priceValueAmount": {
+      "amount": 76,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "D",
+    "priceClassAlias": "25% Student",
+    "priceValueAmount": {
+      "amount": 71.25,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "C1",
+    "priceClassAlias": "Comp - Season Tix holder (Cat 1)",
+    "priceValueAmount": {
+      "amount": 0,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "A",
+    "priceClassAlias": "Standard",
+    "priceValueAmount": {
+      "amount": 95,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "D1",
+    "priceClassAlias": "25% Senior Citizen",
+    "priceValueAmount": {
+      "amount": 71.25,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "D5",
+    "priceClassAlias": "Group Booking 30%",
+    "priceValueAmount": {
+      "amount": 66.50,
+      "currency": "SGD"
+    },
+    "availableQty": "3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "C3",
+    "priceClassAlias": "Comp - Season Tix holder (GALA)",
+    "priceValueAmount": {
+      "amount": 0,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  }
+]
+

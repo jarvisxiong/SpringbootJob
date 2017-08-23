@@ -1,0 +1,152 @@
+[
+  {
+    "priceClassCode": "A",
+    "priceClassAlias": "Standard",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 95.00,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 85.00,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      },
+      {
+        "priceCatNum": 3,
+        "priceValue": {
+          "amount": 75.00,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      }
+    ]
+  },
+  {
+    "priceClassCode": "D",
+    "priceClassAlias": "25% Student",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 71.25,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 63.75,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      },
+      {
+        "priceCatNum": 3,
+        "priceValue": {
+          "amount": 56.25,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      }
+    ]
+  },
+  {
+    "priceClassCode": "D1",
+    "priceClassAlias": "25% Senior Citizen",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 71.25,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 63.75,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      },
+      {
+        "priceCatNum": 3,
+        "priceValue": {
+          "amount": 56.25,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      }
+    ]
+  },
+  {
+    "priceClassCode": "D2",
+    "priceClassAlias": "20% NSF",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 76.00,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 68.00,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      },
+      {
+        "priceCatNum": 3,
+        "priceValue": {
+          "amount": 60.00,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      }
+    ]
+  },
+  {
+    "priceClassCode": "D5",
+    "priceClassAlias": "Group Booking 30%",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 66.50,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 59.50,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      },
+      {
+        "priceCatNum": 3,
+        "priceValue": {
+          "amount": 52.50,
+          "currency": "SGD"
+        },
+        "priceStatus": 19
+      }
+    ]
+  }
+]

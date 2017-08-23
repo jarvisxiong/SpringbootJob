@@ -1,0 +1,29 @@
+{
+	"solicitationList": [
+		{
+			"solicitationType": "Tenant",
+			"organizationID": 746,
+			"organizationName": "Jade Group Intl. Pte. Ltd.",
+			"subscribed": false
+		},
+		{
+			"solicitationType": "Promoter",
+			"organizationID": 747,
+			"organizationName": "Amadeus Intl. Pte. Ltd.",
+			"subscribed": true
+		},
+		{
+			"solicitationType": "Tenant",
+			"organizationID": 142,
+			"organizationName": "Gevorg Sargsyan",
+			"subscribed": true
+		},
+		{
+			"solicitationType": "Promoter",
+			"organizationID": 1243,
+			"organizationName": "Reitoku Kai",
+			"organizationUrl": "http://abcd.com",
+			"subscribed": true
+		}
+	]
+}

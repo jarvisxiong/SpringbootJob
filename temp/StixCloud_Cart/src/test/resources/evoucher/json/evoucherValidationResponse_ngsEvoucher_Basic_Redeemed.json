@@ -1,0 +1,19 @@
+{
+	"exceedMaxQtyAllowed": false,
+	"validationResultList": [
+		{
+			"eVoucherID": "MCjT1S5GTU",
+			"redeemValue": {
+				"amount": 20,
+				"currency": "SGD"
+			},
+			"evoucherType": "NGS_E_VOUCHER",
+			"validationResult": false,
+			"validationConstant": "VALIDATION_BASIC_REDEEMED"
+		}
+	],
+	"totalRedeemValue": {
+		"amount": 0,
+		"currency": "SGD"
+	}
+}

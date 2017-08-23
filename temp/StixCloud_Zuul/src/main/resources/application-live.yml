@@ -1,0 +1,21 @@
+ribbon:
+  eureka:
+    enabled: false
+  OkToRetryOnAllOperations: true
+  MaxAutoRetriesNextServer: 2
+  MaxAutoRetries: 1
+  ServerListRefreshInterval: 2000
+  ConnectTimeout: 3000
+  ReadTimeout: 30000
+  NIWSServerListClassName: io.fabric8.kubeflix.ribbon.KubernetesServerList
+  KubernetesNamespace: sistic-api
+  PortName: tcp8080
+
+eureka:
+  client:
+    enabled: false
+logging:
+  config: classpath:logback-live.xml
+spring:
+  autoconfigure:
+    exclude: org.springframework.cloud.netflix.eureka.EurekaDiscoveryClientConfiguration

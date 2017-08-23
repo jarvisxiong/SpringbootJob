@@ -1,0 +1,14 @@
+{
+"vpc_Version":"1",
+"vpc_Command":"pay",
+"vpc_Merchant":"TEST001500059803",
+"vpc_AccessCode":"E0FC60D7",
+"vpc_Amount":"504",
+"vpc_MerchTxnRef":"20170215-000018",
+"vpc_OrderInfo":"20170215-000018",
+"vpc_CardExp":"1705",
+"vpc_CardNum":"5453010000064154",
+"vpc_CardMonth": "05",
+"vpc_CardYear":"17",
+"vpc_Url":"https://migs.mastercard.com.au/vpcdps"
+}

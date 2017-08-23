@@ -1,0 +1,16 @@
+{
+	"version":"1.0.0",
+	"signMethod":"SHA",
+	"postUrl":"https://sit.sinopayonline.com/UGateWay/Query",
+	"signature":"f22a70ce5c812ebc07aa8c032ee08a820d7a3ccc626d20f894f0d7d30c6137ed",
+	"transType":"01",
+	"merAbbr":"SISTIC",
+	"merId":"875070279220001",
+	"backEndUrl":"https://booking.sistic.stixcloud.com/SisticWebApp/redirectSinopay.jsp",
+	"frontEndUrl":"https://booking.sistic.stixcloud.com/SisticWebApp/redirectSinopay.jsp",
+	"orderTime":"20160301151717",
+	"orderNumber":"20160301-000470",
+	"orderAmount":"950",
+	"charset":"UTF-8",
+	"customerIp":"10.254.1.254"
+}

@@ -1,0 +1,291 @@
+.total {
+  background-color: white; }
+
+.shop-col-1 {
+  float: left;
+  width: 5%; }
+
+.shop-col-2 {
+  float: left;
+  width: 12%; }
+
+.shop-col-3 {
+  float: left;
+  width: 38%; }
+
+.shop-col-4 {
+  float: left;
+  width: 9%; }
+
+.left-info-title {
+  font-family: "nevis", Helvetica, sans-serif;
+  font-size: 18px;
+  color: #a09f9f;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-left: 12px; }
+
+.left-info-note {
+  color: #a09f9f;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase; }
+
+.left-info-content {
+  background-color: #ebebec;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 12px;
+  padding-left: 15px; }
+
+.border-style {
+  border-right: 2px solid #ddd; }
+
+body {
+  width: 100%;
+  max-width: 1000px;
+  min-width: 1000px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 3px 1px #d5d5d5;
+  border-radius: 5px;
+  display: table;
+  align-content: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+
+li {
+  display: run-in;
+  width: 60px; }
+
+th {
+  border-bottom: 1px solid #ddd; }
+
+.row {
+  border-width: 1px; }
+
+.col-centered {
+  float: none;
+  margin: 0 auto; }
+
+.col-md-6 {
+  border-width: 1px; }
+
+.shoppingcart, .continue {
+  padding-top: 0px; }
+
+/* .cart table {
+   width: 100%;
+ }*/
+.continue {
+  float: right;
+  padding: 0px; }
+
+.cart .table-body-item {
+  margin: 10px 10px 10px 5px; }
+  .cart .table-body-item div {
+    display: block;
+    justify-content: center;
+    align-items: center; }
+  .cart .table-body-item .row-item-description {
+    text-align: left; }
+
+.cart .header-item {
+  border-bottom: 1px solid #C0C0C0;
+  margin: 22px 0 10px 5px;
+  padding: 0 10px 5px 0; }
+  .cart .header-item div {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+#cart td.item .description {
+  font-weight: bold; }
+
+.description {
+  font-weight: bold;
+  font-size: 13px; }
+
+.delivery-method-description-text {
+  width: 85%;
+  padding-left: 8.333%;
+  margin-top: 10px;
+  margin-bottom: 30px; }
+
+/* -- Ticket Protector styling --*/
+.total {
+  background-color: #ffbd2c;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000000;
+  margin: 20px 0px 20px 0px;
+  padding: 5px 0px 5px 0px; }
+  .total .label-format {
+    text-transform: none;
+    font-weight: normal;
+    font-size: 10px; }
+
+#grand-total-container {
+  padding-right: 4%;
+  text-align: right; }
+
+.title {
+  background-color: #c6c8c7;
+  border: 15px solid transparent;
+  border-radius: 8px;
+  font: bold 16px nevis, Tahoma, Geneva, sans-serif;
+  margin: 15px 2px 13px 0px;
+  padding-left: 20px;
+  text-shadow: 0 1px 0 #9a9b9b;
+  text-transform: uppercase; }
+
+.shop-col-1 {
+  float: left;
+  width: 5%; }
+
+.shop-col-2 {
+  float: left;
+  width: 12%; }
+
+.shop-col-3 {
+  float: left;
+  width: 38%; }
+
+.shop-col-4 {
+  float: left;
+  width: 9%; }
+
+.number {
+  text-align: center; }
+
+.item {
+  text-align: left; }
+
+.quantity {
+  text-align: center; }
+
+.unit-price {
+  text-align: center; }
+
+.booking-fee {
+  text-align: center; }
+
+.subtotal {
+  text-align: center; }
+
+/*For the print window*/
+@media print {
+  .left-info-title {
+    font-family: "nevis", Helvetica, sans-serif;
+    font-size: 18px;
+    color: #a09f9f;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-left: 12px; }
+  .left-info-note {
+    color: #a09f9f;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase; }
+  .left-info-content {
+    background-color: #ebebec;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 12px;
+    padding-left: 15px; }
+  .border-style {
+    border-right: 2px solid #ddd; }
+  body {
+    width: 100%;
+    max-width: 1000px;
+    min-width: 1000px;
+    padding-bottom: 100px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 3px 1px #d5d5d5;
+    border-radius: 5px;
+    display: table;
+    align-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  li {
+    display: run-in;
+    width: 60px; }
+  th {
+    border-bottom: 1px solid #ddd; }
+  .row {
+    border-width: 1px; }
+  .col-centered {
+    float: none;
+    margin: 0 auto; }
+  .col-md-6 {
+    border-width: 1px; }
+  .shoppingcart, .continue {
+    padding-top: 0px; }
+  /* .cart table {
+       width: 100%;
+     }*/
+  .continue {
+    float: right;
+    padding: 0px; }
+  .cart .table-body-item {
+    margin: 10px 10px 10px 5px; }
+    .cart .table-body-item div {
+      display: block;
+      justify-content: center;
+      align-items: center; }
+    .cart .table-body-item .row-item-description {
+      text-align: left; }
+  .cart .header-item {
+    border-bottom: 1px solid #C0C0C0;
+    margin: 22px 0 10px 5px;
+    padding: 0 10px 5px 0; }
+    .cart .header-item div {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+  #cart td.item .description {
+    font-weight: bold; }
+  .description {
+    font-weight: bold;
+    font-size: 13px; }
+  .delivery-method-description-text {
+    width: 85%;
+    padding-left: 8.333%;
+    margin-top: 10px;
+    margin-bottom: 30px; }
+  /* -- Ticket Protector styling --*/
+  .total {
+    background-color: #ffbd2c;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000;
+    margin: 20px 0px 20px 0px;
+    padding: 5px 0px 5px 0px; }
+    .total .label-format {
+      text-transform: none;
+      font-weight: normal;
+      font-size: 10px; }
+  #grand-total-container {
+    padding-right: 4%;
+    text-align: right; }
+  .title {
+    background-color: #c6c8c7;
+    border: 15px solid transparent;
+    border-radius: 8px;
+    font: bold 16px nevis, Tahoma, Geneva, sans-serif;
+    margin: 15px 2px 13px 0px;
+    padding-left: 20px;
+    text-shadow: 0 1px 0 #9a9b9b;
+    text-transform: uppercase; }
+  .shop-col-1 {
+    float: left;
+    width: 5%; }
+  .shop-col-2 {
+    float: left;
+    width: 12%; }
+  .shop-col-3 {
+    float: left;
+    width: 38%; }
+  .shop-col-4 {
+    float: left;
+    width: 9%; } }

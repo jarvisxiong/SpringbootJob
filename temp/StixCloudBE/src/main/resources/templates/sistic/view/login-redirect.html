@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <object th:include="__${tenantTemplateCode}__/headerfooter/head-tag :: head-tag" th:remove="tag" />
+    <object th:include="fragment/general/head-tag :: head-tag" th:remove="tag" />
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/error-common-style.css'}" />
+    <link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.js" charset="utf-8"></script>
+
+</head>
+<body>
+<div class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/header'} :: header"></div>
+
+<div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+
+<div class="col-xs-12" style="min-height: 500px"></div>
+
+<footer class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/footer'} :: footer">
+
+</footer>
+<div class="clearfix"></div>
+<script src="/bin/login-handle.js" charset="utf-8"></script>
+</body>
+</html>

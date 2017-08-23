@@ -1,0 +1,108 @@
+<div class="col-xs-9 hidden" th:fragment="address-form" id="address-form" >
+	<div class="show-registered-mail-wrapper paddingLeft-0">
+		<div class="show-registered-mail-infor first-mailing-infor-title"><span id="shopping.cart.your.mailing.details"></span></div>
+		<div class="show-registered-mail-infor" id="show-registered-mail-country-id" th:if="${confirmorderform.mailingCountry != null}" th:text="${countries.getDisplayCountry(confirmorderform.mailingCountry)}"></div>
+		<div class="show-registered-mail-infor" id="show-registered-mail-block-id" th:text="${confirmorderform.mailingBlockHouseStreet}">Hello Lane</div>
+		<div class="show-registered-mail-infor" id="show-registered-mail-unit-id" th:text="${confirmorderform.mailingUnitNo}">123</div>
+		<div class="show-registered-mail-infor" id="show-registered-mail-building-name-id" th:text="${confirmorderform.mailingBuildingName}">Building</div>
+		<div class="show-registered-mail-infor" id="show-registered-mail-postal-code-id" th:text="${confirmorderform.mailingPostalCode}">123456</div>
+		
+		<!-- <div class="show-registered-mail-infor" th:text="${confirmorderform.mailingCountry}">Singapore</div> -->
+		<div class="show-registered-mail-infor edit-mailing-details"><a id="sc-edit-mailing-details"><span id="cart.items.delivery.mailing.edit.link">edit mailing details</span></a></div>
+	</div>
+	<div class="registered-mail-wrapper">
+	   	<div class="row registered-mail-title">
+	   		<label class="col-xs-12" for="shoppingcart.mailing.title">
+	   			<span id="cart.items.delivery.mailing.title">Your Mailing Details</span>
+	   		</label>
+	   	</div>
+	   	<div class="row">
+			<div class="form-group">
+				<label for="register.mailing.label.country"
+					class="col-xs-12 col-sm-4 col-md-4 col-lg-4 control-label">
+					<span id="cart.items.delivery.mailing.country.label">Country</span>
+				</label>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+					<select id="mailing-country" class="col-xs-12 no-padding" th:name="mailingCountry">
+						<option th:each="country : ${countries.countries}"
+								th:if="${confirmorderform.mailingCountry != null}"
+								th:selected="${(confirmorderform.mailingCountry).equals(country.countryCode)}"
+								th:value="${country.countryCode}" th:text="${country.countryName}">
+						</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	   	<div class="row">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 col-lg-4 control-label"
+					for="mailing-block-no">
+					<span id="cart.items.delivery.mailing.blockno.label">Block No. / Hse No. / Street Name</span>
+				</label>
+				<!--/ Hse No. / Street Name-->
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+					<input class="form-control input-xs input-style"
+								 id="mailing-block-no" th:name="mailingBlockHouseStreet"
+								 type="text" th:value="${confirmorderform.mailingBlockHouseStreet}"
+								 title="Please enter your mailing address"
+								 required="required" />
+					 <span class="help-block"></span>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 col-lg-4 control-label"
+					for="mailing-unit-no"> <span id="cart.items.delivery.mailing.unitno.label">Unit No.</span>
+				</label>
+				<!--/ Hse No. / Street Name-->
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+					<input class="form-control input-xs input-style"
+								 id="mailing-unit-no" th:name="mailingUnitNo"
+								 type="text" th:value="${confirmorderform.mailingUnitNo}"
+								 title="Please enter your mailing address"
+								 required="required" />
+					 <span class="help-block"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 col-lg-4 control-label" for="mailing-building-name">
+					<span id="cart.items.delivery.mailing.buildingname.label">Building Name</span>
+				</label>
+				<!--/ Hse No. / Street Name-->
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+					<input class="form-control input-xs input-style"
+								 id="mailing-building-name"
+								 type="text" th:field="${confirmorderform.mailingBuildingName}"
+								 title="Please enter your mailing address"
+								 required="required" />
+					 <span class="help-block"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 col-lg-4 control-label"
+					for="mailing-postal-code"> <span id="cart.items.delivery.mailing.postalcode.label">Postal Code</span>
+				</label>
+				<!--/ Hse No. / Street Name-->
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+					<input class="form-control input-xs input-style"
+								 id="mailling-postal-code" th:name="mailingPostalCode"
+								 type="text" th:value="${confirmorderform.mailingPostalCode}"
+								 title="Please enter your mailing address"
+								 required="required" />
+					 <span class="help-block"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<a id="sc-confirm-email-update" class="shopping-cart-confirm-email">
+				<span id="cart.items.delivery.mailing.confirm.link">confirm mailing details</span>
+			</a>
+		</div>
+   </div>
+</div>

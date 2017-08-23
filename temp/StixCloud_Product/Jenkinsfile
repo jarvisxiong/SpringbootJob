@@ -1,0 +1,84 @@
+#!groovy
+import java.text.SimpleDateFormat
+
+def server = Artifactory.server '-1839216902@1445919624309'
+def rtMaven = Artifactory.newMavenBuild()
+def buildInfo = Artifactory.newBuildInfo();
+def IMAGE_NAME = ''
+def REGISTRY_URL = '192.168.11.198:5000'
+def IMAGE = REGISTRY_URL + '/' + IMAGE_NAME
+dateFormat = new SimpleDateFormat("yyyyMMddHHmm")
+TAG = dateFormat.format(new Date())
+def STAGING_TAG = 'staging-' + TAG
+
+node {
+    stage('Checkout') {
+        echo scm.locations[0].getURL()
+        checkout([
+                $class                : 'SubversionSCM',
+                additionalCredentials : [
+                        [realm: '<http://alm.sistic.com:80> Subversion Authorization (BookingEngineRework)', credentialsId: 'SVN']],
+                excludedCommitMessages: '',
+                excludedRegions       : '',
+                excludedRevprop       : '',
+                excludedUsers         : '',
+                filterChangelog       : false,
+                ignoreDirPropChanges  : false,
+                includedRegions       : '',
+                locations             : [[credentialsId        : '96249a11-6b93-4ba0-8587-e80b307af27d',
+                                          depthOption          : 'infinity',
+                                          ignoreExternalsOption: true,
+                                          local                : '.',
+                                          remote               : scm.locations[0].getURL()]],
+                workspaceUpdater      : [$class: 'UpdateUpdater']])
+    }
+
+    stage("Build configuration") {
+        pom = readMavenPom file: 'pom.xml'
+        IMAGE_NAME = pom.build.finalName
+        IMAGE = REGISTRY_URL + '/' + IMAGE_NAME
+
+        echo message: 'image: ' + IMAGE
+    }
+
+    stage("Artifactory configuration") {
+        rtMaven.tool = 'Maven 3' // Tool name from Jenkins configuration
+        rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
+        rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
+    }
+
+    stage("Maven Build") {
+        rtMaven.run pom: 'pom.xml', goals: 'clean install -U -DskipTests', buildInfo: buildInfo
+        server.publishBuildInfo buildInfo
+        sh 'cp target/*.jar src/main/docker'
+    }
+
+    /*stage("Docker Image Build") {
+        dir("src/main/docker") {
+            sh 'docker build -t  ' + IMAGE + ':' + STAGING_TAG + ' . '
+            sh 'docker push ' + IMAGE + ':' + STAGING_TAG
+        }
+    }*/
+
+    stage("Cleaning workspace") {
+        deleteDir()
+    }
+
+    /*stage("Triggering deployment job") {
+        echo "Triggering deployment job"
+        build job: 'API - Deploy to Staging', wait: false, propagate: false, parameters: [
+                [$class: 'StringParameterValue', name: 'IMAGE', value: IMAGE + ':' + STAGING_TAG],
+                [$class: 'StringParameterValue', name: 'IMAGE_NAME', value: IMAGE_NAME]
+        ]
+    }
+
+    stage("Triggering promotion job") {
+        echo "Triggering promotion job"
+        build job: 'API - Promotion Job', wait: false, propagate: false, parameters: [
+                [$class: 'StringParameterValue', name: 'IMAGE', value: IMAGE],
+                [$class: 'StringParameterValue', name: 'BUILD_NUMBER', value: BUILD_NUMBER],
+                [$class: 'StringParameterValue', name: 'STAGING_TAG', value: STAGING_TAG],
+                [$class: 'StringParameterValue', name: 'IMAGE_NAME', value: IMAGE_NAME]
+        ]
+    }*/
+}

@@ -1,0 +1,17 @@
+{
+  "TM_MCode": "20110811002",
+  "TM_RefNo": "20160620-002722",
+  "TM_TrnType": "sale",
+  "TM_Status": "YES",
+  "TM_Currency": "SGD",
+  "TM_DebitAmt": "425.25",
+  "TM_PaymentType": "5",
+  "TM_BankRespCode": "00",
+  "TM_ApprovalCode": "336120",
+  "TM_CCLast4Digit": "0005",
+  "TM_RecurrentId": "20110811002-20022017-1487561260333",
+  "TM_CCNum": "xxxxxxxxxxx0005",
+  "TM_ExpiryDate": "1707",
+  "reqData": "3ds=N&amt=425.25&cccvv=1234&ccdate=1707&ccnum=375987000000005&cur=SGD&mid=20110811002&paytype=5&recurrentid=INIT&ref=20160620-002722&subsequentmid=20110811002&transtype=sale",
+  "respData": "TM_MCode=20110811002&TM_RefNo=20160620-002722&TM_TrnType=sale&TM_SubTrnType=&TM_Status=YES&TM_Error=&TM_Currency=SGD&TM_DebitAmt=425.25&TM_PaymentType=5&TM_BankRespCode=00&TM_ApprovalCode=336120&TM_ErrorMsg=&TM_UserField1=&TM_UserField2=&TM_UserField3=&TM_UserField4=&TM_UserField5=&TM_Original_RefNo=&TM_CCLast4Digit=0005&TM_RecurrentId=20110811002-20022017-1487561260333&TM_CCNum=xxxxxxxxxxx0005&TM_ExpiryDate=1707&TM_IPP_FirstPayment=&TM_IPP_LastPayment=&TM_IPP_MonthlyPayment=&TM_IPP_TransTenure=&TM_IPP_TotalInterest=&TM_IPP_DownPayment=&TM_IPP_MonthlyInterest=&TM_OriginalPayType=&TM_Signature="
+}

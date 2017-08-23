@@ -1,0 +1,82 @@
+<billing th:fragment="billing" class="col-xs-12 wrapper" id="billing">
+    <!-- Begin billing group  -->
+    <div class="row">
+        <a href="#billing-address" data-toggle="collapse" data-target="#billing-address">
+            <h4><span id="patron.account.billing.title">Billing address</span></h4>
+            <i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+        </a>
+        <div id="billing-address" class="collapse">
+
+            <!--Begin form group  -->
+            <div class="row">
+                <div class="form-group">
+                    <label for="register.billing.label.country" class="col-xs-2 control-label"> <!-- col-sm-8 col-md-2 col-lg-2 -->
+                        <span id="patron.account.billing.country.label">Country</span>
+                    </label>
+                    <div class="col-xs-3 "> <!-- col-sm-8 col-md-3 col-lg-3 -->
+                        <select id="billing-country" th:field="*{billingCountry}" name="title" class="form-control">
+                            <option value="1">Singapore</option>
+                            <option value="2">Vietnam</option>
+                        </select>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="register.billing.label.blockno"> <!-- col-sm-4 col-md-2 col-lg-2  -->
+                        <span id="patron.account.billing.blockno.label">Block No. / Hse No. / Street Name</span>
+                    </label>
+                    <!--/ Hse No. / Street Name-->
+                    <div class="col-xs-4"> <!-- col-sm-8 col-md-4 col-lg-4  -->
+                        <input th:field="*{billingBlockHouseStreet}" type="text" id="billing-block" class="form-control input-xs" name="username"
+                               value="" required="" title="Please enter your email"
+                               placeholder="" />
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="register.billing.label.unitno"> <!-- col-sm-4 col-md-2 col-lg-2 -->
+                        <span id="patron.account.billing.unitno.label">Unit no</span>
+                    </label>
+                    <div class="col-xs-4"> <!-- col-sm-8 col-md-4 col-lg-4 -->
+                        <input th:field="*{billingUnitNo}" id="billing-unitno" name="building" type="text"
+                               placeholder=" " class="form-control input-xs"/>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="register.billing.label.buildingno"> <!-- col-sm-4 col-md-2 col-lg-2 -->
+                        <span id="atron.account.billing.buildingname.label">Building Name</span>
+                    </label>
+                    <div class="col-xs-2"> <!-- col-sm-8 col-md-4 col-lg-4 -->
+                        <input th:field="*{billingBuildingName}" id="billing-buidingno" name="lastname" type="text" placeholder=""
+                               class="form-control input-xs"/>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-xs-2 control-label" for="register.billing.label.postalcode"> <!-- col-sm-4 col-md-2 col-lg-2 -->
+                        <span id="patron.account.billing.postalcode.label">Postal code</span>
+                    </label>
+                    <div class="col-xs-4"> <!-- col-sm-8 col-md-4 col-lg-4 -->
+                        <input th:field="*{billingPostalCode}" id="billing-postal" name="lastname" type="text" placeholder=""
+                               class="form-control input-xs"/>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="modal-header"></div>
+    </div>
+    <!--end billing group  -->
+
+</billing>

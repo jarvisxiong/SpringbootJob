@@ -1,0 +1,56 @@
+li {
+    display: inline;
+    width: 60px;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+.row {
+	/*border-style: dotted;*/
+    border-width: 1px;
+}
+
+.col-centered{
+	float: none;
+	margin: 0 auto;
+}
+
+.col-md-6 {
+	/*border-style: dashed;*/
+    border-width: 1px;
+}
+
+.navbar, .user-opt, .content {
+/*	border-style: solid;
+    border-width: 1px;*/
+}
+
+.shoppingcart, .continue {
+	display: inline-block;
+}
+
+.cart table {
+	width: 100%;
+}
+
+.continue {
+	float: right;
+}
+
+.sub-heading {
+	border: 1px solid grey;
+    border-radius: 3px;
+    background-color: lightgrey;
+}
+
+.user-opt {
+	text-align: right;
+}
+
+.delivery-selection {
+	display: block
+	width: auto;
+}
+

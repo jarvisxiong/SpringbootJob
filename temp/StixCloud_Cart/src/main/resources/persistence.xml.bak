@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <!--<persistence-unit name="persistenceUnit">
+        <class>com.stixcloud.domain.ValidateCartView</class>
+        <class>com.stixcloud.domain.Fee</class>
+        <class>com.stixcloud.domain.FeeAttributes</class>
+        <class>com.stixcloud.domain.FeeChargeRule</class>
+        <class>com.stixcloud.domain.FeeClass</class>
+        <class>com.stixcloud.domain.FeeRule</class>
+        <class>com.stixcloud.domain.FeeRuleFeeMapping</class>
+        <class>com.stixcloud.domain.FeeRuleTable</class>
+        <class>com.stixcloud.domain.FeeRuleTableConfiguration</class>
+        <class>com.stixcloud.domain.FeeTemplateLive</class>
+        <class>com.stixcloud.domain.FeeVersionHistory</class>
+        <class>com.stixcloud.domain.MasterCodeTable</class>
+        <class>com.stixcloud.domain.ProductFeeTemplate</class>
+        <class>com.stixcloud.domain.DeliveryMethod</class>
+        <class>com.stixcloud.domain.DeliveryMethodTemplateLive</class>
+        <class>com.stixcloud.domain.DeliveryPaymentRestrictions</class>
+        <class>com.stixcloud.domain.DeliveryTplDetailLive</class>
+        <class>com.stixcloud.domain.DeliveryTplPrdtLive</class>
+        <class>com.stixcloud.domain.ProductLive</class>
+        <class>com.stixcloud.domain.ProfileDeliveryMethod</class>
+        <class>com.stixcloud.domain.ProfileInfo</class>
+        <class>com.stixcloud.domain.fee.DeliveryMethod</class>
+        <class>com.stixcloud.domain.fee.DeliveryMethodTemplateLive</class>
+        <class>com.stixcloud.domain.fee.DeliveryPaymentRestrictions</class>
+        <class>com.stixcloud.domain.fee.DeliveryTplDetailLive</class>
+        <class>com.stixcloud.domain.fee.DeliveryTplPrdtLive</class>
+        <class>com.stixcloud.domain.fee.MasterCodeTable</class>
+        <class>com.stixcloud.domain.fee.ProductLive</class>
+        <class>com.stixcloud.domain.fee.ProfileDeliveryMethod</class>
+        <class>com.stixcloud.domain.fee.ProfileInfo</class>
+        <class>com.stixcloud.domain.fee.UserProfile</class>
+        <class>com.stixcloud.domain.fee.VenueLayoutConfig</class>
+        <class>com.stixcloud.domain.TransactionCode</class>
+        <class>com.stixcloud.domain.GroupInfo</class>
+        <class>com.stixcloud.domain.UserGroup</class>
+        <class>com.stixcloud.domain.PriceCategoryLive</class>
+        <class>com.stixcloud.domain.ProfileInfo</class>
+        <class>com.stixcloud.domain.ProfilePaymentMethod</class>
+        <class>com.stixcloud.domain.PaymentTplDetailLive</class>
+        <class>com.stixcloud.domain.CartLineItemsView</class>
+        <class>com.stixcloud.domain.CreditCard</class>
+        <class>com.stixcloud.domain.CreditCardRegex</class>
+        <class>com.stixcloud.domain.DeliveryMtdCcRange</class>
+        <class>com.stixcloud.domain.Address</class>
+        <class>com.stixcloud.domain.PatronAddress</class>
+        <class>com.stixcloud.domain.PatronAdvanceProfile</class>
+        <class>com.stixcloud.domain.PatronProfileRedis</class>
+        <class>com.stixcloud.domain.Organization</class>
+        <class>com.stixcloud.domain.PatronSolicitation</class>
+        <class>com.stixcloud.domain.EticketDelivery</class>
+        <class>com.stixcloud.domain.Evoucher</class>
+        <class>com.stixcloud.domain.TicketHistory</class>
+        <class>com.stixcloud.domain.Transaction</class>
+        <class>com.stixcloud.domain.TransactionHash</class>
+        <class>com.stixcloud.domain.TransactionLineItem</class>
+        <class>com.stixcloud.domain.TransactionLineItemProduct</class>
+        <class>com.stixcloud.domain.TransactionPayment</class>
+        <class>com.stixcloud.domain.TransactionPaymentFee</class>
+        <class>com.stixcloud.domain.TransactionProduct</class>
+        <class>com.stixcloud.domain.TransactionProductFee</class>
+        <class>com.stixcloud.domain.TransactionProductPayment</class>
+        <class>com.stixcloud.domain.TransactionRefId</class>
+        <properties>
+            <property name="hibernate.connection.url"
+                      value="jdbc:oracle:thin:@//192.168.11.202:1521/devcloud"/>
+            <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
+            <property name="hibernate.connection.username"/>
+            <property name="hibernate.connection.password"/>
+        </properties>
+    </persistence-unit>-->
+</persistence>

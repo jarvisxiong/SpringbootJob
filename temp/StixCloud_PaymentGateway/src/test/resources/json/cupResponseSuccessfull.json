@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "charset": "UTF-8",
+  "signMethod": "SHA",
+  "signature": "8ddf274710feafddd98bae7bb2ead65c60678e327520abba3581b0077cdadfbd",
+  "respCode": "00",
+  "respMsg": "Payment successfully",
+  "respTime": "20160301151841",
+  "reqData": "charset=UTF-8&merId=875070279220001&merReserved=&orderNumber=20160301-000470&orderTime=20160301151717&signMethod=SHA&signature=f22a70ce5c812ebc07aa8c032ee08a820d7a3ccc626d20f894f0d7d30c6137ed&transType=01&version=1.0.0",
+  "respData": "charset=UTF-8&cupReserved={cardNumber=6212******315017&cardType=01&orderAmount=950&orderCurrency=702&payMode=LitePay}&merAbbr=SISTIC&merId=875070279220001&orderAmount=950&orderCurrency=702&orderNumber=20160301-000470&qid=201603011517174722778&respCode=00&respMsg=Payment successfully&respTime=20160301151841&signature=8ddf274710feafddd98bae7bb2ead65c60678e327520abba3581b0077cdadfbd&signMethod=SHA&transType=01&version=1.0.0",
+  "responseValid": true,
+  "merAbbr":"SISTIC",
+  "merId":"875070279220001",
+  "orderAmount":"950",
+  "orderCurrency":"702",
+  "orderNumber":"20160301-000470",
+  "qid":"201603011517174722778",
+  "transType":"01"
+}

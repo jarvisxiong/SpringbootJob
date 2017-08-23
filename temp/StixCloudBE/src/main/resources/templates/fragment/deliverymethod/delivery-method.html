@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<div th:fragment="MASTERCARD_PICKUP" class="col-xs-12">
+	<b id="cart.items.delivery.mastercard-pickup.title">Collection from Singapore Authorised Agents - Payment by MasterCard (SGD 0.00)</b> - <span id="cart.items.delivery.mastercard-pickup.text">Purchases made with MasterCard enjoy a waiver of the SGD 0.50 pickup charge when you collect your tickets from any Singapore SISTIC Authorised Agent before proceeding for the event.</span>
+</div>
+
+<div th:fragment="OUTLET_PICKUP" class="col-xs-12">
+    <b id="cart.items.delivery.collect_from_agent.title">Collection from Singapore Authorised Agents</b>
+    <span id="cart.items.delivery.collect_from_agent.text">- Your ticket(s) is available for your collection only at 
+    Singapore SISTIC Authorised Agents. Check Agent location and operation hours 
+    <a href="http://www.sistic.com.sg/agents" target="_blank">here</a> - SGD 0.50</span>
+</div>
+
+<div th:fragment="VENUE_COLLECTION" class="col-xs-12">
+    <b id="cart.items.delivery.collect_from_event.text">Collection from <a href="http://www.sistic.com.sg/venues", target="_blank">Event Venue</a> on event day 1 hour before show time - SGD 1.50</b>
+</div>
+
+<div th:fragment="VENUE_COLLECTION_MASTERCARD" class="col-xs-12">
+    <span id="cart.items.delivery.mastercard-pickup.title">Collection from <a href="http://www.sistic.com.sg/venues", target="_blank">Event Venue</a> (MasterCard) on event day 1 hour before show time - SGD 0.00</span>
+</div>
+
+<div th:fragment="PANGDEMONIUM_MAIL" class="col-xs-12">
+	<p>Pangdemonium will mail your Season Ticket card within 7-10 working days after purchase.</p>
+	<p>Early Bird purchases will be mailed within the first two weeks of November 2015</p>
+</div>
+
+<div th:fragment="TICKETCUBE_COLLECTION" class="col-xs-12">
+	Collection from TicketCube - SGD 0.20
+</div>
+
+
+<div th:fragment="OUTLET_PICKUP_SIS" class="col-xs-12">
+	Collection from Singapore Indoor Stadium Box Office no later than 1 day (by 8pm) before show time - SGD 0.20
+</div>
+
+
+<div th:fragment="E_TICKET" class="col-xs-12">
+    <span id="cart.items.delivery.eticket.text">Download and print your E-ticket(s) via the "Download E-ticket(s)" link in your confirmation email after completing your transaction - <b>SGD 0.00</b> (<a href="http://www.sistic.com.sg/faq/e-ticket" target="_blank">For more information</a>)</span>
+</div>
+
+<div th:fragment="EMAIL_CONFIRMATION" class="col-xs-12">
+	Please proceed to the security counter at CityHall wing and present your identification Card and email confirmation. For enquiries,  email us at info@nationalgallery.sg or call us at 6690 9400.
+</div>
+
+<div th:fragment="KIOSK_PICKUP" class="col-xs-12">
+	Collection from iNETS Kiosk no later than 1 day (by 8pm) before show time - SGD 0.20
+</div>
+
+<div th:fragment="OUTLET_PICKUP_RWS" class="col-xs-12">
+	Collection from Resorts World Sentosa 1 hour before show time - SGD 0.20
+</div>
+
+<div th:fragment="VENUE_COLLECTION_RWS" class="col-xs-12">
+	Collection from Resorts World Sentosa on event day 1 hour before show time - SGD 0.20
+</div>
+
+<div th:fragment="VENUE_COLLECTION_REDEMPTION" class="col-xs-12">
+	Venue Collection Redemption
+</div>
+
+<div th:fragment="ESPLANADE" class="col-xs-12">
+	Collection from ESPLANADE
+</div>
+
+<div th:fragment="OUTLET_PICKUP_MBS" class="col-xs-12">
+	Venue collection on event day 1 hour before show time - SGD 0.00
+</div>
+
+<div th:fragment="LKC_COLLECTION" class="col-xs-12">
+	Collection at Lee Kong Chian Natural History Museum Counter.
+</div>
+
+<div th:fragment="MAIL" class="col-xs-12">
+    <b>Mail (SGD 1.50)</b> - Mailing is available through
+    <a target="_blank" href="https://www.singpost.com">Singpost</a>
+    and will take up to 7 working days. Please note that SISTIC is not liable for undelivered mail.
+</div>
+
+<div th:fragment="MAIL_MASTERCARD" class="col-xs-12">
+    <b>By Mail (MasterCard) - SGD 0.00</b>
+</div>
+
+<div th:fragment="REGISTERED_MAIL" class="col-xs-12">
+	<b id="cart.items.delivery.registered.title">Registered Mail (SGD 3.00)</b> 
+	<span id="cart.items.delivery.registered.text">- Registered Mail is available through <a href="http://www.singpost.com" target="_blank">Singpost</a> 
+	and will take up to 7 working days. Registered Mailing is a Sign-For service that requires a signature on delivery.</span>
+</div>
+
+<div th:fragment="REGISTERED_MAIL_MERC" class="col-xs-12">
+	By Registered Mail - SGD 3.00
+</div>
+
+<div th:fragment="COURIER" class="col-xs-12">
+    <b id="cart.items.delivery.courier.title">Courier (SGD 15.00)</b>
+    <span id="cart.items.delivery.courier.text">- Courier is a door to door service available through a third party provider. SISTIC will be contacting you to
+    arrange for delivery once the tickets are ready. Courier delivery is a Sign-For service that
+    requires a signature on delivery.</span>
+</div>
+
+<div th:fragment="COURIER_MERC" class="col-xs-12">
+	By Courier - SGD 15.00
+</div>
+
+<div th:fragment="OFFICE_PICKUP" class="col-xs-12">
+	Collection from SISTIC Box Office - SGD 1.00
+</div>
+
+<div th:fragment="OUTLET_PICKUP_SIS_MERC" class="col-xs-12">
+	Collection from Singapore Indoor Stadium SISTIC Box Office - SGD 3.00
+</div>
+
+<div th:fragment="NO_TICKETS_ISSUED" class="col-xs-12">
+	No tickets issued. Please refer to your Booking Confirmation for more details.
+</div>
+
+<div th:fragment="NO_TICKETS_REQUIRED" class="col-xs-12">
+	No tickets required. You will be contacted by SRT's Friends administrator within 10 working days regarding your membership programme and its entitlements.
+</div>
+
+<div th:fragment="VENUE_COLLECTION_STANDARD_CHARTERED_MASTERCARD" class="col-xs-12">
+    <b>Collection from Event Venue - Payment by Standard Chartered MasterCard Credit or Debit Card (SGD 0.00)</b> -
+    Collect your ticket(s) at the venue starting from one hour before the event time.
+</div>
+
+<div th:fragment="VENUE_COLLECTION_SRT" class="col-xs-12">
+    <b>Collection from Event Venue - SRT</b> -
+    Collect your ticket(s) at the venue starting from one hour before the event time.
+</div>
+
+<div th:fragment="VENUE_COLLECTION_MBSBOX" class="col-xs-12">
+    <b>Collection from Event Venue - MS Box</b> -
+    Collect your ticket(s) at the venue starting from one hour before the event time.
+</div>
+
+<div th:fragment="MAIL_WORLD_ELITE_MASTERCARD" class="col-xs-12">
+    <b id="cart.items.delivery.registered-world.title">Registered Mail - Payment by World &#38; World Elite MasterCard (SGD 0.00)</b> - 
+    <span id="cart.items.delivery.registered-world.text">Purchases made with World &#38; World Elite MasterCard enjoy a waiver of the SGD 3.00 registered mail charge. Registered Mail is available through
+    <a target="_blank" href="https://www.singpost.com"> Singpost </a>
+    and will take up to 7 working days. Registered Mailing is a Sign-For service that requires a signature on delivery.</span>
+</div>
+
+<div th:fragment="MAIL_MC_WAIVER" class="col-xs-12">
+    <b>Mail - Payment by Standard Chartered MasterCard Credit or Debit Card (SGD 0.00)</b> -
+    Enjoy waiver of standard mail delivery fee of SGD 1.50 when you book tickets with Standard Chartered MasterCard Credit
+    or Debit Card. Mailing is available through
+    <a target="_blank" href="https://www.singpost.com">Singpost</a> and will take up to 7 working days.
+    Please note that SISTIC is not liable for undelivered mail.
+</div>
+
+<div th:fragment="ESPLANADE_MAIL" class="col-xs-12">
+    <b>Mail - Esplanade mail
+</div>
+
+<div th:fragment="ESPLANADE_COLLECTION" class="col-xs-12">
+    <b>Collection from Esplanade
+</div>
+
+<div th:fragment="DELIVERY_BY_NAC" class="col-xs-12">
+    <b>Delivery By National Arts Council</b>
+</div>
+
+<div th:fragment="RWS_PICKUP" class="col-xs-12">
+    <b>RWS Pickup
+</div>
+
+<div th:fragment="boiler-fragment" class="col-xs-12"></div>
+
+</body>
+</html>	

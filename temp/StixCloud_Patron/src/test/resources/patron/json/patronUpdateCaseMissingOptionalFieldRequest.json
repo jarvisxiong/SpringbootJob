@@ -1,0 +1,27 @@
+{
+	"email": "dbthan@cmc.com.vn",
+	"title": "",
+	"firstName": "Than",
+	"lastName": "Ba Do",
+	"contacts": [
+		{
+			"contactType": "MOBILE",
+			"country": {
+				"code": "SG",
+				"callingCode": 65
+			},
+			"phoneNumber": "3333333"
+		}
+	],
+	"yearOfBirth": 1990,
+	"nationality": "SG",
+	"countryOfResidence": "SG",
+	"identification": {
+		"type": "NRIC/FIN",
+		"no": "6966969"
+	},
+	"isBillingAddressSameAsMailing": false,
+	"addresses": [],
+	"password": "password",
+	"newPassword": "password"
+}

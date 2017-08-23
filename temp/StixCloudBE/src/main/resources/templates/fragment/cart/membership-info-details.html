@@ -1,0 +1,47 @@
+<div class="col-xs-12 col-md-12 item" th:fragment="membership-info-details" id="membership-info-details" >
+	<div class="tp_wrapper  col-xs-12 membershipDiv" id="membership-info" th:if="${shoppingcart.membershipProfileConfig!=null}">
+		<div class="tp-title col-xs-12">
+			<span id="cart.tp.title">MEMBERSHIP PROFILE</span>
+		</div>
+		
+		<div class="membership_info_content col-md-12">
+			<th:block th:each="membershipProfileConfig : ${shoppingcart.membershipProfileConfig}">
+				<div class="membership-block col-md-12">
+					<div th:id="${'membership.instruction.' + membershipProfileConfig.key}" class="membership-instruction" th:text="${membershipProfileConfig.key}"></div>
+				
+					<th:block th:each="membershipConfigProfile : ${membershipProfileConfig.profiles}">
+						<div class="membership-alias" th:text="${membershipConfigProfile.alias}"></div>
+						<th:block th:each="membershipConfigOption : ${membershipConfigProfile.options}">
+							<th:block th:if="${membershipConfigOption.type} == 'CHECKBOX'">
+								<input type="checkbox" th:id="${membershipConfigOption.subKey}" th:name="${membershipProfileConfig.key}" th:value="${membershipConfigOption.subKey}" th:checked="${membershipConfigOption.isSelected}" />&nbsp;
+								<span th:utext="${membershipConfigOption.subAlias}"></span><br />
+							</th:block>
+
+							<th:block th:if="${membershipConfigOption.type} == 'RADIO'">
+								<input type="radio" th:id="${membershipConfigOption.subKey}" th:name="${membershipProfileConfig.key}" th:value="${membershipConfigOption.subKey}" th:checked="${membershipConfigOption.isSelected}" />&nbsp;
+								<span th:utext="${membershipConfigOption.subAlias}"></span><br />
+							</th:block>
+							
+							<th:block th:if="${membershipConfigOption.type} == 'TEXT'">
+								<div class="col-md-4"><span th:utext="${membershipConfigOption.subAlias}"></span>:</div><div class="col-md-8"><input type="text" th:id="${membershipConfigOption.subKey}" th:value="${membershipConfigOption.selectedValue}" /></div>
+								<br />
+							</th:block>
+							
+							<th:block th:if="${membershipConfigOption.type} == 'SELECT'">
+								<input type="radio" th:id="${membershipConfigOption.subKey}" th:name="${membershipProfileConfig.key}" th:value="${membershipConfigOption.subKey}" th:checked="${membershipConfigOption.isSelected}" />&nbsp;
+								<span th:utext="${membershipConfigOption.subAlias}"></span><br />
+							</th:block>
+							
+							<th:block th:if="${membershipConfigOption.type} == 'SPAN'">
+								<span th:utext="${membershipConfigOption.subAlias}"></span><br />
+							</th:block>
+						</th:block>
+					</th:block>
+				</div>
+			</th:block>
+		</div>
+		
+		<input id="membership_profile_fields" type="hidden" name="membershipProfileFields" value="" />
+	</div>
+</div>
+

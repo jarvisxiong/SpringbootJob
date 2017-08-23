@@ -1,0 +1,294 @@
+[
+  {
+    "priceClassCode": "A",
+    "priceClassAlias": "Standard",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 28,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 25,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  },
+  {
+    "priceClassCode": "DA",
+    "priceClassAlias": "15% Hanuman Ticket Stub Holder",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 23.8,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 21.25,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  },
+  {
+    "priceClassCode": "F2",
+    "priceClassAlias": "Family Package of 4 (with 2 trial pass)",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 23.75,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      }
+    ]
+  },
+  {
+    "priceClassCode": "F3",
+    "priceClassAlias": "Family Package of 4 (TLC CD Vol.2 with 2 trial pass)",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 26.75,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      }
+    ]
+  },
+  {
+    "priceClassCode": "I",
+    "priceClassAlias": "School Booking (Promoter Pull)",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 2E+1,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 18,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  },
+  {
+    "priceClassCode": "I1",
+    "priceClassAlias": "25% Buy-outs (Booking of the whole show)",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 21,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 18.75,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  },
+  {
+    "priceClassCode": "I2",
+    "priceClassAlias": "20% Group Discount (Min 201 Tix and above)",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 22.4,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 2E+1,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  },
+  {
+    "priceClassCode": "I3",
+    "priceClassAlias": "15% Group Discount (Min 20 - 200 Ticket)",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 23.8,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 21.25,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  },
+  {
+    "priceClassCode": "I4",
+    "priceClassAlias": "20% SRT Staff/Cast/Crew (Promoter Pull)",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 22.4,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 2E+1,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  },
+  {
+    "priceClassCode": "J",
+    "priceClassAlias": "20% SPH Staff",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 22.4,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 2E+1,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  },
+  {
+    "priceClassCode": "J1",
+    "priceClassAlias": "20% Nexus International Staff",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 22.4,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 2E+1,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  },
+  {
+    "priceClassCode": "J3",
+    "priceClassAlias": "20% MasterCard Staff",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 22.4,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 2E+1,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  },
+  {
+    "priceClassCode": "J4",
+    "priceClassAlias": "20% Malaysia Dairy Industries Staff",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 22.4,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 2E+1,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  },
+  {
+    "priceClassCode": "KH",
+    "priceClassAlias": "10% MasterCard Cardholder",
+    "priceCatList": [
+      {
+        "priceCatNum": 1,
+        "priceValue": {
+          "amount": 25.2,
+          "currency": "SGD"
+        },
+        "priceStatus": 16
+      },
+      {
+        "priceCatNum": 2,
+        "priceValue": {
+          "amount": 22.5,
+          "currency": "SGD"
+        },
+        "priceStatus": 18
+      }
+    ]
+  }
+]

@@ -1,0 +1,209 @@
+spring:
+  application:
+    name: stixcloud-zuul
+  metrics:
+    servo:
+      enabled: false
+
+zuul:
+#  host:
+#    connect-timeout-millis: 10000
+#    socket-timeout-millis: 30000 
+  ignoredServices: '*'
+  routes:
+  
+  ## SISTIC
+
+    icc:
+      path: /api/v0/SISTIC/icc/**
+      url: http://192.168.11.44:9001/SISTIC/icc/
+    product:
+      path: /api/v0/SISTIC/products/**
+      url: http://192.168.11.44:9001/SISTIC/products/
+    cart:
+      path: /api/v0/SISTIC/cart/**
+      url: http://192.168.11.44:9002/SISTIC/cart/
+    evoucher:
+      path: /api/v0/SISTIC/evoucher/**
+      url: http://192.168.11.44:9002/SISTIC/evoucher/
+    patron:
+      path: /api/v0/SISTIC/patrons/**
+      url: http://192.168.11.44:9004/SISTIC/patrons/
+    masterpass:
+      path: /api/v0/SISTIC/masterpass/**
+      url: http://192.168.11.44:9002/SISTIC/masterpass/
+    paymentgateway:
+      path: /api/v0/SISTIC/payment/**
+      url: http://192.168.11.44:9003/SISTIC/payment/
+    membership:
+      path: /api/v0/SISTIC/membership/**
+      url: http://192.168.11.44:9052/SISTIC/membership/
+    member:
+      path: /api/v0/SISTIC/member/**
+      url: http://192.168.11.44:9052/SISTIC/member/
+    addon:
+      path: /api/v0/SISTIC/addon/**
+      url: http://192.168.11.44:9001/SISTIC/addon/
+    
+  ## VIZPRO
+
+    icc2:
+      path: /api/v0/VIZPRO/icc/**
+      url: http://192.168.11.44:9001/VIZPRO/icc/
+    product2:
+      path: /api/v0/VIZPRO/products/**
+      url: http://192.168.11.44:9001/VIZPRO/products/
+    cart2:
+      path: /api/v0/VIZPRO/cart/**
+      url: http://192.168.11.44:9002/VIZPRO/cart/
+    evoucher2:
+      path: /api/v0/VIZPRO/evoucher/**
+      url: http://192.168.11.44:9002/VIZPRO/evoucher/
+    patron2:
+      path: /api/v0/VIZPRO/patrons/**
+      url: http://192.168.11.44:9004/VIZPRO/patrons/
+    masterpass2:
+      path: /api/v0/VIZPRO/masterpass/**
+      url: http://192.168.11.44:9002/VIZPRO/masterpass/
+    paymentgateway2:
+      path: /api/v0/VIZPRO/payment/**
+      url: http://192.168.11.44:9003/VIZPRO/payment/
+    membership2:
+      path: /api/v0/VIZPRO/membership/**
+      url: http://192.168.11.44:9052/VIZPRO/membership/
+    member2:
+      path: /api/v0/VIZPRO/member/**
+      url: http://192.168.11.44:9052/VIZPRO/member/
+    addon2:
+      path: /api/v0/VIZPRO/addon/**
+      url: http://192.168.11.44:9001/VIZPRO/addon/
+    
+  
+  ## WESTKOWLOON
+    oauth3:
+      path: /auth/v0/oauth/token
+      url: http://192.168.11.47:9090/
+    icc3:
+      path: /api/v0/WESTKOWLOON/icc/**
+      url: http://192.168.11.44:6001/WESTKOWLOON/icc/
+    product3:
+      path: /api/v0/WESTKOWLOON/products/**
+      url: http://192.168.11.44:6001/WESTKOWLOON/products/
+    cart3:
+      path: /api/v0/WESTKOWLOON/cart/**
+      url: http://192.168.11.44:6002/WESTKOWLOON/cart/
+    evoucher3:
+      path: /api/v0/WESTKOWLOON/evoucher/**
+      url: http://192.168.11.44:6002/WESTKOWLOON/evoucher/
+    patron3:
+      path: /api/v0/WESTKOWLOON/patrons/**
+      url: http://192.168.11.44:6004/WESTKOWLOON/patrons/
+    masterpass3:
+      path: /api/v0/WESTKOWLOON/masterpass/**
+      url: http://192.168.11.44:6002/WESTKOWLOON/masterpass/
+    paymentgateway3:
+      path: /api/v0/WESTKOWLOON/payment/**
+      url: http://192.168.11.44:6003/WESTKOWLOON/payment/
+    membership3:
+      path: /api/v0/WESTKOWLOON/membership/**
+      url: http://192.168.11.44:9052/WESTKOWLOON/membership/
+    member3:
+      path: /api/v0/WESTKOWLOON/member/**
+      url: http://192.168.11.44:9052/WESTKOWLOON/member/
+    addon3:
+      path: /api/v0/WESTKOWLOON/addon/**
+      url: http://192.168.11.44:6001/WESTKOWLOON/addon/
+      
+    ## Booking Engine
+    booking1:
+      path: /sistic/**
+      url: http://192.168.11.45:8060/sistic/
+    booking2:
+      path: /vizpro/**
+      url: http://192.168.11.45:8060/vizpro/
+    booking3:
+      path: /westkowloon/**
+      url: http://192.168.11.45:8060/westkowloon/
+    prop:
+      path: /prop/**
+      url: http://192.168.11.45:8060/prop/
+    bin:
+      path: /bin/**
+      url: http://192.168.11.45:8060/bin/
+    css:
+      path: /css/**
+      url: http://192.168.11.45:8060/css/
+    fonts:
+      path: /fonts/**
+      url: http://192.168.11.45:8060/fonts/
+    images:
+      path: /images/**
+      url: http://192.168.11.45:8060/images/
+    js:
+      path: /js/**
+      url: http://192.168.11.45:8060/js/
+    assets:
+      path: /assets/**
+      url: http://192.168.11.45:8060/assets/
+    public:
+      path: /public/**
+      url: http://192.168.11.45:8060/public/
+    properties:
+      path: /properties/**
+      url: http://192.168.11.45:8060/properties/
+    tenant:
+      path: /tenant/**
+      url: http://192.168.11.45:8060/tenant/
+      
+  retryable: true
+  sensitive-headers: Cookie,Set-Cookie
+
+#to prevent weird timeout issues
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 30000
+    stixcloud-cart:
+      execution:
+        timeout:
+          enabled: false
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 180000
+  metrics:
+    enabled: false
+
+ribbon:
+  OkToRetryOnAllOperations: true
+  MaxAutoRetriesNextServer: 3
+  MaxAutoRetries: 2
+  ServerListRefreshInterval: 2000
+  ConnectTimeout: 3000
+  ReadTimeout: 30000
+stixcloud-cart:
+  ribbon:
+    ReadTimeout: 120000
+#stixcloud-paymentgateway:
+#  ribbon:
+#    MaxAutoRetries: 0
+#    ReadTimeout: 90000
+
+security:
+    basic:
+      enabled: false
+endpoints:
+  sensitive: false
+management:
+  security:
+    enabled: false
+  health:
+    rabbit:
+      enabled: false
+    db:
+      enabled: false
+    redis:
+      enabled: false

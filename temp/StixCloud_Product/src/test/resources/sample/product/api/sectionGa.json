@@ -1,0 +1,16 @@
+{
+  "gaSeatSectionList": [
+    {
+      "seatSectionId": 9,
+      "seatSectionAlias": "Section Alias",
+      "seatSectionType": "GA",
+      "priceCategoryNum": 8,
+      "priceCategoryId": 7,
+      "seatSectionAvailability": 6,
+      "price": {
+        "amount": 50,
+        "currency": "SGD"
+      }
+    }
+  ]
+}

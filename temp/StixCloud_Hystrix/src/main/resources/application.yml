@@ -1,0 +1,14 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registerWithEureka: false
+
+turbine:
+  clusterNameExpression: new String("default")
+  appConfig: stixcloud-cart,stixcloud-paymentgateway
+#  instanceUrlSuffix:
+#    default: /api/v0/hystrix.stream
+
+server:
+  port: 9999

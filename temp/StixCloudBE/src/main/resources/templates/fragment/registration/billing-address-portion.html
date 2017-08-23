@@ -1,0 +1,75 @@
+<div th:fragment="billing-address-portion" id="billing-address-portion">
+	<div class="use-address row billing-address-update billing-address-register">
+		<p class="address-title" data-toggle="collapse"
+		   data-target="#billing-address" style="cursor: pointer">
+			<span id="patron.account.billing.title" class="title-of-section">Billing address</span>
+			<span class="arrow-down-icon-wrapper title-of-section-arrow">
+				<i class="fa fa-angle-double-down arrow-down-icon" aria-hidden="true"></i>
+			</span>
+
+		</p>
+		<div id="billing-address" class="collapse in" aria-expanded="true">
+
+			<!--Begin form group  -->
+			<div class="row">
+				<div class="form-group">
+					<label for="patron.account.billing.country"
+						   class="col-xs-12 col-sm-4 col-md-4 control-label"> <!-- col-sm-4 col-md-4 col-lg-4 -->
+						<span id="patron.account.billing.country.label">Country</span>
+					</label>
+					<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0 m-lpd0"> <!-- col-sm-8 col-md-8 col-lg-8 -->
+						<select id="billingCountry" th:field="*{billingCountry}" class="selectize-selection-format col-xs-12 expand-bottom">
+							<option th:each="country : ${countryList.getCountriesSortedByCountryName()}" th:value="${country.countryCode}" th:text="${country.countryName}"></option>
+						</select> <span class="help-block"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="patron.account.billing.blockno">
+						<span id="patron.account.billing.blockno.label">Block No. / Hse No. / Street Name</span>
+					</label><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<!--/ Hse No. / Street Name-->
+					<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0 m-lpd0"> <!-- col-sm-8 col-md-8 col-lg-8 -->
+						<input th:field="*{billingBlockHouseStreet}" type="text" id="patron.account.billing.blockno" class="form-control input-xs input-style" />
+						<span class="help-block"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="patron.account.billing.unitno">
+						<span id="patron.account.billing.unitno.label">Unit no</span>
+					</label><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0 m-lpd0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+						<input th:field="*{billingUnitNo}" id="patron.account.billing.unitno" type="text" class="form-control input-xs input-style" />
+						<span class="help-block"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="patron.account.billing.buildingname">
+						<span id="patron.account.billing.buildingname.label">Building Name</span>
+					</label><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0 m-lpd0"> <!-- col-sm-8 col-md-8 col-lg-8 -->
+						<input th:field="*{billingBuildingName}" id="patron.account.billing.buildingname" type="text" class="form-control input-xs input-style" />
+						<span class="help-block"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="patron.account.billing.postalcode">
+						<span id="patron.account.billing.postalcode.label">Postal code</span>
+					</label><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0 m-lpd0"> <!-- col-sm-8 col-md-8 col-lg-8 -->
+						<input th:field="*{billingPostalCode}" id="patron.account.billing.postalcode.label" type="text" class="form-control input-xs input-style" />
+						<span class="help-block"></span>
+					</div>
+				</div>
+			</div>
+			<!--end form group  -->
+		</div>
+	</div>
+</div>

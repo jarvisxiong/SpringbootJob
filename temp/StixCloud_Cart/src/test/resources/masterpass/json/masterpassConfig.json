@@ -1,0 +1,9 @@
+{
+	"consumerKey": "cLb0tKkEJhGTITp_6ltDIibO5Wgbx4rIldeXM_jRd4b0476c!414f4859446c4a366c726a327474695545332b353049303d",
+	"checkoutIdentifier": "a4a6x1ywxlkxzhensyvad1hepuouaesuv",
+	"p12CertFileName": "SandboxMCOpenAPI.p12",
+	"keyPassword": "changeit",
+	"keyAlias": "key alias",
+	"checkOutCallbackUrl": "http://localhost:8080/checkoutCallbackUrl",
+	"pairingCallbackUrl": "http://localhost:8080/pairingCallbackUrl"
+}

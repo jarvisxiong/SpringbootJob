@@ -1,0 +1,36 @@
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <!--<include resource="org/springframework/boot/logging/logback/file-appender.xml"/>-->
+    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+    <appender name="gelf" class="biz.paluch.logging.gelf.logback.GelfLogbackAppender">
+        <host>tcp:192.168.11.193</host>
+        <port>12201</port>
+        <version>1.1</version>
+        <facility>appLogs</facility>
+        <extractStackTrace>true</extractStackTrace>
+        <filterStackTrace>true</filterStackTrace>
+        <mdcProfiling>true</mdcProfiling>
+        <timestampPattern>dd MMM yyyy HH:mm:ss,SSS</timestampPattern>
+        <maximumMessageSize>8192</maximumMessageSize>
+        <additionalFields>application=sistic-api,springApplicationName=${springAppName:-}
+        </additionalFields>
+        <additionalFieldTypes>Thread=String</additionalFieldTypes>
+        <includeFullMdc>true</includeFullMdc>
+        <!--<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>-->
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern >
+                ${CONSOLE_LOG_PATTERN}
+            </Pattern>
+        </layout>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="gelf"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>

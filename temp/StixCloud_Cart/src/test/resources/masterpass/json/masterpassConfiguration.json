@@ -1,0 +1,15 @@
+{
+	"masterpassconfigurationid": 1254265,
+	"tenantName": "SISTIC",
+	"consumerKey": "cLb0tKkEJhGTITp_6ltDIibO5Wgbx4rIldeXM_jRd4b0476c!414f4859446c4a366c726a327474695545332b353049303d",
+	"merchantIdentifierId": "a4a6x1ywxlkxzhensyvad1hepuouaesuv",
+	"certificateFileName": "SandboxMCOpenAPI.p12",
+	"keystorePassword": "changeit",
+	"keystoreAlias": "key alias",
+	"checkoutCallbackUrl": "http://localhost:8080/checkoutCallbackUrl",
+	"pairingCallbackUrl": "http://localhost:8080/pairingCallbackUrl",
+	"startDate": "2016-11-18T02:00:00Z",
+	"updateDate": "2016-11-18T02:00:00Z",
+	"createdBy": 11,
+	"updatedBy": 11
+}

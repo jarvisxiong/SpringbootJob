@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="900">
+    <Properties>
+        <Property name="PID">????</Property>
+        <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
+        <Property name="LOG_LEVEL_PATTERN">%5p</Property>
+        <property name="APP_NAME">${bundle:application:spring.application.name}</property>
+        <Property name="CONSOLE_LOG_PATTERN">%clr{%d{yyyy-MM-dd HH:mm:ss.SSS}}{faint} %clr{${LOG_LEVEL_PATTERN}} %clr{[${APP_NAME},%X{ipAddress},%X{sessionId},%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-Span-Export}]}{yellow} %clr{${sys:PID}}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+    </Properties>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}"/>
+        </Console>
+        <Console name="STDERR" target="SYSTEM_ERR">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}"/>
+        </Console>
+        <Gelf name="gelf" host="udp:192.168.11.193" port="12201" version="1.1"
+              extractStackTrace="true" facility="appLogs"
+              filterStackTrace="false" mdcProfiling="true" includeFullMdc="true"
+              maximumMessageSize="8192"
+              additionalFieldTypes="Thread=String"
+              ignoreExceptions="true">
+            <Field name="application" literal="sistic-api"/>
+            <Field name="springApplicationName" pattern="${APP_NAME}"/>
+            <Field name="timestamp" pattern="%d{dd MMM yyyy HH:mm:ss,SSS}"/>
+            <Field name="level" pattern="%level"/>
+            <Field name="simpleClassName" pattern="%C{1}"/>
+            <Field name="className" pattern="%C"/>
+            <Field name="server" pattern="%host"/>
+            <Field name="server.fqdn" pattern="%host{fqdn}"/>
+            <Field name="sessionID" pattern="%X{sessionID}"/>
+            <Field name="email" pattern="%X{email}"/>
+            <Field name="patronId" pattern="%X{patronId}"/>
+            <Field name="cartGuid" pattern="%X{cartGuid}"/>
+        </Gelf>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.stixcloud" level="info"/>
+        <Logger name="com.stixcloud.common" level="info"/>
+        <Logger name="org.hibernate" level="info"/>
+        <Logger name="org.springframework" level="info"/>
+
+        <Root level="info">
+            <AppenderRef ref="gelf"/>
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>

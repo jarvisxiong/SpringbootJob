@@ -1,0 +1,135 @@
+<div th:fragment="subscription" id="subscription">
+	<th:block
+		th:unless="${patronSolicitation.solicitationList == null} or ${patronSolicitation.solicitationList.isEmpty()}">
+		<div class="subscription-title col-xs-12 acc-wrapper-title"
+			data-target="subscription-wrapper">
+			<span id="cart.subscription.title">Subscription</span>
+		</div>
+		<div class="sc-item-wrapper acc-wrapper-content collapse"
+			id="subscription-wrapper">
+			<div class="col-xs-12 subscription cart">
+				<div class="row subcription-sub-title" id="cart.subscription.text">I
+					wish to receive marketing information by email from, and agree to
+					the collection, use and disclosure of my personal data for such
+					marketing by:</div>
+				<!-- <div class="sub-heading">Subscription</div> -->
+				<div class="form-group sub-content subscription-wrapper">
+					<div
+						th:each="solicitationList, rowStat : ${patronSolicitation.getSolicitationListGroupByType()}"
+						class="subscriptions-style-small-wrapper row">
+						<!-- This filter is because API is returning extra types that are not shown in production currently -->
+						<th:block
+							th:if="${solicitationList.key == 'Tenant' or solicitationList.key == 'Promoter' or solicitationList.key == 'Venue'}">
+
+
+							<div class="desktop">
+								<div class="standardcheckbox">
+									<input type="checkbox" th:id="|solicitation-${rowStat.count}|"
+										th:value="${solicitationList.key}"
+										th:field="${confirmorderform.solicitation}"
+										class="checkbox-custom-style" /> <label
+										th:for="|solicitation-${rowStat.count}|"></label>
+								</div>
+								<th:block th:if="${solicitationList.key == 'Tenant'}"
+									th:each="solicitation : ${solicitationList.value}">
+									<span th:text="${solicitation.organizationName}"></span>
+								</th:block>
+								<span th:if="${solicitationList.key == 'Promoter'}"><span
+									id="cart.subscription.item.01.chk">Promoter(s) for the
+										event(s) purchased</span> <i class="fa fa-angle-double-down"
+									aria-hidden="true"></i> <i class="fa fa-angle-double-up"
+									aria-hidden="true"></i> </span> <span
+									th:if="${solicitationList.key  == 'Venue'}"><span
+									id="cart.subscription.item.03.chk">Venue Manager(s) for
+										the event(s) purchased</span> <i class="fa fa-angle-double-down"
+									aria-hidden="true"></i> <i class="fa fa-angle-double-up"
+									aria-hidden="true"></i> </span>
+							</div>
+
+							<div class="mobile-view">
+								<div class="standardcheckbox subscheckbox">
+									<input type="checkbox" th:id="|solicitation-${rowStat.count}|"
+										th:value="${solicitationList.key}"
+										th:field="${confirmorderform.solicitation}"
+										class="checkbox-custom-style" /> <label
+										th:for="|solicitation-${rowStat.count}|"></label>
+								</div>
+								<div class="standardcheckboxlabel tenantlabel"
+									th:if="${solicitationList.key == 'Tenant'}">
+									<th:block th:each="solicitation : ${solicitationList.value}">
+										<span th:text="${solicitation.organizationName}"></span>
+									</th:block>
+								</div>
+								<div class="arrowLabelContainer" th:if="${solicitationList.key == 'Promoter'}">
+									<div class="standardcheckboxlabel promoterlabel">
+										<span class="m-float-left" id="cart.subscription.item.01.chk">Promoter(s)
+											for the event(s) purchased</span>
+									</div>
+									<div class="standardcheckboxarrow">
+										<i class="fa fa-angle-double-down" aria-hidden="true"></i> <i
+											class="fa fa-angle-double-up" aria-hidden="true"></i>
+									</div>
+								</div>
+
+								<div class="arrowLabelContainer" th:if="${solicitationList.key == 'Venue'}">
+									<div class="standardcheckboxlabel venuelabel">
+										<span id="cart.subscription.item.03.chk" class="m-float-left">Venue
+											Manager(s) for the event(s) purchased</span>
+									</div>
+									<div class="standardcheckboxarrow">
+										<i class="fa fa-angle-double-down" aria-hidden="true"></i> <i
+											class="fa fa-angle-double-up" aria-hidden="true"></i>
+									</div>
+								</div>
+							</div>
+
+							<ul th:each="solicitation : ${solicitationList.value}"
+								class="collapse subscription-sub-wrapper">
+								<li th:unless="${solicitationList.key == 'Tenant'}"
+									class="sub-terms-style"><span
+									th:if="${solicitation.organizationUrl == null or solicitation.organizationUrl.isEmpty()}"
+									th:text="${solicitation.organizationName}"></span> <a
+									th:unless="${solicitation.organizationUrl == null or solicitation.organizationUrl.isEmpty()}"
+									th:href="${solicitation.organizationUrl}"
+									th:text="${solicitation.organizationName}"></a></li>
+							</ul>
+						</th:block>
+					</div>
+				</div>
+			</div>
+		</div>
+	</th:block>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

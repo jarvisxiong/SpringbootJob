@@ -1,0 +1,238 @@
+<div th:fragment="payment" id="payment">
+
+  <div class="overlay-level-5 payment-cover hidden" id="payment-cover"></div>
+	  <div class="payment-title col-xs-12 acc-wrapper-title" data-target="payment-wrapper">
+	    <span id="cart.payment.title" lang="true">Payment</span>
+	  </div>
+  <div class="sc-item-wrapper payment-item-wrapper  acc-wrapper-content" id="payment-wrapper">
+	<div class="panel-body no-side-padding"> 
+	    <div th:if="${tenantComponents.masterpass}" class="row col-xs-12 mastercard-image">
+	      <a href="javascript:void(0);" id="masterpassLink">
+	        <img id="masterpassLogo" src="https://static.masterpass.com/dyn/img/btn/global/mp_chk_btn_147x034px.svg" class="masterpass"/>
+	      </a>
+	
+	      <!-- <a class="font-icon-wrapper" href="#">
+	        <i class="fa fa-info-circle infor-circle-font" aria-hidden="true"></i>
+	      </a> -->
+	      <a class="font-icon-wrapper" href="https://www.mastercard.com/mc_us/wallet/learnmore/en/" id="view-masterpass-infor">
+	        <span>i</span>
+	      </a>
+	    </div>
+	    <div th:if="${tenantComponents.masterpass}" class="row col-xs-12 payment-line-wrapper">
+	      <div class="col-xs-1 payment-line"></div>
+	      <div class="col-xs-1 payment-line-or" id="cart.payment.or.label">OR</div>
+	      <div class="col-xs-10 payment-line payment-line-last"></div>
+	    </div>
+	    <div class="container col-xs-12 col-sm-6 col-md-6 small-section-wrapper">
+	      <div class="row col-xs-12 debit-credit-title">
+	        <strong id="cart.payment.card.title">DEBIT/CREDIT CARD</strong>
+	        <a id="fa-credit-card-item-id">
+	          <i class="fa fa-credit-card credit-card-font" aria-hidden="true"></i>
+	        </a>
+	
+	      </div>
+	      <div class="row col-xs-12 payment-small-section" style="line-height:0.5">
+	        <div class="form-group ">
+	          <label class="col-xs-5 lbl-payment padding-top-2p" for="card-type"><!-- col-xs-12 col-md-5 -->
+	            <span id="cart.payment.card.type.label">Card Type</span>
+	          </label>
+	          <div class="col-xs-7 m-rpd0"><!-- col-xs-12 col-md-7 -->
+	            <!--<input type="hidden" id="cctype" th:field="${confirmorderform.cardType}" />-->
+	            <!-- <div id="common-payments" th:attr="data-payment=${shoppingcart.commonPaymentMethod.getCreditCardTypes()}"></div> -->
+	            <select id="card-type" th:field="${confirmorderform.cardType}" >
+	            	<th:block th:unless="${shoppingcart.commonPaymentMethod.getCreditCardTypes() == null}" th:each="creditCardType : ${shoppingcart.commonPaymentMethod.getCreditCardTypes()}">
+	            		<option th:unless="${creditCardType == null}" th:value="${creditCardType.key}" th:text="${creditCardType.value}"></option>
+	            	</th:block>
+	            </select>
+	            <span class="help-block messages card-type"></span>
+	          </div>
+	        </div>
+	
+	      </div>
+	      <div class="row col-xs-12 payment-small-section">
+	        <div class="form-group ">
+	          <label class="col-xs-5 lbl-payment" for="ccnumber" style="line-height: 2.5; font-weight: normal;">
+	            <!-- col-xs-12 col-md-5 -->
+	            <span id="cart.payment.card.card-no.label">Credit Card Number</span>
+	          </label>
+	          <div class="col-xs-7 m-rpd0"><!-- col-xs-12 col-md-7 -->
+	            <input id="ccnumber" type="hidden" class="form-control input-xs"
+	                   th:field="${confirmorderform.creditCardNumber}"/>
+	            <input id="visible-ccnumber" type="text" class="form-control input-xs" />
+	            <span class="help-block messages" id="ccvalidation-message"></span>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="row col-xs-12 payment-small-section">
+	        <div class="form-group ">
+	          <label class="col-xs-5 lbl-payment lbl-payment-cvv padding-top-2p" for="cvv"><!-- col-xs-12 col-md-5 -->
+	            <p id="cart.payment.card.cvv.label.01">CVV2/CVC2</p>
+	            <p id="cart.payment.card.cvv.label.02">(* applicable for AMEX cards only)</p>
+	          </label>
+	          <div class="col-md-4 col-sm-4 col-xs-3 rpd5"><!-- col-xs-12 col-md-4 -->
+	            <input id="cvv" name="cvv" type="text" class="form-control input-xs"
+	                   th:field="${confirmorderform.cardSecurityCode}"/>
+	            <span class="help-block messages"></span>
+	          </div>
+	          (<a href="/cart/cvv" id="view-credit-card-infor"><span id="remove-link"><span id="cart.payment.card.cvv.whats-this.link">what's this?</span></span></a>)
+	        </div>
+	      </div>
+	
+	      <div class="row col-xs-12 payment-small-section exp-dte">
+	        <div class="form-group">
+	          <label class="col-xs-5 lbl-payment dpadding-top-2p padding-top-4p"
+	                 for=""> <!-- col-xs-12 col-md-5  -->
+	            <span id="cart.payment.card.expiry.label">Expiry Date</span>
+	          </label>
+	          <div class="col-xs-4 col-sm-4 col-md-3 selectize-row paddingRight-0"><!-- col-xs-12 col-lg-3 -->
+		          <div class="form-group selectize-row selectize-row-mob padding-m-0 mob-exp-date m-rpd0"><!-- col-xs-12 col-lg-3 -->
+		            <select id="expiry-month" name="expiry-month" class="col-xs-12 no-padding"
+		                    th:field="${confirmorderform.cardExpiryMonth}">
+		              <option id="cart.payment.card.expiry.month.dropdown" value="">Month</option>
+              			<option th:each="month : ${#numbers.sequence(1, 12)}" th:value="${month}" th:text="${{#numbers.setFormatInteger(month,2)}}">
+		              </option>
+		            </select>
+		            <span class="help-block messages expiry-month"></span>
+	          </div>
+	          </div>
+	          <div class="col-xs-3 col-sm-3 col-md-3 paddingLeft-0 selectize-row-mob padding-m-0"><!-- col-lg-3 -->
+		          <div class="form-group selectize-row-mob-select year-rpd0"><!-- col-lg-3 -->
+		            <select id="expiry-year" name="expiry-year" class="col-xs-12 no-padding"
+		                    th:field="${confirmorderform.cardExpiryYear}">
+		              <option value="" id="cart.payment.card.expiry.year.dropdown">Year</option>
+		              <option th:each="year : ${#numbers.sequence(#dates.year(#dates.createNow()), #dates.year(#dates.createNow()) + 10)}" th:value="${year}" th:text="${year}">
+		              </option>
+		            </select>
+		            <span class="help-block messages expiry-year"></span>
+		          </div>
+	          </div>
+	        </div>
+	      </div>
+	
+	      <div class="row col-xs-12 payment-small-section">
+	        <div class="form-group ">
+	          <label class="col-xs-5 lbl-payment padding-top-2p" for="ccname"><span
+	              id="cart.payment.card.name.label">Name on Credit Card</span></label><!-- col-xs-12 col-md-5 -->
+	          <div class="col-xs-7 m-rpd0"><!-- col-xs-12 col-md-7 -->
+	            <input id="ccname" name="ccname" type="text" class="form-control input-xs"
+	                   th:field="${confirmorderform.creditCardHolderName}"/>
+	            <span class="help-block messages"></span>
+	          </div>
+	        </div>
+	      </div>
+	
+	      <div class="row col-xs-12 payment-small-section">
+	        <div class="form-group">
+	          <label class="col-xs-5 lbl-payment padding-top-2p" for="ccissuing"><span
+	              id="cart.payment.cardissue-bank.label">Credit Card Issuing Bank</span></label><!-- col-xs-12 col-md-5 -->
+	          <div class="col-xs-7 m-rpd0"><!-- col-xs-12 col-md-7 -->
+	            <input id="ccissuing" name="ccissuing" type="text" class="form-control input-xs"
+	                   th:field="${confirmorderform.creditCardIssuingBank}"/>
+	            <span class="help-block messages"></span>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	
+	
+	    <div class="container col-xs-12 col-sm-6 col-md-6 billing-address-wrapper padding-m-0">
+	      <div class="row col-xs-12 billing-address-title">
+	        <strong id="cart.payment.billing.title" class="billing-address-subtext">BILLING ADDRESS</strong>
+	        <!-- <a class="font-icon-billing-address" href="#">
+	          <i  class="fa fa-info-circle infor-circle-font" aria-hidden="true"></i>
+	        </a> -->
+	        <a id="infor-circle-font-id" class="font-icon-wrapper" href="#">
+	          <span>i</span>
+	        </a>
+	        <a id="copy-from-mailing-address-spid" class="copy-email" href="#">
+	        	<span id="cart.payment.billing.copy-from-mail.link">Copy from Mailing Address</span>
+        	</a>
+	        <div class="billing-address-annotation" id="cart.payment.billing.tooltip">
+	          Your billing address serves as an additional security measure for payment verification.
+	        </div>
+	      </div>
+	
+	      <div class="row col-xs-12 payment-small-section">
+	        <div class="form-group ">
+	          <label class="col-xs-5 lbl-payment padding-top-2p"
+	                 for="country"><!-- col-xs-12 col-md-5 -->
+	            <span id="cart.payment.billing.country.label">Country</span>
+	          </label>
+	          <div class="col-xs-7 selectize-row m-rpd0"><!-- col-xs-12 col-md-7 -->
+	            <select id="payment-billing-country" name="billing-country" class="col-xs-12 no-padding payment-billing-country-style" th:field="${confirmorderform.billingCountry}">
+		            <option th:each="country : ${countries.countries}"
+		            		th:if="${confirmorderform.billingCountry != null}"
+		            		th:selected="${(confirmorderform.billingCountry).equals(country.countryCode)}"
+							th:value="${country.countryCode}"
+							th:text="${country.countryName}">
+					</option>
+	            </select>
+	            <span class="help-block messages"></span>
+	          </div>
+	        </div>
+	      </div>
+	
+	      <div class="row col-xs-12 payment-small-section">
+	        <div class="form-group ">
+	          <label class="col-xs-5 lbl-payment padding-top-2p" for="textinput"><!-- col-xs-12 col-md-5 -->
+	            <span id="cart.payment.billing.blockno.label">
+               		Block No. / Hse No. / Street Name
+               </span>
+	          </label>
+	          <div class="col-xs-7 m-rpd0"><!-- col-xs-12 col-md-7 -->
+	            <input id="payment-billing-block" name="billing-block" type="text" th:field="${confirmorderform.billingBlockHouseStreet}"
+	                   class="form-control input-xs"/>
+	          </div>
+	          <span class="help-block messages col-xs-7"></span>
+	        </div>
+	      </div>
+	
+	      <div class="row col-xs-12 payment-small-section">
+	        <div class="form-group ">
+	          <label class="col-xs-5 lbl-payment padding-top-2p"
+	                 for="textinput"><!-- col-xs-12 col-md-5 -->
+	            <span id="cart.payment.billing.unitno.label">
+			                   		Unit No
+			                   </span>
+	          </label>
+	          <div class="col-xs-7 m-rpd0"><!-- col-xs-12 col-md-7 -->
+	            <input id="payment-billing-unit" name="billing-unit" type="text" th:field="${confirmorderform.billingUnitNo}"
+	                   class="form-control input-xs"/>
+	            <span class="help-block"></span>
+	          </div>
+	        </div>
+	      </div>
+	
+	      <div class="row col-xs-12 payment-small-section">
+	        <div class="form-group ">
+	          <label class="col-xs-5 lbl-payment padding-top-2p"
+	                 for="textinput"><!-- col-xs-12 col-md-5 -->
+	            <span id="cart.payment.billing.buildingname.label">
+			                   		Building Name
+			                   </span>
+	          </label>
+	          <div class="col-xs-7 m-rpd0"><!-- col-xs-12 col-md-7 -->
+	            <input id="payment-billing-building" name="billing-building" type="text" th:field="${confirmorderform.billingBuildingName}"
+	                   class="form-control input-xs"/>
+	            <span class="help-block"></span>
+	          </div>
+	        </div>
+	      </div>
+	
+	      <div class="row col-xs-12 payment-small-section">
+	        <div class="form-group">
+	          <label class="col-xs-5 lbl-payment padding-top-2p"
+	                 for="textinput"><span id="cart.payment.billing.postalcode.label">Postal Code</span></label>
+	          <!-- col-xs-12 col-md-5  -->
+	          <div class="col-xs-7 m-rpd0"><!-- col-xs-12 col-md-7 -->
+	            <input id="payment-billing-postal" name="billing-postal" type="text" th:field="${confirmorderform.billingPostalCode}"
+	                   class="form-control input-xs"/>
+	
+	          </div>
+	          <span class="help-block messages col-xs-7"></span>
+	        </div>
+	      </div>
+	    </div>
+	</div>
+  </div>
+</div>

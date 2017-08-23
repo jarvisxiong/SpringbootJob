@@ -1,0 +1,56 @@
+{
+  "cartGuid": "7762fe9f-8940-48f1-8a29-549463641afb",
+  "cartItems": [
+    {
+      "productId": 245640,
+      "priceCatId": 12176,
+      "seatSectionId": 356888,
+      "inventoryIdList": [
+        121561775,
+        121561776,
+        121561777,
+        121561778
+      ],
+      "priceClassMap": {
+        "A1": 1,
+        "D2": 1,
+        "F1": 1,
+        "FD": 1
+      },
+      "mode": "GA"
+    },
+    {
+      "productId": 255027,
+      "priceCatId": 2139,
+      "seatSectionId": 359914,
+      "inventoryIdList": [
+        123050935,
+        123050936,
+        123050937,
+        123050938
+      ],
+      "priceClassMap": {
+        "A": 3,
+        "D4": 1
+      },
+      "mode": "SP"
+    },
+    {
+      "productId": 251335,
+      "priceCatId": 10200,
+      "seatSectionId": 357987,
+      "inventoryIdList": [
+        122654002,
+        122654003,
+        122654004,
+        122654005
+      ],
+      "priceClassMap": {
+        "A": 2,
+        "J3": 1,
+        "KH": 1
+      },
+      "mode": "BA"
+    }
+  ]
+}

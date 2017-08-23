@@ -1,0 +1,4 @@
+{
+	"httpStatus": "400",
+	"statusMessage": "Email is already existed."
+}

@@ -1,0 +1,42 @@
+{
+	"organizationId" : 99,
+	"patronType" : "I",
+	"preferLanguage" : "en_SG",
+	"email": "dbthan@cmc.com.vn",
+	"title": "MR",
+	"firstName": "THAN",
+	"lastName": "DO BA",
+	"contacts": [
+		{
+			"contactType": "MOBILE",
+			"country": {
+				"code": "SGXXXX",
+				"callingCode": 65
+			},
+			"phoneNumber": "16549862122"
+		}
+	],
+	"yearOfBirth": 1990,
+	"nationality": "VN",
+	"countryOfResidence": "VN",
+	"identification": {
+		"type": "Passport",
+		"no": "S999996E"
+	},
+	"isBillingAddressSameAsMailing": true,
+	"addresses": [
+		{
+			"type": "Mailing Address",
+			"countryCode": "VN",
+			"addressLineOne": "Cau Giay",
+			"addressLineTwo": "99",
+			"addressLineThree": "CMC",
+			"postalCode": "99999"
+		}
+	],
+	"password": "password",
+	"isReceiveTicketingAgent": true,
+	"isReceivePromoter": false,
+	"isReceiveVenue": null
+}
+  

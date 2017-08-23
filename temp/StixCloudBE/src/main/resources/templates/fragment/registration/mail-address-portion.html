@@ -1,0 +1,75 @@
+<div class="use-address row" th:fragment="mail-address-portion" id="mail-address-portion">
+	<p class="address-title register-style-mailling" data-toggle="collapse"
+	   data-target="#mailing-address" style="cursor: pointer">
+		<span id="patron.account.mailing.title"  class="title-of-section">Mailing address</span>
+		<span class="arrow-down-icon-wrapper">
+		<i class="fa fa-angle-double-down arrow-down-icon" aria-hidden="true"></i>
+		</span>
+	</p>
+	<div id="mailing-address" class="collapse in" aria-expanded="true">
+		<a href="#" class="copy-from-billing-style" id="copy-from-billing"><span id="patron.account.mailing.copyfrombill.link">Copy from Billing address</span></a>
+		<!--Begin form group  -->
+		<div class="row">
+			<div class="form-group">
+				<label for="register.mailing.label.country"
+					   class="col-xs-12 col-sm-4 col-md-4 control-label"> <!-- col-sm-4 col-md-4 col-lg-4 -->
+					<span id="patron.account.mailing.country.label">Country</span>
+				</label>
+				<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"> <!-- col-sm-8 col-md-8 col-lg-8 -->
+					<select id="mailingCountry" th:field="*{mailingCountry}" class="selectize-selection-format col-xs-12 expand-bottom">
+						<option th:each="country : ${countryList.getCountriesSortedByCountryName()}" th:value="${country.countryCode}" th:text="${country.countryName}"></option>
+					</select> <span class="help-block"></span>
+				</div>
+				<div class="tooltip-mailling-wrapper"
+					 th:include="fragment/tooltip/tooltip:: tooltip (message='<span id=\'patron.account.mailing.bubble\'>We do not mail to international addresses. If you are choosing to have your tickets mailed to you, please ensure that this is a Singapore address.</span>')"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="register.mailing.label.blockno">
+					<span id="patron.account.mailing.blockno.label">Block No. / Hse No. / Street Name</span>
+				</label><!-- col-sm-4 col-md-4 col-lg-4 -->
+				<!--/ Hse No. / Street Name-->
+				<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+					<input type="text" th:field="*{mailingBlockHouseStreet}" id="block" class="form-control input-xs input-style" required="required" title="Please enter your mailing address" />
+					<span class="help-block"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="register.mailing.label.unitno">
+					<span id="patron.account.mailing.unitno.label">Unit no</span>
+				</label><!-- col-sm-4 col-md-4 col-lg-4 -->
+				<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+					<input id="building" th:field="*{mailingUnitNo}" type="text" class="form-control input-xs input-style" />
+					<span class="help-block"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="register.mailing.label.buildingName">
+					<span id="patron.account.mailing.buildingname.label">Building Name</span>
+				</label><!-- col-sm-4 col-md-4 col-lg-4 -->
+				<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+					<input th:field="*{mailingBuildingName}" id="mailing-building-name" type="text" class="form-control input-xs input-style" />
+					<span class="help-block"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="register.mailing.label.postalcode"><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<span id="patron.account.mailing.postalcode.label">Postal code</span>
+				</label>
+				<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+					<input id="postal" th:field="*{mailingPostalCode}" type="text" class="form-control input-xs input-style" />
+					<span class="help-block"></span>
+				</div>
+			</div>
+
+		</div>
+		<!--end form group  -->
+	</div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "imageAvailable": 0,
+  "viewFromSeatAvailable": 0,
+  "seatSelectedType": "IO",
+  "imageURL": "",
+  "overlayImagePath": "/SisticWebApp/images",
+  "setsReservedList": [
+    {
+      "setsReserved": [
+        {
+          "inventoryId": 120943553,
+          "seatRowAlias": "PA",
+          "seatAlias": "8",
+          "seatType": 1
+        }
+      ]
+    }
+  ],
+  "seatsAvailableList": [],
+  "seatsUnavailableList": [],
+  "sectionAlias": "Stall"
+}
+
+//products/243851/seatmap/availability?priceCatId=18284&seatSectionId=356153&quantity=1&mode=HS

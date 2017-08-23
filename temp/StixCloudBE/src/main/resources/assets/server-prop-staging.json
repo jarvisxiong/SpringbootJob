@@ -1,0 +1,4 @@
+{
+	"stix.api.server":"api.stixcloudstaging.com/api/v0",
+	"security.url":"http://"
+}

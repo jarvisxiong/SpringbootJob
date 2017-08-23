@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+	<object th:include="fragment/general/head-tag :: head-tag" th:remove="tag" />
+<title>SISTIC Subscriptions</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<link href="/images/favicon.ico" rel="shortcut icon"
+	type="image/x-icon" />
+<link href="/css/font.css" media="screen" rel="stylesheet" />
+<link href="/images/sistic/fb_logo.gif" rel="image_src" />
+<link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css"/>
+<link type="text/css" rel="stylesheet"
+	href="/css/jquery.ui.datepicker.css" />
+<link id="main-css" type="text/css" rel="stylesheet" th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/main.css'}" />
+<link type="text/css" rel="stylesheet"
+	href="/css/jquery-ui-slider.css" />
+<link th:href="@{'/css/tenant/' + ${tenantTemplateCode} + '/subscriptions.css'}" media="screen" rel="stylesheet" />
+
+</head>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+	<div class="col-xs-12 m-padding-side-zero" th:include="@{ ${tenantTemplateCode} + '/headerfooter/header'} :: header"></div>
+	<div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+	<div class="display-message-manage-register-wrapper">
+		<div class="alert alert-warning changes-warning-manageuser-register" role="alert">
+		  <p>You have unsaved changes. Please click Update Account before leaving this page.</p>
+		</div>
+		<!--<div th:unless="${error == null} or ${error.isEmpty()}" class="alert alert-danger changes-warning-manageuser" role="alert">-->
+		  <!--<p th:text="${error}">This is error message returned from api</p>-->
+		<!--</div>-->
+		
+		<div class="alert alert-success changes-success-manageuser-register" role="alert" th:unless="${success == null} or ${success.isEmpty()}">
+		    <p th:text="${success}">Error to appear here</p>
+		</div>
+		
+		
+		<div class="alert alert-danger changes-error-manageuser-register" role="alert" th:unless="${error == null} or ${error.isEmpty()}">
+		    <p th:text="${error}">Error to appear here</p>
+		</div>
+	</div>	
+	<div class="container-fluid">
+		<div id="container"></div>
+		<div class="row">
+	        <div th:include="fragment/patron/my-patron-account :: my-patron-account (message='MY ACCOUNT', isRegisterPage=false)"></div>
+	    </div>
+		<div class="row my-account-content">
+			<div class="col-xs-12 col-sm-3 col-md-3">
+				<div th:include="fragment/patron/sidebar :: sidebar"></div>
+			</div>
+			<div class="sidebar-seperate hidden-xs hidden-sm"></div>
+			<div class="col-xs-12 col-sm-9 col-md-9 no-padding" id="subscriptions-page">
+				<form id="updateForm" th:action="@{/{tenant}/patron/subscriptions (tenant=${tenantContext}) }" th:object="${patronSubscriptionsForm}" method="POST" novalidate="true">
+					<th:block th:if="${(patronSolicitation == null) or patronSolicitation.values().isEmpty()}">
+						<div>There are no user subscriptions</div>
+					</th:block>
+					<th:block th:if="${patronSolicitation} != null" th:unless="${patronSolicitation.values().isEmpty()}">
+						<div class="sub-content col-xs-12 row m-padding-side-15">
+							<div class="sub-content-title">
+								<p class="image-title-manage-patron">
+									<span id="register.subscriptions.title.1"></span>
+								</p>
+							</div>
+							<h4>
+								<span id="register.subscriptions.title.2"></span>
+							</h4>
+							<p>
+								<span id="register.subscriptions.paragraph.content.1"></span> <br />
+								<br /> Check the boxes to receive updates from:
+							</p>
+		
+							<div th:each="solicitationList : ${patronSolicitation}">
+								<span class="sub-promoter" th:unless="${solicitationList.key == 'Tenant'}" th:text="${solicitationList.key}">Promoter</span>
+								<div th:if="${solicitationList.key == 'Tenant'}">
+									<div th:each="solicitation : ${solicitationList.value}">
+										<!-- take note, id is set here inside a loop! Works because there is only 1 tenant -->
+										<div class="checker" id="uniform-buzz">
+											<div class="standardcheckbox">
+												<input th:id="|solicitation-${solicitation.organizationID}|" th:name="solicitationList" th:value="${solicitation.organizationID}" th:checked="${solicitation.subscribed}" type="checkbox" class="checkbox-subscription-page" style="opacity: 1;" />
+												<label th:for="${solicitation.organizationID}"></label>
+											</div>
+											<span th:text="${solicitation.organizationName}"></span>
+										</div>
+										<div class="update_from_description" th:if="${solicitation.organizationID == tenantObject.organizationId}">
+											<p id="register.subscriptions.paragraph.content.2"></p>
+											<p>
+												<span>Information includes:</span>
+												<ul class="info_incl_list">
+													<li>Latest shows on sale</li>
+													<li>What's happening this week</li>
+													<li>Online promotions with prizes waiting to be won</li>
+												</ul>
+											</p>
+											<p>
+												More than 500,000 people read SISTIC Buzz, so don't miss out! <br />
+												<br /> In addition, SISTIC may also send you information on
+												exciting events, promotions and other related products and
+												services offered by show organisers or reputable third parties.
+											</p>
+										</div>
+									</div>
+								</div>
+								<ul class="items" th:unless="${solicitationList.key == 'Tenant'}" th:each="solicitation : ${solicitationList.value}">
+									<li>
+										<div class="checker sub-checker">
+											<input th:id="|solicitation-${solicitation.organizationID}|" th:name="solicitationList" th:value="${solicitation.organizationID}" th:checked="${solicitation.subscribed}" type="checkbox" class="checkbox-subscription-page" style="opacity: 1;" />
+											<span th:text="${solicitation.organizationName}"></span>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--  end row -->
+						<div class="row col-xs-12 m-padding-side-30">
+							<button id="subscription-button" class="enable-btt subscription-button button-b-con">Update</button>
+						</div>
+					</th:block>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<footer class="col-xs-12"
+		th:include="@{ ${tenantTemplateCode} + '/headerfooter/footer'} :: footer"> </footer>
+		<div class="clearfix"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"
+		charset="utf-8"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js"
+		charset="utf-8"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.min.js"
+		charset="utf-8"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.min.js"
+		charset="utf-8"></script>
+	<script src="/bin/subscription.js" charset="utf-8"></script>
+</body>
+</html>

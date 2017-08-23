@@ -1,0 +1,72 @@
+<div th:fragment="evoucher" id="evoucher">
+  <div class="overlay-level-5 evoucher-cover hidden" id="evoucher-cover"></div>
+  	<div id="cart.evoucher.title" class="evoucher-title col-xs-12 acc-wrapper-title" data-target="evoucher-wrapper">SISTIC E-Voucher</div>
+  <div class="sc-item-wrapper acc-wrapper-content" id="evoucher-wrapper">
+  	<div class="panel-body">
+	    <div class="row col-xs-12 padding-0">
+	      <p class="evoucher-description" id="cart.evoucher.text">
+	        If you have SISTIC eVoucher for this event, please enter in the field box below and click Apply Voucher.
+	      </p>
+	    </div>
+	
+	    <div class="col-xs-12 padding-0">
+	      <div class="form-group" style="padding:0px">
+	        <label class="control-label col-xs-12 col-sm-2 col-md-2" for="evoucher1" style="padding:0px">
+	          <span id="cart.evoucher.label" style="font-weight: normal; padding-left: 0px;">SISTIC eVoucher(s):</span>
+	        </label>
+	        <div id="evoucher-row" class="col-xs-12 col-sm-10 col-md-10 evoucher-row" style="padding: 0px">
+	          <div class="voucher-wrapper" style="padding: 0px">
+	            <input id="evoucher1" name="evoucher1" type="text" maxlength="10" placeholder="Voucher 1"
+	                   class="form-control input-xs input-vouchers" th:field="${confirmorderform.evoucherIds}"/>
+	            <span class="help-block evoucher-message"></span>
+	
+	          </div>
+	          <div class="voucher-wrapper" style="padding: 0px">
+	            <input id="evoucher2" name="evoucher2" type="text" maxlength="10" placeholder="Voucher 2"
+	                   class="form-control input-xs input-vouchers" th:field="${confirmorderform.evoucherIds}"/>
+	            <span class="help-block evoucher-message"></span>
+	          </div>
+	          <div class="voucher-wrapper" style="padding: 0px">
+	            <input id="evoucher3" name="evoucher3" type="text" maxlength="10" placeholder="Voucher 3"
+	                   class="form-control input-xs input-vouchers" th:field="${confirmorderform.evoucherIds}"/>
+	            <span class="help-block evoucher-message"></span>
+	          </div>
+	          <div id="voucher-instruction-id" class="voucher-instruction">
+	            <img class="tooltip-arrow-img" src="/images/tooltiparrow.png"></img>
+	            <span id="cart.evoucher.bubble">Key in your eVoucher here. Click "add" if you have more than 3 eVouchers to redeem.</span>
+	          </div>
+	          <a id="remove-evoucher" class="link-evoucher" style="display:none"><span class="cart.evoucher.remove.link.multi">remove</span></a>
+	        </div>
+	        <span class="inactive-evoucher-remover"><a href="" class="remove-selected-evoucher">remove</a></span>
+	        <div class="cloner"></div>
+	
+	        <!-- <div id="voucher-instruction-id" class="voucher-instruction">
+	          <img class="tooltip-arrow-img" src="/images/tooltiparrow.png"></img>
+	          Key in your eVoucher here. Click "add" if you have more than 3 eVouchers to redeem.
+	        </div> -->
+	      </div>
+	    </div>
+	
+	    <div class="row">
+	      <div class="voucher-space"></div>
+	      <div class="apply-voucher-wrapper">
+		    	<span id="cart.evoucher.button.apply" class="apply-voucher-btn pull-left"> 
+		    		<button id="apply-voucher-button" class="shopping-cart-button button-b-con"><span id="cart.evoucher.apply.btn">Apply voucher</span></button>
+		    	</span>
+	        <span class="add-more-voucher">
+				<a id="add-more-evoucher" class="link-evoucher"><span id="cart.evoucher.add-more.link">Add More Vouchers</span></a>
+				</span>
+	        <span id="voucher-helper" class="col-xs-12 m-lpd0" style="display:none;color:red; font-style:italic">
+				</span>
+	      </div>
+	    </div>
+	  </div>
+  </div>
+<div id="total-redeem-section" class="row col-xs-12" style="display:none">
+	<span class="col-xs-2">Total redeem : </span>
+	<span id="total-redeem" class="col-xs-8">Total redeem:</span>
+</div>
+<div id="total-calculation" class="row col-xs-12" style="display:none">
+	<span class="col-xs-2">Total Calculation : </span>
+	<span id="evoucher-remaining-value" class="col-xs-8" style="font-size: 15px; color:#0000ff; font-weight: bold;">100</span></div>
+</div>

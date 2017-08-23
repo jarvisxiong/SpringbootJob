@@ -1,0 +1,18 @@
+<div class="col-xs-12 col-md-12 item" th:fragment="membership-redeem" id="membership-redeem" >
+	<div class="tp_wrapper  col-xs-12 redeemDiv" id="membershipRedeem" th:if="${membershipRedemption.alias!=null}">
+		<div class="tp-title col-xs-12">
+			<span id="cart.tp.title">MEMBERSHIP REDEMPTION</span>
+		</div>
+		<div class="redeem_content col-xs-12">
+			<table class="tbl_cls_block1" cellspacing="0" border="0">
+				<tr>										
+					<td class="td_cls_format2"><span th:text="'Current '+${membershipRedemption.alias}+' Points: '+${membershipRedemption.current}+' points'"></span></td>
+				</tr>		
+				<tr>										
+					<td class="td_cls_format2"><span th:text="'Total '+${membershipRedemption.alias}+' Points Required: '+${membershipRedemption.redeem}+' points'"></span></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+

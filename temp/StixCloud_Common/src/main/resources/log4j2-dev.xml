@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn" monitorInterval="900">
+    <Properties>
+        <Property name="log-path">./STIX/applogs</Property>
+        <Property name="PID">????</Property>
+        <Property name="LOG_EXCEPTION_CONVERSION_WORD">%xwEx</Property>
+        <Property name="LOG_LEVEL_PATTERN">%5p</Property>
+        <property name="APP_NAME">${bundle:application:spring.application.name}</property>
+        <Property name="CONSOLE_LOG_PATTERN">%clr{%d{yyyy-MM-dd HH:mm:ss.SSS}}{faint} %clr{${LOG_LEVEL_PATTERN}} %clr{[${APP_NAME},%X{ipAddress},%X{sessionId},%X{X-B3-TraceId},%X{X-B3-SpanId},%X{X-Span-Export}]}{yellow} %clr{${sys:PID}}{magenta} %clr{---}{faint} %clr{[%15.15t]}{faint} %clr{%-40.40c{1.}}{cyan} %clr{:}{faint} %m%n${sys:LOG_EXCEPTION_CONVERSION_WORD}</Property>
+    </Properties>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}" />
+        </Console>
+        <Console name="STDERR" target="SYSTEM_ERR">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}" />
+        </Console>
+        <RollingFile name="App-File-Appender" fileName="${log-path}/application.log"
+                     filePattern="${log-path}/application-%d{MM-dd-yyyy}.log">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+        <RollingFile name="Autoconfig-File-Appender"
+                     fileName="${log-path}/application-autoconfig.log"
+                     filePattern="${log-path}/application-autoconfig-%d{MM-dd-yyyy}.log">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+        <RollingFile name="Product-File-Appender" fileName="${log-path}/application-product.log"
+                     filePattern="${log-path}/application-product-%d{MM-dd-yyyy}.log">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+        <RollingFile name="Cart-File-Appender" fileName="${log-path}/application-cart.log"
+                     filePattern="${log-path}/application-cart-%d{MM-dd-yyyy}.log">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+        <RollingFile name="PaymentGateway-File-Appender"
+                     fileName="${log-path}/application-paymentgateway.log"
+                     filePattern="${log-path}/application-paymentgateway-%d{MM-dd-yyyy}.log">
+            <PatternLayout pattern="${sys:CONSOLE_LOG_PATTERN}" />
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="200"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.stixcloud" level="debug" additivity="false">
+            <AppenderRef ref="App-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.common" level="info" additivity="false">
+            <AppenderRef ref="Autoconfig-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.product" level="debug" additivity="false">
+            <AppenderRef ref="Product-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.seatmap" level="debug" additivity="false">
+            <AppenderRef ref="Product-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.cart" level="debug" additivity="false">
+            <AppenderRef ref="Cart-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.evoucher" level="debug" additivity="false">
+            <AppenderRef ref="Cart-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.ticketprotector" level="debug" additivity="false">
+            <AppenderRef ref="Cart-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <Logger name="com.stixcloud.paymentgateway" level="debug" additivity="false">
+            <AppenderRef ref="PaymentGateway-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>
+        <!--<Logger name="com.stixcloud.common.aspect.logging" level="debug" additivity="false">
+            <AppenderRef ref="AspectJ-File-Appender"/>
+            <AppenderRef ref="STDOUT"/>
+        </Logger>-->
+        
+
+        <Logger name="org.hibernate" level="info"/>
+        <Logger name="org.springframework" level="info"/>
+        <Logger name="org.springframework.cloud" level="info"/>
+        <Logger name="org.springframework.boot" level="info"/>
+        <Logger name="org.springframework.transaction" level="info"/>
+        <Logger name="org.springframework.test" level="info"/>
+        <Logger name="org.springframework.cloud.netflix" level="info"/>
+        <Logger name="com.netflix" level="info"/>
+        <Logger name="org.apache.http" level="info"/>
+
+        <Root level="debug">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="App-File-Appender"/>
+        </Root>
+    </Loggers>
+</Configuration>

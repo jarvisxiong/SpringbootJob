@@ -1,0 +1,39 @@
+{
+  "mastercard.only.payment.list": [
+    "MASTERCARD_PICKUP",
+    "MOBILE_TICKET_MASTERCARD",
+    "MAIL_WORLD_ELITE_MASTERCARD",
+    "VENUE_COLLECTION_STANDARD_CHARTERED_MASTERCARD"
+  ],
+  "overview.section.availability.text": {
+    "0": "Not Available",
+    "1": "Available",
+    "2": "Limited seats",
+    "3": "Single Seats"
+  },
+  "countdown.timer.ttl": 15,
+  "seat.confirmation.max.number.of.seats": 12,
+  "seat.confirmation.max.number.of.seats.NBETERS2017": 50,
+  "seat.confirmation.max.number.of.seats.NBETERGA2017": 30,
+  "seat.confirmation.max.number.of.seats.NBETEMIX2017": 50,
+  "status.colors": {
+    "3": "333333",
+    "2": "0033f2",
+    "1": "636363",
+    "0": "AA0000",
+    "19": "333333",
+    "18": "0033F2",
+    "17": "800080",
+    "16": "FF0000",
+    "-6": "AA0000",
+    "-7": "AA0000",
+    "-8": "AA0000",
+    "default": "000000"
+  },
+  "shopping.cart.queue.poll.time":3000,
+  "sistic.tenant":"/VIZPRO",
+  "tenant.api": "/VIZPRO",
+  "tenant.default.language": "en_US",
+  "tenant.login.additional-label": "SISTIC",
+  "tenant.login.sistic-supported": true
+}

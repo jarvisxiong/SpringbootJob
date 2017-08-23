@@ -1,0 +1,108 @@
+<div class="col-xs-12 col-lg-12 item" th:fragment="history-cart-item" id="history-cart-item">
+	<div>
+		<div class="header-item row">
+			<div class="col-xs-1"><span class="patron.history.transaction-detail.no.label.multi">No.</span></div>	<!-- col-xs-12 col-lg-1 -->
+			<div class="col-xs-4"><span class="patron.history.transaction-detail.item.label.multi">Item</span></div>	<!-- col-xs-12 col-lg-3 -->
+			<!-- <div class="col-xs-2">Ticket Type</div>	col-xs-12 col-lg-2 -->
+			<div class="col-xs-1"><span class="patron.history.transaction-detail.qty.label.multi">Qty</span></div>	<!-- col-xs-12 col-lg-1 -->
+			<div class="col-xs-2"><span class="patron.history.transaction-detail.unit-price.label.multi">Unit Price</span></div>	<!-- col-xs-12 col-lg-2 -->
+			<div class="col-xs-2"><span class="patron.history.transaction-detail.booking-fees.label.multi">Booking Fees</span></div>	<!-- col-xs-12 col-lg-2 -->
+			<div class="col-xs-2"><span class="patron.history.transaction-detail.subtotal.label.multi">Subtotal</span></div>	<!-- col-xs-12 col-lg-1 -->
+		</div>
+
+		<div id="item-table " class="item row content-item" th:each="transactionLineItem, rowStat : ${transaction.lineItems}">
+			<div class="number  col-xs-1"><span class="" th:text="${rowStat.count}"></span></div>
+			<!-- This div configuration is output for PRODUCT type -->
+			<th:block th:if="${transactionLineItem.type == 'PRODUCT'}">
+				<div class="item  col-xs-4">
+					<div class="patron-description" th:text="|${transactionLineItem.product.name} - ${#temporals.format(transactionLineItem.product.startDate, 'E, dd MMM yyyy hh:mm a ')}|">
+						Lee Kong Chian Natural History Museum (Aug16) (Test)
+					</div>
+					<div class="venue" th:text="|${transactionLineItem.product.venue}|">
+						Sat 01 Oct 2016 10:00 AM Lee Kong Chian Natural History Museum</div>
+					<div class="seatinfo">
+						<!-- START Reserved Seating -->
+						<th:block th:if="${transactionLineItem.product.sectionType == 'RS'}">
+							<span th:text="|Level: ${transactionLineItem.product.level}
+							Section:  ${transactionLineItem.product.section}
+							Row: ${transactionLineItem.product.row}
+							Seat(s) ${transactionLineItem.product.getSeatsFormatted()}|">
+							</span>
+						</th:block>
+						<!-- END Reserved Seating -->
+						<!-- START General Admission -->
+						<th:block th:if="${transactionLineItem.product.sectionType == 'GA'}">
+							<span th:text="|Section: General Admission - General Admission|">
+							</span>
+						</th:block>
+						<!-- END General Admission -->
+					</div>
+				</div>
+				<!-- <div class="ticket-type  col-xs-2" th:text="${transactionLineItem.product.seatSectionType}">S'porean/ PR Adult</div> -->
+				<div class="quantity  col-xs-1" th:text="${transactionLineItem.quantity}">2</div>
+				<div class="unit-price  col-xs-2">
+					<span class="currency" th:text="${transactionLineItem.unitPrice.currency}"></span>
+					<span class="amount" th:text="${transactionLineItem.getUnitPriceFormatted()}">SGD 47.70</span>
+				</div>
+				<div class="booking-fee  col-xs-2">
+					<span class="currency" th:text="${transactionLineItem.bookingFee.currency}"></span>
+					<span class="amount" th:text="${transactionLineItem.getBookingFeeFormatted()}">SGD 15.00</span>
+				</div>
+				<div class="subtotal  col-xs-2">
+					<span class="currency" th:text="${transactionLineItem.subTotal.currency}"></span>
+					<span class="amount subtotal-amount" th:text="${transactionLineItem.getSubTotalFormatted()}">SGD 47.70</span>
+				</div>
+			</th:block>
+			<!-- END, This div is output for PRODUCT type -->
+
+			<!-- This div configuration is output for DELIVERYMETHOD type -->
+			<th:block th:if="${transactionLineItem.type == 'DELIVERYMETHOD'}">
+				<div class="item  col-xs-4">
+					<div class="patron-description"  th:text="${transactionLineItem.name}">
+						Lee Kong Chian Natural History Museum (Aug16) (Test)
+					</div>
+					<div class="address description" th:if="${transactionLineItem.mailingAddress}">
+						<div class="mailto">Mail to:</div>
+						<div class="lineone" th:text="${transactionLineItem.mailingAddress.lineOne}"></div>
+						<div class="linetwo" th:text="${transactionLineItem.mailingAddress.lineTwo}"></div>
+						<div class="linethree" th:text="${transactionLineItem.mailingAddress.lineThree}"></div>
+						<div class="postalcode" th:text="${transactionLineItem.mailingAddress.postalCode}"></div>
+						<div class="country" th:text="${transactionLineItem.mailingAddress.country}"></div>
+						<div class="city" th:text="${transactionLineItem.mailingAddress.city}"></div>
+						<div class="state" th:text="${transactionLineItem.mailingAddress.state}"></div>
+					</div>
+				</div>
+				<!-- <div class="ticket-type  col-xs-2"></div> -->
+				<div class="quantity  col-xs-1">-</div>
+				<div class="unit-price  col-xs-2">
+					<span class="currency" th:text="${transactionLineItem.unitPrice.currency} ? ${transactionLineItem.unitPrice.currency}"></span>
+					<span class="amount" th:text="${transactionLineItem.getUnitPriceFormatted()} ? ${transactionLineItem.getUnitPriceFormatted()} : '-'">SGD 47.70</span>
+				</div>
+				<div class="booking-fee  col-xs-2">
+					<!-- <span class="currency" th:text="${transactionLineItem.bookingFee.currency} ? ${transactionLineItem.bookingFee.currency}"></span>
+					<span class="amount" th:text="${transactionLineItem.getBookingFeeFormatted()} ? ${transactionLineItem.getBookingFeeFormatted()} : '-'">SGD 47.70</span> -->
+					<span class="currency"></span>
+					<span class="amount">-</span>
+				</div>
+				<div class="subtotal  col-xs-2">
+					<span class="currency" th:text="${transactionLineItem.subTotal.currency} ? ${transactionLineItem.subTotal.currency}"></span>
+					<span class="amount subtotal-amount" th:text="${transactionLineItem.getSubTotalFormatted()} ? ${transactionLineItem.getSubTotalFormatted()} : '-'">SGD 47.70</span>
+				</div>
+			</th:block>
+			<!-- END, This div is output for DELIVERYMETHOD type -->
+		</div>
+
+		<div class="row row-history">
+			<div id="delivery-data" class="col-xs-9" >
+				<span class="description"><span class="patron.history.transaction-detail.total.label.multi">TOTAL (including GST)</span></span>
+				<!-- Please don't remove below line -->
+				<!-- <div id="delivery-method"></div> -->
+			</div>
+			<div id="delivery-charge" class="price col-xs-3" style="text-align:right">
+				<span class="currency" th:text="${transaction.totalAmount.currency}"></span>
+				<span id="delivery-price" class="amount" th:text="${transaction.getTotalAmountFormatted()}">SGD 47.70</span>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,24 @@
+[
+  {
+    "city": "Singapore",
+    "country": "US",
+    "countrySubdivision": "123",
+    "line1": "123",
+    "line2": "123",
+    "line3": "123",
+    "postalCode": "123456",
+    "type": "MAILING",
+    "isPrimary": false
+  },
+  {
+    "city": "Singapore",
+    "country": "US",
+    "countrySubdivision": null,
+    "line1": "Blk 123 Hougang Ave 1",
+    "line2": "#03-239",
+    "line3": "test biling address",
+    "postalCode": "530123",
+    "type": "BILLING",
+    "isPrimary": true
+  }
+]

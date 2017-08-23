@@ -1,0 +1,11 @@
+{
+  "deliveryMethodCode" : "MASTERCARD_PICKUP",
+  "paymentMethodCode" : "MASTER",
+  "sameAsMailingAddrFlag" : false,
+  "purchaseTp" : false,
+  "evoucherIdList" : [ "MC4s2Bfj4e", "MC77K0r72N" ],
+  "creditCardNo" : "5123456789012346",
+  "creditCardMonth":"01",
+  "creditCardYear":"17",
+  "creditCardExpiry" : "0618"
+}

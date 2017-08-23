@@ -1,0 +1,7 @@
+# Configure this Discovery Server
+eureka:
+  client:  # Not a client, don't register with yourself
+    service-url:
+      defaultZone: http://eureka-peer1:8761/eureka/
+  instance:
+    hostname: peer2

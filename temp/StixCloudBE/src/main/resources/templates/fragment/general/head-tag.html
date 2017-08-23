@@ -1,0 +1,12 @@
+<div th:fragment="head-tag" id="head-tag">
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+	<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+	<th:block th:if="${tenantObject != null} and ${tenantObject.mobileResponsive != null} and ${tenantObject.mobileResponsive == true}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	</th:block>
+	<th:block th:unless="${tenantObject != null} and ${tenantObject.mobileResponsive != null} and ${tenantObject.mobileResponsive == true}">
+		<meta name="viewport" content="width=1024, initial-scale=1.0, maximum-scale=1.0"/>
+	</th:block>
+	<link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css"/>
+	
+</div>

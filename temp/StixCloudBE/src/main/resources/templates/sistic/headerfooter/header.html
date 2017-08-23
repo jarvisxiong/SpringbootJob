@@ -1,0 +1,201 @@
+<header th:fragment="header" class="col-xs-12 wrapper" id="header">
+    <div class="col-xs-12 header-row desktop"><!-- fixed-header -->
+        <a class="logo" href="https://www.sistic.com.sg"><!-- visible-md visible-lg -->
+            <img alt="Image" height="66" src="/images/logo.png" width="316"/>
+        </a>
+        <!-- <div class="text-logo hidden-md hidden-lg">
+            <h2>SISTIC</h2>
+            <button class="hamburger-menu-icon btn btn-defaul" onclick="sidebarTrigger()">
+                <i class="fa fa-bars fa-2x"></i>
+            </button>
+        </div> -->
+
+    </div>
+    <div class="col-lg-12 vertical-menu-mobile vertical-menu-web desktop" id="menu-mobile">
+        <!--nav bar -->
+        <!-- /.navbar -->
+        <nav class="nav col-md-8 col-sm-8 col-xs-12 level2 nav-mobile-vw"><!-- nav col-xs-10 col-md-8  -->
+            <ul>
+                <!-- this part should be changed using the grid method -->
+                <li class="menu-item home-menu-item">
+                    <a class="item" href="https://www.sistic.com.sg">
+                        <img alt="Image" src="/images/home.png"/> <!-- class="visible-lg visible-md" -->
+                        <!-- <span class="hidden-lg hidden-md">Home</span>
+ -->                    </a>
+                </li>
+                <div class="col-md-11 menu-row">
+                    <li class="menu-item ">
+                        <a class="item" href="https://www.sistic.com.sg">
+                            <span class="header.find-an-event.link.multi">FIND AN EVENT</span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a class="item" href="https://www.sistic.com.sg/attraction">
+                            <span class="header.attractions.link.multi">ATTRACTIONS</span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a class="item" href="https://www.sistic.com.sg/promotions">
+                            <span class="header.promotions.link.multi">PROMOTIONS</span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a class="item" href="https://www.sistic.com.sg/groupdeals">
+                            <span class="header.group-deals.link.multi">GROUP DEALS</span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a class="item" href="https://www.sistic.com.sg/dining">
+                            <span class="header.dining.link.multi">DINING</span>
+                        </a>
+                    </li>
+                    <li class="menu-item ">
+                        <a class="item" href="https://www.asiatravel.net/partners/sistic.html" target="_blank">
+                            <span class="header.travel.link.multi">TRAVEL</span>
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+        <!-- end nav bar -->
+		<div class="col-md-4 col-sm-4 col-xs-12 top-right-nav no-side-padding">
+        <!-- FB Button -->
+        <div class="fb-like level2 fb-mobile-vw" data-href="https://www.facebook.com/SISTICsingapore"
+             data-layout="button_count" data-send="false" data-show-faces="false" data-width="100">
+        </div>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        <!-- END FB Button -->
+        <div class="level2 app-mobile-vw"><a href="https://www.sistic.com.sg/header_mobile_app" class="header_mobile_app"></a><!-- col-md-1 level2 visible-lg visible-md -->
+        </div>
+        <!-- search box -->
+        <div class="search_area level2 search-mobile-vw" id="search_panel">
+        <!-- col-md-1 level2 visible-md visible-lg -->
+            <form action="https://www.sistic.com.sg/events/search" method="GET">
+                <div class="keyword_search">
+                    <input class="txt header.search.placeholder.multi" name="q" placeholder="SEARCH" type="text" value=""/>
+                    <button class="btn btn-default" type="button">
+                    </button>
+
+                </div>
+            </form>
+            <div class="clear">
+            </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    
+    <!-- Mobile Navbar -->
+    <nav class="navbar navbar-default mobile-view">
+      <div class="container">
+        <div class="navbar-header mobile-navbar-header">
+       	  <a class="logo navbar-brand mobile-navbar-brand" href="https://www.sistic.com.sg">
+            <img alt="Image" class="img-responsive" src="/images/logo.png"/>
+          </a>
+          </div>
+          <div class="mobile-search-area-menu">
+          	<button type="button" class="navbar-toggle mobile-navbar-toggle collapsed" data-toggle="collapse" data-target="#mobile-menu">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	        </button>
+	        <div class="fb-like level2 fb-mobile-vw mobile-view-like" data-href="https://www.facebook.com/SISTICsingapore"
+	             data-layout="button_count" data-send="false" data-show-faces="false" data-width="100">
+	            <div class="fb-like" data-href="https://www.facebook.com/SISTICsingapore" data-layout="button_count" data-show-faces="false"></div>
+	            <script>(function(d, s, id) {
+	                var js, fjs = d.getElementsByTagName(s)[0];
+	                if (d.getElementById(id)) return;
+	                js = d.createElement(s); js.id = id;
+	                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+	                fjs.parentNode.insertBefore(js, fjs);
+	            }(document, 'script', 'facebook-jssdk'));</script>
+	        </div>
+	        <div class="search_area level2 search-mobile-vw mobile-view-search" id="mobile-search-box">
+	        	<i class="fa fa-search" id="mobile-search-icon" aria-hidden="true"></i>
+	            
+	            </div>
+	        </div>
+	    <div class="hidden"  id="mobile-search-form">
+	            <form action="https://www.sistic.com.sg/events/search" method="GET" role="search">
+	                <div class="input-group">
+						<input type="text" class="form-control header.search.placeholder.multi" placeholder="Search">
+						<span class="input-group-btn">
+							<button type="reset" id="mobile-close-search" class="mobile-view-btn btn btn-default">
+								<i class="fa fa-times" aria-hidden="true"></i>
+							</button>
+							<button type="submit" class="mobile-view-btn btn btn-default">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</button>
+						</span>
+					</div>
+	            </form>
+	            <div class="clear">
+	            </div>
+	            </div>
+        <div class="collapse navbar-collapse mobile-navbar-collapse" id="mobile-menu">
+          <ul class="nav navbar-nav navbar-right text-center">
+          	<li>
+          		<a class="item" href="https://www.sistic.com.sg">
+                        <img alt="Image" class="mobile-home-img" src="/images/home.png"/>
+	            </a>
+	        </li>
+            <li>
+            	<a class="item" href="https://www.sistic.com.sg">
+                            <span class="header.find-an-event.link.multi">FIND AN EVENT</span>
+                </a>
+            </li>
+            <li>
+            <a class="item" href="https://www.sistic.com.sg/attraction">
+                            <span class="header.attractions.link.multi">ATTRACTIONS</span>
+                        </a>
+			</li>
+            <li>
+            	<a class="item" href="https://www.sistic.com.sg/promotions">
+                            <span class="header.promotions.link.multi">PROMOTIONS</span>
+                        </a>
+			</li>
+            <li>
+            	<a class="item" href="https://www.sistic.com.sg/groupdeals">
+                            <span class="header.group-deals.link.multi">GROUP DEALS</span>
+                        </a>
+			</li>
+            <li>
+            	<a class="item" href="https://www.sistic.com.sg/dining">
+                            <span class="header.dining.link.multi">DINING</span>
+                        </a>
+			</li>
+            <li>
+				<a class="item" href="https://www.asiatravel.net/partners/sistic.html" target="_blank">
+                            <span class="header.travel.link.multi">TRAVEL</span>
+                        </a>
+			</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <script>
+    var $v = jQuery.noConflict();
+    $v(document).on("click","#mobile-search-icon",function(){
+    	if($j(".mobile-navbar-collapse").hasClass("in")){
+    		$j(".mobile-navbar-collapse").removeClass("in");
+    	}
+    	$v("#mobile-search-form").toggleClass("hidden");
+    	$v(".mobile-search-area-menu").toggleClass("hidden");
+    });
+    $v(document).on("click","#mobile-close-search",function(){
+    	$v("#mobile-search-form").toggleClass("hidden");
+    	$v(".mobile-search-area-menu").toggleClass("hidden");
+    });
+    </script>
+
+</header>

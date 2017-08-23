@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <object th:include="__${tenantTemplateCode}__/headerfooter/head-tag :: head-tag" th:remove="tag" />
+	<object th:include="fragment/general/head-tag :: head-tag" th:remove="tag" />
+    <link href="/css/font.css" media="screen" rel="stylesheet"/>
+    <link href="/images/sistic/fb_logo.gif" rel="image_src"/>
+    <link type="text/css" rel="stylesheet" href="/css/simplebar.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/jquery.ui.datepicker.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/jquery-ui-slider.css"/>
+    <link id="main-css" type="text/css" rel="stylesheet" th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/main.css'}" />
+</head>
+<body>
+	<div class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/header'} :: header"></div>
+	
+	<div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+	
+	<div id="app" class="col-xs-12"></div>
+	
+	<footer class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/footer'} :: footer">
+	
+	</footer>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.js" charset="utf-8"></script>
+	<script type="text/javascript" src="/js/jquery-ui-custom.js"></script>
+	<script type="text/javascript" src="/js/jquery.countdown.js"></script>
+	<!-- <script type="text/javascript" src="http://sistic.testing.com/js/jquery-ui-custom.js" ></script> -->
+	<script type="text/javascript" src="/js/jquery.uniform.js"></script>
+	<!-- <script type="text/javascript" src="http://sistic.testing.com/js/jquery.uniform.js" ></script> -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.imagemapster/1.2.10/jquery.imagemapster.js"></script>
+	
+	<script th:inline="javascript">
+		/*<![CDATA[*/
+	    //A CDATA section is "a section of element content that is marked for the parser to interpret as only character data, not markup."
+	    //this function is to allow some of the older JQuery libraries to run with the latest JQuery version
+	    (function () {
+	        var matched, browser;
+	
+	        // Use of jQuery.browser is frowned upon.
+	        // More details: http://api.jquery.com/jQuery.browser
+	        // jQuery.uaMatch maintained for back-compat
+	        jQuery.uaMatch = function (ua) {
+	            ua = ua.toLowerCase();
+	
+	            var match = /(chrome)[ \/]([\w.]+)/.exec(ua) ||
+	                /(webkit)[ \/]([\w.]+)/.exec(ua) ||
+	                /(opera)(?:.*version|)[ \/]([\w.]+)/.exec(ua) ||
+	                /(msie) ([\w.]+)/.exec(ua) ||
+	                ua.indexOf("compatible") < 0 && /(mozilla)(?:.*? rv:([\w.]+)|)/.exec(ua) ||
+	                [];
+	
+	            return {
+	                browser: match[1] || "",
+	                version: match[2] || "0"
+	            };
+	        };
+	
+	        matched = jQuery.uaMatch(navigator.userAgent);
+	        browser = {};
+	
+	        if (matched.browser) {
+	            browser[matched.browser] = true;
+	            browser.version = matched.version;
+	        }
+	
+	        // Chrome is Webkit, but Webkit is also Safari.
+	        if (browser.chrome) {
+	            browser.webkit = true;
+	        } else if (browser.webkit) {
+	            browser.safari = true;
+	        }
+	        jQuery.browser = browser;
+	    })();
+	    /*]]>*/
+	</script>
+	
+	<!--   <script src="/bin/booking.js" charset="utf-8"></script> -->
+	<script src="/js/simplebar.js"></script>
+	<script src="/bin/membership.js" charset="utf-8"></script>
+</body>
+</html>

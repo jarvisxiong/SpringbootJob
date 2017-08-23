@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+	<object th:include="fragment/general/head-tag :: head-tag" th:remove="tag" />
+<title>SISTIC Memberships</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<link href="/images/favicon.ico" rel="shortcut icon"
+	type="image/png" />
+<link href="/css/font.css" media="screen" rel="stylesheet" />
+<link href="/images/sistic/fb_logo.gif" rel="image_src" />
+<link href="/css/header_footer.css" media="screen"
+	rel="stylesheet" />
+<link type="text/css" rel="stylesheet"
+	href="/css/jquery.ui.datepicker.css" />
+<link id="main-css" type="text/css" rel="stylesheet"
+	href="/css/main.css" />
+<link type="text/css" rel="stylesheet"
+	href="/css/jquery-ui-slider.css" />
+<link href="/css/manageMembership.css" media="screen" rel="stylesheet" />
+
+</head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+	<div class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/header'} :: header"></div>
+	<div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+	<div class="display-message-manage-register-wrapper">
+		<div class="alert alert-warning changes-warning-manageuser-register" role="alert">
+		  <p>You have unsaved changes. Please click Update Account before leaving this page.</p>
+		</div>
+		<!--<div th:unless="${error == null} or ${error.isEmpty()}" class="alert alert-danger changes-warning-manageuser" role="alert">-->
+		  <!--<p th:text="${error}">This is error message returned from api</p>-->
+		<!--</div>-->
+		
+		<div class="alert alert-success changes-success-manageuser-register" role="alert" th:unless="${success == null} or ${success.isEmpty()}">
+		    <p th:text="${success}">Error to appear here</p>
+		</div>
+		
+		
+		<div class="alert alert-danger changes-error-manageuser-register" role="alert" th:unless="${error == null} or ${error.isEmpty()}">
+		    <p th:text="${error}">Error to appear here</p>
+		</div>
+	</div>	
+	<div class="container-fluid">
+		<div id="container"></div>
+		<div class="row">
+	        <div th:include="fragment/patron/my-patron-account :: my-patron-account (isRegisterPage=false)"></div>
+	    </div>
+		<div class="row my-account-content">
+			<div class="col-xs-3">
+				<div th:include="fragment/patron/sidebar :: sidebar"></div>
+			</div>
+			<div class="sidebar-seperate"></div>
+			<div class="col-xs-9 no-padding" id="subscriptions-page">
+				
+				<th:block th:if="${(patronMembership == null)}">
+					<div>There are no user memberships</div>
+				</th:block>
+				<th:block th:if="${patronMembership} != null">
+					<div class="sub-content col-xs-12 row">
+						<div class="sub-content-title">
+							<p class="image-title-manage-patron">
+								<span id="membership.title.1"></span>
+							</p>
+						</div>
+						
+						<th:block th:each="membershipInfo : ${patronMembership.membershipInfo}">
+							<div class="membership-listing">
+								
+								<th:block th:each="membershipPatron : ${membershipInfo.membershipPatron}">
+
+									<div class="membership-label col-md-4 membership-organization">
+										<span id="membership.label.organization">Organization</span>
+									</div>
+									<div class="membership-value col-md-8 membership-organization" th:text="${membershipPatron.organizationAlias}">
+									</div>
+
+									<div class="membership-label col-md-4">
+										<span id="membership.label.membership.type">Membership Type</span>
+									</div>
+									<div class="membership-value col-md-8" th:text="${membershipPatron.membershipTier}">
+									</div>
+									
+									<div class="membership-label col-md-4">
+										<span id="membership.label.card.effective.date">Card Effective Date</span>
+									</div>
+									<div class="membership-value col-md-8">
+										<span th:text="${#temporals.format(membershipPatron.startDate, 'E, dd MMM yyyy')}" /> <span id="membership.label.to">to</span>
+										<span th:text="${#temporals.format(membershipPatron.endDate, 'E, dd MMM yyyy')}" />
+									</div>
+									
+									<div class="membership-label col-md-4">
+										<span id="membership.label.status">Status</span>
+									</div>
+									<div class="membership-value col-md-8" th:unless="${membershipPatron.isExpired}">
+										<span id="membership.field.active">Active</span>
+									</div>
+									<div class="membership-value col-md-8" th:if="${membershipPatron.isExpired}">
+										<span id="membership.field.expired" class="membership-expired">Expired</span>
+									</div>
+									
+									<div class="membership-label col-md-12">
+										<a th:href="${'/patron/membership/' + membershipPatron.organizationId}"><button id="membership-button" class="enable-btt membership-button">View Details</button></a>
+									</div>
+									
+									<div class="col-md-12 membership-separator"></div>
+								</th:block>				
+							</div>
+							
+							
+						</th:block>
+					</div>
+					<div class="pagination-wrapper" th:if="${patronMembership.totalPage != null}">
+			          <label class="pagination-label" for="pagination-select">Page</label>
+			          <select id="pagination-select" name="page" class="no-padding-side">
+			            <th:block th:each="page : ${#numbers.sequence(1, patronMembership.totalPage)}">
+			              <option th:text="${page}" th:value="${page}"
+			                      th:selected="${page == patronMembership.currentPage}"></option>
+			            </th:block>
+			          </select>
+			        </div>
+				</th:block>
+			</div>
+		</div>
+	</div>
+
+	<footer class="col-xs-12"
+		th:include="sistic/headerfooter/footer :: footer"> </footer>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"
+		charset="utf-8"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js"
+		charset="utf-8"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.min.js"
+		charset="utf-8"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.min.js"
+		charset="utf-8"></script>
+	<script src="/bin/manage-membership.js" charset="utf-8"></script>
+</body>
+</html>

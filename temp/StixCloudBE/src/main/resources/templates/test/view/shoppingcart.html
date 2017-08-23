@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<object th:include="__${tenantTemplateCode}__/headerfooter/head-tag :: head-tag" th:remove="tag" />
+		<object th:include="fragment/general/head-tag :: head-tag" th:remove="tag" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/selectize/selectize.css"/>
+		<link type="text/css" rel="stylesheet" th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/shoppingcart.css'}" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/js/jquery-ui-custom.js"></script>
+		<script type="text/javascript" src="/js/jquery.countdown.js"></script>
+		<script type="text/javascript" src="/js/jquery.uniform.js"></script>
+		<script type="text/javascript" src="/js/jquery-payment/jquery.payment.js"></script>
+		<!-- <script type="text/javascript" src="https://static.masterpass.com/dyn/js/switch/integration/MasterPass.client.js"></script> -->
+
+		<!-- Google Tag Manager -->
+		<script th:include="__${tenantTemplateCode}__/scripts/script_ga :: ga_headscript"></script>
+		<!-- End Google Tag Manager -->
+	</head>
+	<body>
+		<!-- Google Tag Manager (noscript) -->
+		<noscript th:include="__${tenantTemplateCode}__/scripts/script_ga :: ga_bodyscript"></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+
+		<div id="queue-lightbox"></div>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/header'} :: header"></div>
+				<div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+				<div class="clear-both"></div>
+
+				<div class="col-md-12 col-centered" id="app">
+					<div id="error-block" class="alert alert-danger shopping-cart-alert" th:classappend="!${error} ? hidden" role="alert">
+						<div class="frontend-block" ></div>
+						<div class="backend-block">
+							<span th:id="${error}"></span>
+						</div>
+					</div>
+
+
+					<div class="header col-xs-12 ">
+						<div class="sc-title col-xs-9 shopping-cart-title">
+							<h3><span id="cart.label.title">Shopping Cart</span></h3>
+						</div>
+						<div class="continue col-xs-3">
+							<button id="continue-shopping-button" class="shopping-cart-button">
+								<span id="cart.button.continue">Continue Shopping</span></button>
+						</div>
+					</div>
+
+					<div class="content">
+						<form th:action="@{/{tenant}/action/confirmorder (tenant=${tenantContext}) }" th:object="${confirmorderform}" method="post" id="payment-form" novalidate="true">
+							<div id="cart" class="cart">
+								<div class="col-xs-12  no-side-padding" th:include="fragment/cart/cart-item :: cart-item (isShoppingCart=true)" th:with="confirmorderform=${confirmorderform}"></div>
+
+								<div class="col-xs-12" th:if="${tenantComponents.ticketProtector}" th:include="fragment/cart/ticket-protector :: ticket-protector"></div>
+								<!-- <div class="col-xs-12" th:include="fragment/cart/membership-redeem :: membership-redeem"></div>	-->
+								<div class="total col-xs-12" th:include="fragment/cart/grand-total :: grand-total (isShoppingCart=true)" th:with="grandtotal=${shoppingcart}"></div>
+								<!-- <div class="col-xs-12" th:include="fragment/cart/membership-point :: membership-point"></div>
+								<div class="col-xs-12" th:include="fragment/cart/membership-evoucher :: membership-evoucher"></div>																					
+								<div class="col-xs-12" th:include="fragment/cart/membership-info-details :: membership-info-details"></div>		 -->						
+							</div>
+
+							<div class="col-xs-12 no-side-padding" id="advertise-banner">
+								<a target="_blank" border="0" id="mcLink" href="https://www.sistic.com.sg/promotions?cid=2016octdec-shoppingcart-mcapplepromo&amp;?#3641">
+									<img src="/images/Booking-Page-Banner.jpg" id="masterBanner"/>
+								</a>
+							</div>
+
+							<div class="col-xs-12 voucher-component" th:if="${tenantComponents.evoucher}" th:include="fragment/cart/evoucher :: evoucher"></div>
+
+							<div class="col-xs-12 payment-section-wrapper" th:include="fragment/cart/payment :: payment"></div>
+
+							<div class="col-xs-12" th:if="${tenantComponents.subscription}" th:include="fragment/cart/subscription :: subscription"></div>
+							<div class="sc-item-wrapper-confirm">
+								<div class="highlight_type cart col-xs-12" th:include="fragment/cart/confirmorder :: confirm-cart"></div>
+							</div>
+
+						</form>
+					</div>
+				</div>
+				<footer th:include="@{ ${tenantTemplateCode} + '/headerfooter/footer'} :: footer">
+				</footer>
+			</div>
+		</div>
+		<div class="overlay-level-6" style="position:fixed;width:200px;float:right;bottom:20px;right:10px" id="timer-modal">
+		</div>
+		<div id="lightbox_wrapper"></div>
+
+		<div id="promotion-validation-flag" th:attr="data-validate=${tenantComponents.promotion}"></div>
+		<script th:src="${@environment.getProperty('masterpass.js.url')}" type="text/javascript" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js" charset="utf-8"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js" charset="utf-8"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.min.js" charset="utf-8"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="/js/selectize/selectize.js"></script>
+		<script th:inline="javascript">
+			var $j = jQuery.noConflict();
+
+
+		</script>
+
+		<script src="/bin/cart.js" charset="utf-8"></script>
+
+	</body>
+</html>

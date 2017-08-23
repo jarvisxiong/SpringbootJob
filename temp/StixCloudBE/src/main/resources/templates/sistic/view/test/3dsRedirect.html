@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Test 3ds redirect</title>		
+	</head>
+	<body>
+		<form name="3dsRequestForm" action="https://migs.mastercard.com.au/vpcdps" method="post">
+			<input type="text" name="vpc_Version" value="1" />
+			<input type="text" name="vpc_Command" value="pay" />
+			<input type="text" name="vpc_Locale" value="en" />
+			<input type="text" name="vpc_gateway" value="threeDSecure" />
+			<input type="text" name="vpc_Merchant" value="TEST001500059803" />
+			<input type="text" name="vpc_AccessCode" value="E0FC60D7" />
+			<input type="text" name="vpc_MerchTxnRef" value="20170902-000023" />
+			<input type="text" name="vpc_OrderInfo" value="20170902-000023" />
+			<input type="text" name="vpc_Amount" value="100" />
+			<input type="text" name="vpc_ReturnURL" value="https://booking.sistic.stixcloud.com/SisticWebApp/redirect3D.jsp" />
+			<input type="text" name="vpc_card" value="VISA" />
+			<input type="text" name="vpc_CardNum" value="4005550000000001" />
+			<input type="text" name="vpc_CardExp" value="1705" />
+			<input type="text" name="vpc_CardSecurityCode" value="" />
+			<input type="text" name="vpc_SecureHash" value="5413EE9297E90260A2899EC155257329" />
+			<input type="text" name="vpc_SecureHashType" value="SHA256" />
+			
+			<input type="submit" value="Submit" />
+		</form>
+	</body>
+</html>

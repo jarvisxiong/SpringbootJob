@@ -1,0 +1,29 @@
+{
+	"solicitationList": [
+		{
+			"solicitationType": "Tenant",
+			"organizationID": 142,
+			"organizationName": "Gevorg Sargsyan",
+			"subscribed": true
+		},
+		{
+			"solicitationType": "Promoter",
+			"organizationID": 1243,
+			"organizationName": "Reitoku Kai",
+			"organizationUrl": "http://abcd.com",
+			"subscribed": true
+		},
+		{
+			"solicitationType": "Promoter",
+			"organizationID": 750,
+			"organizationName": "Amadeus Choral Society",
+			"subscribed": false
+		},
+		{
+			"solicitationType": "Venue",
+			"organizationID": 710,
+			"organizationName": "AEGThemeSTAR",
+			"subscribed": false
+		}
+	]
+}

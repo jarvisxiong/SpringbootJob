@@ -1,0 +1,29 @@
+{
+	"exceedMaxQtyAllowed": false,
+	"validationResultList": [
+		{
+			"eVoucherID": "MCjT1X5GTU",
+			"redeemValue": {
+				"amount": 20,
+				"currency": "SGD"
+			},
+			"evoucherType": "DBS_E_VOUCHER",
+			"validationResult": true,
+			"validationConstant": "VALIDATION_RULE_PASS"
+		},
+		{
+			"eVoucherID": "MCjT1Y5GTU",
+			"redeemValue": {
+				"amount": 20,
+				"currency": "SGD"
+			},
+			"evoucherType": "ESPLANADE_E_VOUCHER",
+			"validationResult": true,
+			"validationConstant": "VALIDATION_RULE_PASS"
+		}
+	],
+	"totalRedeemValue": {
+		"amount": 40,
+		"currency": "SGD"
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"countryList": [
+		{
+			"countryName": "Afghanistan",
+			"countryCode": "AF",
+			"countryCallingCode": "93"
+		},
+		{
+			"countryName": "Albania",
+			"countryCode": "AL",
+			"countryCallingCode": "355"
+		},
+		{
+			"countryName": "Argentina",
+			"countryCode": "AR",
+			"countryCallingCode": "54"
+		},
+		{
+			"countryName": "Aruba",
+			"countryCode": "AW",
+			"countryCallingCode": "297"
+		},
+		{
+			"countryName": "Singapore",
+			"countryCode": "SG",
+			"countryCallingCode": "65"
+		}
+	]
+}

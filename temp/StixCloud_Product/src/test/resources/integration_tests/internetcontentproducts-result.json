@@ -1,0 +1,40 @@
+{
+  "icAttributesList": [
+    "1"
+  ],
+  "promotion": false,
+  "showTimingList": [
+    {
+      "productId": 243851,
+      "showTitle": "RENT",
+      "showDateTime": "2016-10-29T07:00:00Z",
+      "availabilityStatus": 19,
+      "isValidPromoCode": false,
+      "venue": "Drama Centre"
+    },
+    {
+      "productId": 243853,
+      "showTitle": "RENT",
+      "showDateTime": "2016-10-29T12:00:00Z",
+      "availabilityStatus": 19,
+      "isValidPromoCode": false,
+      "venue": "Drama Centre"
+    },
+    {
+      "productId": 243852,
+      "showTitle": "RENT",
+      "showDateTime": "2016-10-30T07:00:00Z",
+      "availabilityStatus": 19,
+      "isValidPromoCode": false,
+      "venue": "Drama Centre"
+    },
+    {
+      "productId": 243854,
+      "showTitle": "RENT",
+      "showDateTime": "2016-10-30T12:00:00Z",
+      "availabilityStatus": 19,
+      "isValidPromoCode": false,
+      "venue": "Drama Centre"
+    }
+  ]
+}

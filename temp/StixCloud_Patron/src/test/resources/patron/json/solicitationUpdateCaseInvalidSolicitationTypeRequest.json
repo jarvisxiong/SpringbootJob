@@ -1,0 +1,14 @@
+{
+	"solicitationList": [
+		{
+			"solicitationType": "abcd",
+			"organizationID": 1,
+			"subscribed": true
+		},
+		{
+			"solicitationType": "Venue",
+			"organizationID": 2,
+			"subscribed": true
+		}
+	]
+}

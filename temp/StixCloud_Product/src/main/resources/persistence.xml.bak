@@ -1,0 +1,36 @@
+<persistence>
+    <persistence-unit name="product">
+        <!--GLOBAL_JNDI_GOES_HERE-->
+        <jta-data-source>jdbc/myDS</jta-data-source>
+        <class>com.stixcloud.domain.internetcontent.InternetContent</class>
+        <class>com.stixcloud.domain.product.FestivalCode</class>
+        <class>com.stixcloud.domain.product.ProductLive</class>
+        <class>com.stixcloud.domain.product.UserGroup</class>
+        <class>com.stixcloud.domain.product.Venue</class>
+        <class>com.stixcloud.domain.product.VisibilityTemplateLive</class>
+        <class>com.stixcloud.domain.product.VisibilityTplDetailLive</class>
+        <class>com.stixcloud.domain.product.VisibilityTplPrdtLive</class>
+        <class>com.stixcloud.domain.product.InternetContentLive</class>
+        <class>com.stixcloud.domain.product.ProductInternetContentLive</class>
+        <class>com.stixcloud.domain.product.GroupInfo</class>
+        <properties>
+            <property name="eclipselink.jdbc.url" value="jdbc:oracle:thin:@//192.168.11.203:1521/stgcloud"/>
+            <property name="eclipselink.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="eclipselink.jdbc.user"/>
+            <property name="eclipselink.jdbc.password"/>
+            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@//192.168.11.203:1521/stgcloud"/>
+            <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
+            <property name="hibernate.connection.username"/>
+            <property name="hibernate.connection.password"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:oracle:thin:@//192.168.11.203:1521/stgcloud"/>
+            <property name="openjpa.ConnectionDriverName" value="oracle.jdbc.OracleDriver"/>
+            <property name="openjpa.ConnectionUserName"/>
+            <property name="openjpa.ConnectionPassword"/>
+            <property name="toplink.jdbc.url" value="jdbc:oracle:thin:@//192.168.11.203:1521/stgcloud"/>
+            <property name="toplink.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+            <property name="toplink.jdbc.user"/>
+            <property name="toplink.jdbc.password"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="persistenceUnit"/>
+</persistence>

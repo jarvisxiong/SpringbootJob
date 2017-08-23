@@ -1,0 +1,10 @@
+{
+	"eVoucherID": "MCjT1X5GTU",
+	"redeemValue": {
+		"amount": 10,
+		"currency": "SGD"
+	},
+	"evoucherType": "NGS_E_VOUCHER",
+	"validationResult": true,
+	"validationConstant": "VALIDATION_RULE_PASS"
+}

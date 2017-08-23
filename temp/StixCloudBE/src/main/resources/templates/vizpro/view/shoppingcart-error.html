@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<object th:include="fragment/general/head-tag :: head-tag" th:remove="tag" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="/css/shoppingcart.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js" charset="utf-8"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js" charset="utf-8"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.min.js" charset="utf-8"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.min.js" charset="utf-8"></script>			
+	</head>
+	       
+	<body>
+        <div class="col-xs-12" th:include="sistic/headerfooter/header :: header"></div>
+        <div id="vizpro_page_wrapper">
+	        <div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+	        <div class="clearfix"></div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-12 col-centered">
+						<div class="content error_content col-xs-12">
+							<div class="error_notification" th:text="${error}">Your shopping cart is empty.</div>
+							<div class="continue_wrapper">
+								<a class="shopping-cart-button button-b-con" href="https://www.sistic.com.sg">
+									<span id="cart.continue.btn">Continue Shopping</span>
+								</a>
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer th:include="sistic/headerfooter/footer :: footer">
+		</footer>
+		<div class="clearfix"></div>
+		<script src="/bin/login-handle.js" charset="utf-8"></script>
+	</body>
+</html>

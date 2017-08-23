@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.sistic.be</groupId>
+	<artifactId>StixCloudBE</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>StixCloudBE</name>
+	<description>StixCloudBE Project</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.1.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<!-- <spring-session.version>1.3.0.RELEASE</spring-session.version> -->
+		<spring-boot-starter-thymeleaf.version>1.5.2.RELEASE</spring-boot-starter-thymeleaf.version>
+		<thymeleaf.version>3.0.3.RELEASE</thymeleaf.version>
+		<thymeleaf-layout-dialect.version>2.1.1</thymeleaf-layout-dialect.version>
+		<thymeleaf-spring4.version>3.0.3.RELEASE</thymeleaf-spring4.version>
+		<thymeleaf-extras-conditionalcomments.version>2.1.2.RELEASE</thymeleaf-extras-conditionalcomments.version>
+		<thymeleaf-extras-java8time.version>3.0.0.RELEASE</thymeleaf-extras-java8time.version>
+		<thymeleaf-extras-springsecurity4.version>3.0.2.RELEASE</thymeleaf-extras-springsecurity4.version>
+		<thymeleaf-extras-data-attribute.version>2.0.1</thymeleaf-extras-data-attribute.version>
+		<docker.registryUrl>192.168.11.198:5000</docker.registryUrl>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-java8time</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-conditionalcomments</artifactId>
+		</dependency>
+		
+		<!-- <dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-validator</groupId>
+			<artifactId>commons-validator</artifactId>
+			<version>1.4.0</version>
+		</dependency> -->
+
+		<!-- Java Money & Currency API https://javamoney.github.io/api.html -->
+		<dependency>
+			<groupId>javax.money</groupId>
+			<artifactId>money-api</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.javamoney</groupId>
+			<artifactId>moneta</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.zalando</groupId>
+			<artifactId>jackson-datatype-money</artifactId>
+			<version>0.11.0</version>
+		</dependency>
+
+		<!-- GSON -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<!-- Java 8 Jackson Support -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.module</groupId>
+			<artifactId>jackson-module-parameter-names</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jdk8</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.datatype</groupId>
+			<artifactId>jackson-datatype-jsr310</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jersey</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.mastercard.masterpass.merchant</groupId>
+			<artifactId>mastercard-masterpass-merchant</artifactId>
+			<version>1.0.0</version>
+			<exclusions>
+				<exclusion>
+					<groupId>com.google.code.gson</groupId>
+					<artifactId>gson</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.fasterxml.jackson.dataformat</groupId>
+					<artifactId>jackson-dataformat-xml</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.google.oauth-client</groupId>
+					<artifactId>google-oauth-client-jetty</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.stix</groupId>
+			<artifactId>stix-policy-agent</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-data-jpa</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<dependency>
+			<groupId>biz.paluch.logging</groupId>
+			<artifactId>logstash-gelf</artifactId>
+			<version>1.11.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>stixcloud-be</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+							<goal>build-info</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.4.13</version>
+				<configuration>
+					<imageName>${docker.registryUrl}/${project.build.finalName}</imageName>
+					<!--<imageTags>${maven.build.timestamp}</imageTags> -->
+					<imageTags>docker</imageTags>
+					<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+					<resources>
+						<resource>
+							<targetPath>/</targetPath>
+							<directory>${project.build.directory}</directory>
+							<include>${project.build.finalName}.jar</include>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>libs-release</id>
+			<name>STIX Cloud Repository-releases</name>
+			<url>http://alm.sistic.com:8081/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>libs-snapshot</id>
+			<name>STIX Cloud Repository-releases</name>
+			<url>http://alm.sistic.com:8081/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>libs-release</id>
+			<name>STIX Cloud Repository-releases</name>
+			<url>http://alm.sistic.com:8081/artifactory/libs-release</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>libs-snapshot</id>
+			<name>STIX Cloud Repository-releases</name>
+			<url>http://alm.sistic.com:8081/artifactory/libs-snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-release</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/libs-release</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-snapshots</id>
+			<name>Spring Snapshots</name>
+			<url>https://repo.spring.io/libs-snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>

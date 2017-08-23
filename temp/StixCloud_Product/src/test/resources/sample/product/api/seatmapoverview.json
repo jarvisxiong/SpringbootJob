@@ -1,0 +1,31 @@
+{
+  "hideStandardPrice": 0,
+  "imageAvailable": 1,
+  "interactive": 1,
+  "mode": "SP",
+  "imageURL": "/public/SISTIC/SeatmapMapping/539/esrt1608061100_The_Three_Little_Pigs_weekends.jpg",
+  "seatSectionList": [
+    {
+      "priceCatAlias": "Cat 1",
+      "SeatLevel": [
+        {
+          "seatLevelAlias": "Stall",
+          "seatSectionId": 51331,
+          "seatSectionAlias": "Center",
+          "seatSectionType": "RS",
+          "seatEntrance": "Stall",
+          "priceCategoryNum": 1,
+          "priceCategoryId": 10200,
+          "price": {
+            "amount": 48,
+            "currency": "SGD"
+          },
+          "redeem": false,
+          "coordinatesList": [
+            "450,633,456,616,711,571,769,651,514,694,506,712"
+          ]
+        }
+      ]
+    }
+  ]
+}

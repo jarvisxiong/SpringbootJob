@@ -1,0 +1,12 @@
+# Configure this Discovery Server
+eureka:
+  instance:
+#    leaseRenewalIntervalInSeconds: 1
+#    leaseExpirationDurationInSeconds: 2
+    prefer-ip-address: true
+  client:  # Not a client, don't register with yourself
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    enableSelfPreservation: false
+#    responseCacheUpdateIntervalMs: 1

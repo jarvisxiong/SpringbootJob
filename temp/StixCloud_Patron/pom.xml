@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Will be removed after merge into stixcloud-api <parent> <groupId>com.stixcloud</groupId>
+        <artifactId>stixcloud-api</artifactId> <version>0.0.3-SNAPSHOT</version>
+        </parent> -->
+
+    <parent>
+        <groupId>com.stixcloud</groupId>
+        <artifactId>stixcloud-api</artifactId>
+        <version>0.0.3-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <artifactId>stixcloud-patron</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>stixcloud-patron</name>
+    <description>StixCloud Patron</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.stixcloud</groupId>
+            <artifactId>stixcloud-domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.stixcloud</groupId>
+            <artifactId>stixcloud-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.stix</groupId>
+            <artifactId>stix-policy-agent</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <!-- <dependency> -->
+        <!-- <groupId>org.springframework.boot</groupId> -->
+        <!-- <artifactId>spring-boot-starter-security</artifactId> -->
+        <!-- </dependency> -->
+
+        <!-- <dependency> -->
+        <!-- <groupId>org.springframework.security.oauth</groupId> -->
+        <!-- <artifactId>spring-security-oauth2</artifactId> -->
+        <!-- </dependency> -->
+
+        <!-- <dependency> -->
+        <!-- <groupId>org.springframework.security</groupId> -->
+        <!-- <artifactId>spring-security-jwt</artifactId> -->
+        <!-- </dependency> -->
+
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20160810</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.7</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>stixcloud-patron</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.13</version>
+                <configuration>
+                    <skipDocker>false</skipDocker>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <distributionManagement>
+        <repository>
+            <id>libs-release</id>
+            <name>STIX Cloud Repository-releases</name>
+            <url>http://alm.sistic.com:8081/artifactory/libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>libs-snapshot</id>
+            <name>STIX Cloud Repository-releases</name>
+            <url>http://alm.sistic.com:8081/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>libs-release</id>
+            <name>STIX Cloud Repository-releases</name>
+            <url>http://alm.sistic.com:8081/artifactory/libs-release</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>libs-snapshot</id>
+            <name>STIX Cloud Repository-releases</name>
+            <url>http://alm.sistic.com:8081/artifactory/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>

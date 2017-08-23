@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: stixcloud-eureka
+  cloud:
+    inetutils:
+      ignoredInterfaces=eth0,eth1,lo
+
+# Configure this Discovery Server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://stixcloud-eureka:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.int}
+  server:
+    enable-self-preservation: false
+
+#logging:
+#  config: classpath:logback-live.xml
+turbine:
+  clusterNameExpression: new String("default")
+  appConfig: stixcloud-zuul, stixcloud-product, stixcloud-cart, stixcloud-paymentgateway

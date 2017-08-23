@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>SISTIC Manage user</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+  <link href="/css/font.css" media="screen" rel="stylesheet"/>
+  <link href="/images/sistic/fb_logo.gif" rel="image_src"/>
+  <link href="/css/header_footer.css" media="screen" rel="stylesheet"/>
+  <link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css"/>
+  <link id="register-css" media="screen" rel="stylesheet" th:href="@{'/css/tenant/'+ ${tenantTemplateCode} + '/register.css'}"/>
+  <link type="text/css" rel="stylesheet" href="/css/jquery.ui.datepicker.css"/>
+  <link id="main-css" type="text/css" rel="stylesheet" th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/main.css'}" />
+  <link type="text/css" rel="stylesheet" href="/css/jquery-ui-slider.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/selectize/selectize.css"/>
+  <link th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/bookingHistory.css'}" media="screen" rel="stylesheet"/>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/js/selectize/selectize.js"></script>
+</head>
+
+<body>
+
+<div class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/header'} :: header"></div>
+
+<div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+
+<div class="container-fluid">
+  <div id="container"></div>
+  <div class="row">
+    <div th:include="fragment/patron/my-patron-account :: my-patron-account (message='MY ACCOUNT', isRegisterPage=false)"></div>
+  </div>
+  <div class="row my-account-content">
+    <div class="col-xs-3">
+      <div th:include="fragment/patron/sidebar :: sidebar"></div>
+    </div>
+    <div class="sidebar-seperate"></div>
+    <div class="col-xs-9">
+      <div class="sub-content col-xs-12 row">
+        <div class="sub-content-title">
+          <p class="image-title-manage-patron">
+            <span id="register.history.title.1"></span>
+          </p>
+        </div>
+        <div class="sub-content-1">
+          <div class="line-item-options col-xs-12">
+            <a href="#" id="print" class="printer-image-style" onclick="">
+              <i class="fa fa-print fa-2" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="expand-all"><span id="register.history.expand">Expand All</span></a>
+            <a href="#" class="collapse-all"><span id="register.history.collapse">Collapse
+								All</span>
+            </a>
+          </div>
+		  <th:block th:if="${patronTransaction.transactions == null}">
+		    <div>No transactions found!</div>
+		  </th:block>
+		  <th:block th:unless="${patronTransaction.transactions == null}">
+			<div class="transaction-row" th:each="transaction, numStat : ${patronTransaction.returnSortedPatronTransaction().transactions}">
+	            <!-- start of transaction row -->
+	            <div class="control col-xs-12 row" style="float:right"> <!-- toggle arrow row  -->
+	              <a href="#" th:attr="data-target=|#patron-history-items-key-${numStat.count}|"
+	                 class="col-xs-12 no-padding-side">
+	                <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+	                <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+	              </a>
+	            </div>
+	            <div class="transaction-wrapper col-xs-12">
+	              <div class="line-item-options col-xs-12">
+	                <div class="line-item-title col-xs-3">
+	                  <span>TRANSACTION NO.</span>
+	                </div>
+	                <div class="history-item-content">
+	                  <span
+	                      th:text="|${transaction.transactionRefNumber} (${transaction.type})|">20160331-000739 (RETURN)</span>
+	                </div>
+	              </div>
+	              <div class="line-item-options col-xs-12">
+	                <div class="line-item-title col-xs-3">
+	                  <span>DATE OF PURCHASE</span>
+	                </div>
+	                <div class="history-item-content"><span
+	                    th:text="${#temporals.format(transaction.dateOfPurchase, 'E, dd MMM yyyy hh:mm a ')}">Thu, 31 Mar 2016 03:16 PM</span>
+	                </div>
+	              </div>
+	              <div class="line-item-options line-item-options-last col-xs-12">
+	                <div class="line-item-title col-xs-3">
+	                  <span>PURCHASED WITH</span>
+	                </div>
+	                <div class="history-item-content col-xs-7 no-padding-side" th:text="${transaction.purchasedWith}">VISA
+	                </div>
+	
+	              </div>
+	            </div>
+	            <!-- Begin row collapse -->
+	            <div th:id="|patron-history-items-key-${numStat.count}|" class="toggle collapse">
+	              <div class="col-xs-12 "
+	                   th:include="@{ ${tenantTemplateCode} + '/view/sidebar/history-cart-item'} :: history-cart-item"></div>
+	            </div>
+	        </div>
+		  </th:block>
+        </div> <!--end sub-content-1 row -->
+        <div class="pagination-wrapper" th:if="${patronTransaction.totalPage != null}">
+          <label class="pagination-label" for="pagination-select">Page</label>
+          <select id="pagination-select" name="page" class="no-padding-side">
+            <th:block th:each="page : ${#numbers.sequence(1, patronTransaction.totalPage)}">
+              <option th:text="${page}" th:value="${page}"
+                      th:selected="${page == patronTransaction.currentPage}"></option>
+            </th:block>
+          </select>
+        </div>
+      </div><!-- end sub-content row -->
+    </div>
+
+
+  </div>
+</div>
+
+<footer class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/footer'} :: footer"></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.min.js" charset="utf-8"></script>
+
+<script src="/bin/booking-history.js" charset="utf-8"></script>
+<script type="text/javascript">
+
+
+</script>
+
+</body>
+</html>

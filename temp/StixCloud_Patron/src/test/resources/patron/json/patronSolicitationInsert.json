@@ -1,0 +1,10 @@
+{
+	"patronsolicitationid": 1,
+	"patronProfileId": 1,
+	"solicitationTypeMctId": 200,
+	"solicitationLabelMctId": 203,
+	"organizationId" : 49,
+	"subscriptionstatus" : true,
+	"updateddate" : null,
+	"updatedBy" : 59
+}

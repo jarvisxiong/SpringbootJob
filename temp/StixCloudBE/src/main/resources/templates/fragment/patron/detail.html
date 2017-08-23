@@ -1,0 +1,183 @@
+<div th:fragment="detail" class="col-xs-12 wrapper" id="detail">
+	<!-- <div class="col-xs-12 col-6 col-xs-6 col-lg-6"> -->
+        <!-- detail section -->
+        <div class="row">
+             <div class="form-group">
+                 <label for="email" class="col-xs-3 control-label"> <!-- col-xs-12 col-md-2 col-lg-3 -->
+                     <span id="register.account.msg.email">Email.</span></label>
+                 <label for="email" th:field="*{emailAddress}" class="col-xs-4 control-label"> <!-- col-sm-12 col-md-4 col-lg-4 -->
+                     lamtrongphan@gmail.com
+                  </label>
+             </div>
+      </div>
+      
+      <div class="row">
+             <div class="form-group">
+                 <label class="control-label col-xs-2" 
+                        for="register.account.option.title"><span id="register.account.msg.title">Title</span></label><!-- col-xs-12 col-md-2 col-lg-3 -->
+                 <div class="col-xs-2 "> <!-- col-sm-8 col-md-2 col-lg-2 -->
+                 	
+                     <select name="title" class="form-control">
+                         <option id="register.account.option.title" value="1">Mr</option>
+                         <option value="2">Mrs</option>
+                     </select>
+                     
+                     <span class="help-block"></span>
+                 </div>
+             </div>
+         </div>
+          
+      <div class="row">
+             <div class="form-group">
+                 <label class="col-xs-4 control-label"
+                        for="textinput"><span id="register.account.msg.firstname">First name</span></label><!-- col-sm-4 col-md-4 col-lg-4 -->
+                 <div class="col-xs-5"><!-- col-sm-8 col-md-5 col-lg-5 -->
+                     <input id="firstname" th:field="*{firstName}" required="" name="firstname" type="text" placeholder="first name" class="form-control input-xs"/>
+                     <span class="help-block"></span>
+                 </div>
+             </div>
+         </div>
+         <div class="row">
+             <div class="form-group">
+                 <label class="col-xs-2 control-label"
+                        for="textinput"><span id="register.account.msg.lastname">Last name</span></label><!-- col-sm-4 col-md-2 col-lg-3 -->
+                 <div class="col-xs-5"> <!-- col-sm-8 col-md-5 col-lg-5 -->
+                     <input id="lastname" th:field="*{lastName}" required="" name="lastname" type="text" placeholder=""
+                            class="form-control input-xs"/>
+                     <span class="help-block"></span>
+                 </div>	
+             </div>
+         </div>
+         <div class="row">
+             <div class="form-group">
+                 <label class="col-xs-3 control-label"
+                        for="selectbasic"><span id="register.account.contact.mobile">Contact no(mobile)</span>
+                 </label><!-- col-sm-4 col-md-2 col-lg-3 -->
+                 <div class="col-xs-2"><!-- col-sm-12 col-md-2 col-lg-2 -->
+                     <select id="contact" th:field="*{mobileCountryCode}" name="contact" class="form-control">
+                         <option value="1">65 </option>
+                         <option value="2">12 </option>
+                         <option value="3">84 </option>
+                     </select>
+                 </div>
+                 <div class="col-xs-3"> <!-- col-sm-12 col-md-3 col-lg-3 -->
+                     <input type="text" th:field="*{mobileNo}" class="form-control input-xs" name="phonenumber" value=""
+                            required="" title="Please enter your phone number" placeholder="" />
+                     <span class="help-block"></span>                     
+                 </div>
+                 <div class="col-xs-2"> <!-- col-sm-12 col-md-2 col-lg-2 -->
+                 	 <a href="#" data-toggle="collapse" data-target="#contact-more">                    
+        				<span id="register.contact.more">
+        					<i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+        				</span>
+        			 </a>                     
+        		 </div>
+             </div>             
+         </div>
+         
+         <div id="contact-more" class="collapse">         	
+               <div class="form-group">
+	                 <label class="col-xs-3 control-label"
+	                        for="selectbasic"><span id="register.account.contact.home">Contact No(home)</span></label> <!-- col-lg-3 -->
+	                 <div class="col-xs-3"><!-- col-lg-3 -->
+	                     <select id="contact" th:field="*{homeNo}" name="contact" class="form-control">
+	                         <option value="1">65 </option>
+	                         <option value="2">12 </option>
+	                         <option value="3">84 </option>
+	                     </select>
+	                 </div>
+	                 <div class="col-xs-3"> <!-- col-md-3 col-lg-3 -->
+	                     <input type="text" th:field="*{homeCountryCode}" class="form-control input-xs" name="phonenumber" value=""
+	                            required="" title="Please enter your phone number" placeholder="" />
+	                     <span class="help-block"></span>
+	                 </div>	                        
+            	</div>
+           
+               <div class="form-group">
+                 <label class="col-xs-12 control-label"
+                        for="selectbasic"><span id="register.account.contact.other">Contact No(other)</span></label> <!-- col-lg-3 -->
+                 <div class="col-xs-4"> <!-- col-lg-4 -->
+                     <select id="contact" th:field="*{otherNo}" name="contact" class="form-control">
+                         <option value="1">65 </option>
+                         <option value="2">12 </option>
+                         <option value="3">84 </option>
+                     </select>
+                 </div>
+                 <div class="col-xs-3"><!-- col-lg-3 -->
+                     <input type="text" th:field="*{otherCountryCode}" class="form-control input-xs" name="phonenumber" value=""
+                            required="" title="Please enter your phone number" placeholder="" />
+                     <span class="help-block"></span>
+                 </div>	                        
+            	</div>
+         </div>
+         
+         <div class="row">
+             <div class="form-group">
+                 <label class="col-xs-2 control-label" for="register.account.label.yob"> <!-- col-sm-4 col-md-2 col-lg-3 -->
+                 	<span id="register.account.label.yob">Year of birth
+                 </span>
+                 </label>
+                 <div class="col-xs-2"> <!-- col-sm-7 col-md-2 col-lg-2 -->
+                     <select id="register.account.label.yob" th:field="*{birthYear}" class="form-control">
+                         <option value="1">1981</option>
+                         <option value="2">1980</option>
+                         <option value="3">1979</option>
+                     </select>
+                     <span class="help-block"></span>
+                     
+                 </div>
+             </div>
+         </div>
+         
+         <div class="row">
+             <div class="form-group">
+                 <label class="col-xs-2 control-label"
+                        for="nationality">* Nationality.</label> <!-- col-sm-4 col-md-2 col-lg-3 -->
+                 <div class="col-xs-3"> <!-- col-sm-8 col-md-3 col-lg-3 -->
+                     <select id="nationality" th:field="*{nationality}" required="" name="nationality" class="form-control">
+                         <option value="1">Singapore</option>
+                         <option value="2">Vietnam</option>
+                         <option value="3">Malaysia</option>
+                     </select>
+                     <span class="help-block"></span>
+                 </div>
+             </div>
+         </div>
+         
+         <div class="row">
+             <div class="form-group">
+                 <label class="col-xs-2 control-label"
+                        for="country-residence"><span id="register.account.label.cor"></span></label><!-- col-sm-4 col-md-2 col-lg-3 -->
+                 <div class="col-xs-3"> <!-- col-sm-8 col-md-3 col-lg-3 -->
+                     <select id="register.account.label.cor" th:field="*{country}" required="" name="cor" class="form-control">
+                         <option value="1">Singapore</option>
+                         <option value="2">Vietnam</option>
+                         <option value="3">Malaysia</option>
+                     </select>
+                     <span class="help-block"></span>
+                 </div>
+             </div>
+         </div>
+         <div class="row">
+             <div class="form-group">
+                 <p class="col-xs-12 col-md-12 col-ms-12 col-lg-12">
+                     <label class="col-xs-5 checkbox-inline" for="radio-0"> <!-- col-md-12 col-ms-12 col-lg-5 -->
+                         <input th:field="*{idType}" type="radio" id="radio-0" value="1"/>
+                         <span id="register.account.check.nric">Nric</span>
+                     </label>
+                     <label class="col-xs-5 checkbox-inline" for="radio-1"> <!-- col-md-12 col-ms-12 col-lg-5 -->
+                         <input th:field="*{idType}" type="radio" id="radio-1" value="2"/>
+                         <span id="register.account.check.passport">Passport</span>
+                     </label>
+                 </p>
+             </div>
+         </div>
+         
+         <div class="row">
+             <div class="modal-header"></div>          
+         </div>
+        <!-- detail section -->
+	    <div class="clear"></div>
+	<!-- </div> -->	
+</div>
+<div class="clearfix"></div>

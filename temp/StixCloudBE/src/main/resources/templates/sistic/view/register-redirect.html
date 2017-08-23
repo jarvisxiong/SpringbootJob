@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<object th:include="__${tenantTemplateCode}__/headerfooter/head-tag :: head-tag" th:remove="tag" />
+	<object th:include="fragment/general/head-tag :: head-tag" th:remove="tag" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/error-common-style.css'}" />
+	<link type="text/css" rel="stylesheet" th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/redirect-style.css'}"></link>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js" charset="utf-8"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.js" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.js" charset="utf-8"></script>
+	<!-- <script type="text/javascript" src="https://sandbox.static.masterpass.com/dyn/js/switch/integration/MasterPass.client.js"></script> -->
+	<!-- <script type="text/javascript" src="https://static.masterpass.com/dyn/js/switch/integration/MasterPass.client.js"></script> -->
+</head>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.min.js" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.min.js" charset="utf-8"></script>
+
+<body>
+<div class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/header'} :: header"></div>
+<div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 col-centered">
+			<!-- Div for the Registration? Front end please create/style it and populate the dynamic thymeleaf values as I done into the page -->
+
+			<div class="light-box"></div>
+			<div id="div_id_success_content" class="success-content-style">
+
+				<div class="success-content-header"></div>
+				<div class="success-content-bg" id="patron.register.complete.title">REGISTRATION COMPLETED!</div>
+				<div class="success-content-body">
+					<p class="sub-content-body" id="patron.register.complete.text.01">Thank you for signing up with us! You are now logged in.</p>
+					<p>
+						<span id="patron.register.complete.text.02">An email confirmation has been sent to</span>&nbsp
+						<a target="_blank" th:text="${email}">test@email.com</a>&nbsp
+						<span id="patron.register.complete.text.03">To book your tickets in future, please login with this email.</span>
+					</p>
+				</div>
+				<div class="success-content-footer">
+					<div class="content-footer-sub-wrapper" >
+						<div class="sub-footer-text-wrapper">|</div>
+						<div class="sub-footer-text-wrapper term-condition-hyperlink">
+							<a target="_blank" href="https://www.sistic.com.sg/terms-and-conditions" id="patron.register.complete.conditions-of-use.link">Terms and Conditions</a>
+						</div>
+						<div class="sub-footer-text-wrapper close-redirect-wrapper">
+							<a th:href="${gotoUrl}" id="close-redirect">
+								<span class="fa fa-close" aria-hidden="true"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="content error_content col-xs-12">
+				<div class="error_notification" th:text="${error}">There was an error registering</div>
+				<div class="continue_wrapper">
+					<a class="shopping-cart-button button-b-con" th:href="${gotoUrl}">
+						<span id="cart.button.continue">Continue Shopping</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="col-xs-12" style="min-height: 500px"></div>
+
+<footer class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/footer'} :: footer">
+</footer>
+<div class="clearfix"></div>
+<script src="/bin/login-handle.js" charset="utf-8"></script>
+</body>
+</html>

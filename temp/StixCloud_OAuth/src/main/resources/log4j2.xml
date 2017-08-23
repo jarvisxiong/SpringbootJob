@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+	<Properties>
+       <property name="APP_NAME">${bundle:application:spring.application.name}</property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %clr{${APP_NAME}} [%t] %-5level %logger{36} %p %c{1} - %msg%n" />
+        </Console>
+        <Gelf name="gelf" host="tcp:SGCS2VPGRAPP04.STIXCLOUD.LOCAL" port="12201" version="1.1"
+              extractStackTrace="true" facility="appLogs"
+              filterStackTrace="false" mdcProfiling="true" includeFullMdc="true"
+              maximumMessageSize="8192"
+              additionalFieldTypes="Thread=String"
+              ignoreExceptions="true">
+            <Field name="application" literal="sistic-api"/>
+            <Field name="springApplicationName" pattern="${APP_NAME}"/>
+            <Field name="timestamp" pattern="%d{dd MMM yyyy HH:mm:ss,SSS}"/>
+            <Field name="level" pattern="%level"/>
+            <Field name="simpleClassName" pattern="%C{1}"/>
+            <Field name="className" pattern="%C"/>
+            <Field name="server" pattern="%host"/>
+            <Field name="server.fqdn" pattern="%host{fqdn}"/>
+        </Gelf>
+    </Appenders>
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="gelf"/>
+        </Root>
+    </Loggers>
+</Configuration>

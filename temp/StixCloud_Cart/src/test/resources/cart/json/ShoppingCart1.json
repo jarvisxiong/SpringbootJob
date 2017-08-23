@@ -1,0 +1,31 @@
+{
+  "cartGuid": "7762fe9f-8940-48f1-8a29-549463641af1",
+  "cartItems": [
+    {
+      "cartItemId": "fb84c474-1148-4f48-8e8c-71263f0c56f3",
+      "productId": 245634,
+      "priceCatId": 12176,
+      "seatSectionId": 356882,
+      "inventoryIdList": [
+        121555775
+      ],
+      "priceClass": "A1",
+      "quantity": 1,
+      "mode": "SP"
+    },
+    {
+      "cartItemId": "7167c997-88cc-412f-a498-01a2625630d5",
+      "productId": 245634,
+      "priceCatId": 12176,
+      "seatSectionId": 356882,
+      "inventoryIdList": [
+        121555781
+      ],
+      "priceClass": "A",
+      "quantity": 1,
+      "mode": "SP"
+    }
+  ],
+  "purchaseTp": true,
+  "isFullyRedeemed": false
+}

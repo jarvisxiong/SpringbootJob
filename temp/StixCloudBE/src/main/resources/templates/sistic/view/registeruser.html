@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <object th:include="__${tenantTemplateCode}__/headerfooter/head-tag :: head-tag" th:remove="tag" />
+  <object th:include="fragment/general/head-tag :: head-tag" th:remove="tag" />
+  <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link href="/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+  <link href="/css/font.css" media="screen" rel="stylesheet"/>
+  <link type="text/css" rel="stylesheet"
+        href="/css/jquery.ui.datepicker.css"/>
+  <link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css"/>
+  <link type="text/css" rel="stylesheet" href="/css/jquery-ui-slider.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/selectize/selectize.css"/>
+  <link id="register-css" type="text/css" rel="stylesheet" th:href="@{'/css/tenant/'+ ${tenantTemplateCode} + '/register.css'}"/>
+  <script
+          src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script
+          src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+
+<div class="col-xs-12 m-padding-side-zero" th:include="@{ ${tenantTemplateCode} + '/headerfooter/header'} :: header"></div>
+
+<div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+
+<div class="display-message-manage-register-wrapper">
+  <div class="alert alert-warning changes-warning-manageuser-register" role="alert">
+    <p>Fill in the form and click submit to create your account.</p>
+  </div>
+  <div class="alert alert-danger changes-error-manageuser-register" role="alert"
+       th:unless="${error == null} or ${error.isEmpty()}">
+    <p th:text="${error}">Error to appear here</p>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+  <div id="register-patron"></div>
+  <div class="row">
+    <div th:include="fragment/patron/my-patron-account :: my-patron-account (isRegisterPage=true)"></div>
+  </div>
+  <form id="register-form"
+        th:action="@{/{tenant}/patron/register (tenant=${tenantContext}, gotoUrl=${gotoUrl}) }"
+        th:object="${patronForm}" method="POST">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6" id="left-panel"><!--  col-sm-12 col-xs-6 col-lg-6 -->
+        <!--this is col-xs-6 left-->
+        <div class="row">
+          <p class="col-xs-12 col-md-12 col-ms-12 account-register-title">
+            <b><span id="patron.register.tenant.title">My SISTIC Account</span></b>
+          </p>
+          <p class="col-xs-12 col-md-12 col-ms-12 account-register-annotation">
+			<span class="register-text-title-require" id="patron.register.complete">
+				Please complete this registration page.
+			</span>
+            <br/>
+            <span class="register-text-title-mandatory" id="patron.register.mandatory">
+            * Mandatory fields
+            </span>
+          </p>
+        </div>
+        <div
+                th:include="fragment/registration/sistic-account:: sistic-account"></div>
+        <div class="row registering-field register-line-space">
+          <div class="password-line-space"></div>
+        </div>
+        <div
+                th:include="fragment/registration/password-portion:: password-portion (isRegisterPage=true)"></div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-6 right-panel-style" id="right-panel"><!-- col-sm-12 col-xs-6 col-lg-6  -->
+        <!--this is col-xs-6 right-->
+        <div
+                th:include="fragment/registration/billing-address-portion:: billing-address-portion">
+        </div>
+        <div class="row registering-field-address">
+          <div class="password-line-space"></div>
+        </div>
+        <div
+                th:include="fragment/registration/mail-address-portion:: mail-address-portion">
+        </div>
+        <div class="row registering-field-address">
+          <div class="password-line-space"></div>
+        </div>
+        <div class="row col-xs-12 col-md-12 col-ms-12 col-lg-12 get-online-wrapper">
+          <p class="col-xs-12 col-md-12 col-ms-12 col-lg-12 get-online-sistic">
+            <b><span id="patron.register.tnc.news.title"></span></b>
+          </p>
+          <p class="col-xs-12 col-md-12 col-ms-12 col-lg-12 get-online-sistic-special">
+            <span id="patron.register.tnc.news.text"></span>
+          </p>
+
+          <div class="get-online-sistic-special">
+            <label class="form-group">
+              <input id="subscriptions" type="checkbox" value="SISTIC" th:field="*{subscriptions}"/>
+              <span class="terms-sistic" id="patron.register.tnc.news.checkbox.label">SISTIC.com Pte Ltd</span>
+              <span class="help-block messages"></span>
+            </label>
+          </div>
+          <div class="row registering-field-address-line">
+            <div class="password-line-space"></div>
+          </div>
+
+          <div class="get-online-sistic-special">
+            <label class="form-group">
+              <input id="termsAccepted" type="checkbox" value="termsAccepted" th:field="*{termsAccepted}"/>
+              <span class="terms-sistic" id="patron.register.tnc.main.checkbox.label">
+              I agree that SISTIC may collect my personal data both in its own capacity, and as ticketing agent and data imtermediary of promoters and venue managers of events for which I purchase tickets. My personal data may be collected, used, processed and disclosed by SISTIC, its agents and the above parties in accordance with SISTIC'TMs <a target=\"_blank\" href=\"http://www.sistic.com.sg/privacy-policy\">Privacy Policy</a>. I further confirm that all information provided is accurate and complete.
+              </span>
+              <span class="help-block messages"></span>
+            </label>
+          </div>
+          <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="6Lc-VRQUAAAAAF8ojFJxTMaUu1DR5UYm0OgF36AH"></div>
+            <span class="help-block messages pull-left col-xs-12"></span>
+          </div>
+          <div id="register-submit" class="col-xs-12">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+<div class="clearfix"></div>
+<footer class="col-xs-12"
+        th:include="@{ ${tenantTemplateCode} + '/headerfooter/footer'} :: footer"></footer>
+<div class="clearfix"></div>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"
+        charset="utf-8"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js"
+        charset="utf-8"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.min.js"
+        charset="utf-8"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.min.js"
+        charset="utf-8"></script>
+
+<script type="text/javascript" src="/js/jquery-ui-custom.js"></script>
+<!-- <script type="text/javascript" src="http://sistic.testing.com/js/jquery-ui-custom.js" ></script> -->
+<script type="text/javascript" src="/js/jquery.uniform.js"></script>
+<!-- <script type="text/javascript" src="http://sistic.testing.com/js/jquery.uniform.js" ></script> -->
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/jquery.imagemapster/1.2.10/jquery.imagemapster.js"></script>
+
+
+<!--   <script src="/bin/booking.js" charset="utf-8"></script> -->
+
+<!-- <script src="/bin/HeaderComponent.js" charset="utf-8"></script> -->
+<!--<script src="/bin/booking.js" charset="utf-8"></script>-->
+<script src="/bin/register.js" charset="utf-8"></script>
+
+
+</body>
+</html>

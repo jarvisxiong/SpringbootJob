@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <object th:include="__${tenantTemplateCode}__/headerfooter/head-tag :: head-tag" th:remove="tag" />
+    <object th:include="fragment/general/head-tag :: head-tag" th:remove="tag" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/shoppingcartcheckout.css"></link>
+    <link href="/css/font.css" media="screen" rel="stylesheet"/>
+    <link href="/images/sistic/fb_logo.gif" rel="image_src"/>
+    <link type="text/css" rel="stylesheet" href="/css/jquery.ui.datepicker.css"/>
+    <link id="main-css" type="text/css" rel="stylesheet" th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/main.css'}"  />
+    <link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="/css/jquery-ui-slider.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/selectize/selectize.css" />
+    <link th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/manageuser.css'}" media="screen" rel="stylesheet"/>
+
+</head>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"
+        charset="utf-8"></script>
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"
+        charset="utf-8"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js"
+        charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.min.js"
+        charset="utf-8"></script>
+<script
+        src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.js"
+        charset="utf-8"></script>
+<body>
+<div class="col-xs-12 m-padding-side-zero" th:include="@{ ${tenantTemplateCode} + '/headerfooter/header'} :: header"></div>
+
+<div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+
+<div class="display-message-manage-register-wrapper">
+    <div class="alert alert-warning changes-warning-manageuser-register" role="alert">
+        <p id="patron.account.top.unsaved.label">You have unsaved changes. Please click Update Account before leaving this page.</p>
+    </div>
+    <!--<div th:unless="${error == null} or ${error.isEmpty()}" class="alert alert-danger changes-warning-manageuser" role="alert">-->
+    <!--<p th:text="${error}">This is error message returned from api</p>-->
+    <!--</div>-->
+
+    <div class="alert alert-success changes-success-manageuser-register" role="alert" th:unless="${success == null} or ${success.isEmpty()}">
+        <p th:text="${success}">Error to appear here</p>
+    </div>
+    <div class="alert alert-danger changes-error-manageuser-register" role="alert" th:unless="${error == null} or ${error.isEmpty()}">
+        <p th:text="${error}">Error to appear here</p>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div th:include="fragment/patron/my-patron-account :: my-patron-account (isRegisterPage=false)"></div>
+    </div>
+    <div id="user-content-wrapper" class="col-xs-12 row m-padding-side-zero">
+        <div class="col-xs-12 col-sm-3 col-md-3 nav-bar-wrapper">
+            <div th:include="fragment/patron/sidebar :: sidebar"></div>
+        </div>
+        <div class="sidebar-seperate hidden-xs hidden-sm"></div>
+
+
+        <form id="updateForm" th:action="@{/{tenant}/patron/management (tenant=${tenantContext}) }" th:object="${patronForm}" method="POST" novalidate="true">
+            <div class="col-xs-12 col-sm-9 col-md-9 m-padding-side-zero" id="user-content">
+                <div class="col-xs-12 col-md-12 col-lg-12 image-title-manage-patron">
+                    <p id="patron.account.header">Edit My Details</p>
+                </div>
+                <!--  <div class="row col-xs-12" id="update-message" th:text="${success}"></div> -->
+                <div class="col-xs-12 col-sm-10 col-md-10 block-wrapper"> <!-- col-md-10 col-lg-10  -->
+                    <div
+                            th:include="fragment/registration/sistic-account:: sistic-account"></div>
+                    <div class="row registering-field-address">
+                        <div class="password-line-space"></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-10  block-wrapper"> <!-- col-md-10 col-lg-10 -->
+                    <div
+                            th:include="fragment/registration/billing-address-portion:: billing-address-portion"></div>
+                    <div class="row registering-field-address">
+                        <div class="password-line-space"></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-10 mailing-address-udpate block-wrapper"> <!-- col-md-10 col-lg-10 -->
+                    <div
+                            th:include="fragment/registration/mail-address-portion:: mail-address-portion">
+                    </div>
+
+                    <div class="row registering-field-address">
+                        <div class="password-line-space"></div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-10 block-wrapper"> <!-- col-md-10 col-lg-10 -->
+                    <div
+                            th:include="fragment/registration/password-portion:: password-portion (isRegisterPage=false)"></div>
+                </div>
+                <div id="btn-update-patron-attach" class="col-xs-6 pull-center"></div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<div class="clearfix"></div>
+<footer class="col-xs-12"
+        th:include="@{ ${tenantTemplateCode} + '/headerfooter/footer'} :: footer"></footer>
+<div class="clearfix"></div>
+<script type="text/javascript" src="/js/jquery-ui-custom.js"></script>
+<script type="text/javascript" src="/js/jquery.uniform.js"></script>
+<script src="/bin/manage-patron.js" charset="utf-8"></script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<div th:fragment="grand-total" id="grand-total">
+	
+		<div class="col-xs-4 col-sm-4 col-md-3">
+			<span id="cart.total.label">Total</span>
+			<span id="cart.total.tax.label" class="label-format"> (including GST) </span>
+		</div>
+		<div id="grand-total-container" class="col-xs-8 col-sm-8 col-md-9 grand-total-container">
+			<span id="grand-total-currency" class="currency" th:text="${grandtotal.currencyUnit}"></span>
+			<span th:if="${isShoppingCart == true}" id="grand-total-amount" class="amount" th:text="${grandtotal.getLineItemsTotalPriceFormatted()}">100.00</span>
+			<span th:if="${isShoppingCart == false}" id="grand-total-amount" class="amount" th:text="${grandtotal.getTotalPaymentPriceFormatted()}">100.00</span>
+		</div>
+		<div class="clearfix"></div>
+	
+</div>

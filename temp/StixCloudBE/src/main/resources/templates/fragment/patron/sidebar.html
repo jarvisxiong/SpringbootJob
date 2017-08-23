@@ -1,0 +1,31 @@
+<div th:fragment="sidebar" class="col-xs-12 wrapper" id="sidebar">
+    <!--side bar -->
+    <nav class="sidebar-nav col-xs-12 col-sm-12 col-md-12 col-lg-12 side-bar-small-wrapper" >
+        <ul class="nav nav-pills nav-stacked nav-stacked-class">
+            <li class="sidebar-menu-item my-item">
+                <a class="item-details paddingLeft-0 item-details-account" th:href="@{/{tenant}/patron/management (tenant=${tenantContext}) }">
+                    <span id="patron.account.menu.link">My Account</span>
+                </a>
+            </li>
+            <li class="sidebar-menu-item my-item" th:if="${hasMembership}">
+                <a class="item-details paddingLeft-0 item-details-membership" href="/patron/membership">
+                    <span id="patron.membership.menu.link">Membership</span>
+                </a>
+            </li>
+            <li class="sidebar-menu-item my-item">
+                <a class="item-details paddingLeft-0 item-details-subscriptions" th:href="@{/{tenant}/patron/subscriptions (tenant=${tenantContext}) }">
+                    <span id="patron.subscriptions.menu.link">Subscriptions</span>
+                </a>
+            </li>
+            <li class="sidebar-menu-item my-item">
+                <a class="item-details paddingLeft-0 item-details-history" th:href="@{/{tenant}/patron/transactions (tenant=${tenantContext}) }">
+                    <span id="patron.history.menu.link" class="bh-align">Booking History</span>
+                </a>
+            </li>
+            <div class="clear"></div>
+        </ul>
+    </nav>
+
+    <div class="clear"></div>
+    <!-- end side bar -->
+</div>

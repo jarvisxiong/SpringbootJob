@@ -1,0 +1,223 @@
+<div th:fragment="sistic-account" id="sistic-account">
+	<div class="account-information-wrapper">
+		<div class="row registering-field">
+			<div class="form-group">
+				<label for="email" class="col-xs-12 col-sm-4 col-md-4 control-label email-sistic">
+					<span class="required-field"></span>
+					<span id="patron.account.email.label">Email Address</span>
+				</label><!-- col-sm-4 col-md-4 col-lg-4 -->
+				<label th:text="${patronForm.emailAddress}" for="emailAddress"
+					   class="col-xs-8 col-sm-8 col-md-8 control-label email-sistic inputed-sistic-email"><!-- col-sm-8 col-md-8 col-lg-8 -->
+					lamtrongphan@gmailcom
+				</label>
+				<input th:value="${patronForm.emailAddress}" id="emailAddress" type="hidden" name="emailAddress"></input>
+			</div>
+			<div id="email-hint-box">
+				<div id="patron.account.email.bubble"></div>
+				Email is used as your login. We may also send you email when shows
+				are cancelled or if there has been a change in the event venue.
+			</div>
+		</div>
+		<div class="row registering-field">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 control-label" ><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<span class="required-field"></span>
+					<span id="patron.account.title.label">Title</span>
+				</label>
+				<div class="col-xs-12 col-sm-3 col-md-3 manage-row-class padding-m-0 manage-row-class-title-mobile paddingLeft-0"><!-- col-sm-3 col-md-3 col-lg-3 -->
+					<select id="title" class="col-xs-12 selectize-selection-format equal-width expand-bottom expand-bottom" th:field="*{title}">
+						<option id="patron.account.title.option.01" value="MR">Mr</option>
+						<option id="patron.account.title.option.02" value="MS">Ms</option>
+						<option id="patron.account.title.option.03" value="MRS">Mrs</option>
+						<option id="patron.account.title.option.04" value="MDM">Mdm</option>
+					</select> <span class="help-block messages"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row registering-field">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="firstname"><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<span class="required-field">*</span>
+					<span id="patron.account.firstname.label">First Name</span>
+				</label>
+				<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+					<input id="patron.account.firstname.tooltip" th:field="*{firstName}" required="required" type="text"
+						   class="form-control input-xs input-style"/>
+					<span class="help-block messages"></span>
+				</div>
+				<div class="tooltip-box-wrapper"
+					 th:include="fragment/tooltip/tooltip:: tooltip (message='<span id=\'patron.account.firstname.bubble\'>Please enter your name as in your NRIC/FIN/Passport</span>')"></div>
+			</div>
+		</div>
+		<div class="row registering-field">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="lastname"><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<span class="required-field">*</span>
+					<span id="patron.account.lastname.label">Last Name</span>
+				</label>
+				<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+					<input id="patron.account.lastname.tooltip" th:field="*{lastName}" required="required" type="text"
+						   class="form-control input-xs input-style"/>
+					<span class="help-block messages"></span>
+				</div>
+				<div class="tooltip-box-wrapper"
+					 th:include="fragment/tooltip/tooltip:: tooltip (message='<span id=\'patron.account.lastname.bubble\'>Please enter your name as in your NRIC/FIN/Passport</span>')"></div>
+			</div>
+		</div>
+		<div class="row registering-field">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="mobile-country-selection"><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<span class="required-field">*</span>
+					<span id="patron.account.contactmobile.label">Contact No. (Mobile)</span>
+				</label>
+				<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+					<select id="mobileCallingCode" th:field="*{mobileCallingCode}"
+							class="contact-input selectize-selection-format col-xs-12 expand-bottom country-calling-code">
+						<option value=""></option>
+						<th:block th:each="country : ${countryList.getCountriesSortedByCountryName()}">
+							<option th:value="|${country.countryCallingCode},${country.countryCode}|" th:text="|${country.countryName} ${country.countryCallingCode}|"></option>
+						</th:block>
+					</select>
+					<input type="text" th:field="*{mobileNo}" class="form-control input-xs input-style contact-no-input"
+						   required="required" title="Please enter your phone number" id="patron.account.contactmobile.tooltip"/>
+					<a data-toggle="collapse" data-target="#contact-more" class="contact-more">
+								<span id="add-more-contact-id">
+									<i class="fa fa-angle-double-down arrow-down-icon" aria-hidden="true"></i>
+								</span>
+					</a>
+					<span class="special-block-message help-block messages"></span>
+				</div>
+				<div class="tooltip-box-wrapper"
+					 th:include="fragment/tooltip/tooltip:: tooltip (message='<span id=\'patron.account.contactmobile.bubble\'>We need to inform you when shows are cancelled or if there has been a change in the event venue.</span>')"></div>
+			</div>
+		</div>
+		<!--  Toogle contact section  -->
+		<div id="contact-more" class="collapse">
+			<div class="row registering-field contact-more-row">
+				<div class="form-group">
+					<label for="contact-home" class="col-xs-12 col-sm-4 col-md-4 control-label"><!-- col-sm-4 col-md-4 col-lg-4 -->
+						<span class="required-field"></span>
+						<span id="patron.account.contacthome.label">Contact No. (Home)</span>
+					</label>
+					<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+						<select th:field="*{homeCallingCode}" id="homeCallingCode" class="contact-input selectize-selection-format col-xs-12 expand-bottom country-calling-code">
+							<option value=""></option>
+							<th:block th:each="country : ${countryList.getCountriesSortedByCountryName()}">
+								<option th:value="|${country.countryCallingCode},${country.countryCode}|" th:text="|${country.countryName} ${country.countryCallingCode}|"></option>
+							</th:block>
+						</select>
+						<input th:field="*{homeNo}" type="text" class="form-control input-xs input-style contact-no-input"
+							   required="required" title="Please enter " id="patron.account.contacthome.tooltip"/>
+						<span class="help-block messages"></span>
+					</div>
+				</div>
+			</div>
+			<div class="row registering-field contact-more-row">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="contact-no"><!-- col-sm-4 col-md-4 col-lg-4 -->
+						<span class="required-field"></span>
+						<span id="patron.account.contactother.label">Contact No. (Other)</span>
+					</label>
+					<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+						<select th:field="*{otherCallingCode}" id="otherCallingCode" class="contact-input selectize-selection-format col-xs-12 expand-bottom country-calling-code">
+							<option value=""></option>
+							<th:block th:each="country : ${countryList.getCountriesSortedByCountryName()}">
+								<option th:value="|${country.countryCallingCode},${country.countryCode}|" th:text="|${country.countryName} ${country.countryCallingCode}|"></option>
+							</th:block>
+						</select>
+						<input th:field="*{otherNo}" type="text" class="form-control input-xs input-style contact-no-input"
+							   required="required" title="Please enter your phone number" id="patron.account.contactother.tooltip"/>
+						<span class="help-block messages"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--End toogle section-->
+		<div class="row registering-field">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="register.account.label.yob"><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<span class="required-field"></span>
+					<span id="patron.account.yearofbirth.label">Year of Birth</span>
+				</label>
+				<div class="col-xs-12 col-sm-7 col-md-7 padding-0 padding-m-0"><!--col-sm-7 col-md-7 col-lg-7  -->
+					<select id="birthYear" th:field="*{birthYear}" class="col-xs-12 col-sm-5 col-md-5 equal-width selectize-selection-format expand-bottom">
+						<option th:each="year : ${#numbers.sequence(#dates.year(#dates.createNow()), 1890, -1)}" th:value="${year}" th:text="${year}"></option>
+						<!-- <option value="1981">1981</option>
+                        <option value="1980">1980</option>
+                        <option value="1979">1979</option> -->
+					</select>
+					<span class="help-block messages"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row registering-field ">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="register.account.label.nationality"><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<span class="required-field">*</span>
+					<span id="patron.account.nationality.label">Nationality</span>
+				</label>
+				<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+					<select id="nationality" th:field="*{nationality}" required="required" class="selectize-selection-format col-xs-12 expand-bottom">
+						<option th:each="country : ${countryList.getCountriesSortedByCountryName()}" th:value="${country.countryCode}"
+								th:text="${country.countryName}"></option>
+					</select>
+					<span class="help-block messages"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row registering-field">
+			<div class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4 control-label" for="country-residence-selection"><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<span class="required-field">*</span>
+					<span id="patron.account.countryresidence.label">Country of Residence</span>
+				</label>
+				<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+					<select id="country" th:field="*{country}" required="required"
+							class="selectize-selection-format col-xs-12 expand-bottom">
+						<option th:each="country : ${countryList.getCountriesSortedByCountryName()}" th:value="${country.countryCode}"
+								th:text="${country.countryName}"></option>
+					</select>
+					<span class="help-block messages"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row registering-field">
+			<div class="form-group radio-nric-passport-wrapper">
+				<!-- <p class="col-xs-12 col-md-12 col-ms-12 col-lg-12"> -->
+				<div class="radio-inline" for="radio-0">
+					<input th:field="*{idType}" type="radio" id="radio-0" class="input-radio-nric-passport" value="NRIC/FIN"/>
+					<div class="radio-date" id="nric-fin-radio">
+						<div class="radio-text"></div>
+					</div>
+					<span id="patron.account.check.nric.radio" class="radio-nric-passport">NRIC/FIN</span>
+				</div>
+				<div class="radio-inline" for="radio-1">
+					<input th:field="*{idType}" type="radio" id="radio-1" class="input-radio-nric-passport" value="Passport" checked="checked"/>
+					<div class="radio-date" id="passport-radio">
+						<div class="radio-text"></div>
+					</div>
+					<span id="patron.account.check.passport.radio" class="radio-nric-passport">Passport</span>
+				</div>
+				<!-- </p> -->
+				<span class="help-block messages"></span>
+			</div>
+		</div>
+
+		<div class="row registering-field">
+			<div id="nric-form-group" class="form-group">
+				<label class="col-xs-12 col-sm-4 col-md-4  control-label" for="identityNo"><!-- col-sm-4 col-md-4 col-lg-4 -->
+					<span class="required-field">*</span>
+					<span id="patron.account.nric.label">NRIC/FIN/Passport No</span>
+				</label>
+				<div class="col-xs-12 col-sm-8 col-md-8 manage-row-class padding-m-0"><!-- col-sm-8 col-md-8 col-lg-8 -->
+					<input id="patron.account.nric.tooltip" th:field="*{identityNo}" type="text" required="required"
+						   class="form-control input-xs input-style"/>
+					<span id="nric-error" class="idtype-special-block-message help-block messages"></span>
+				</div>
+				<div class="tooltip-box-wrapper"
+					 th:include="fragment/tooltip/tooltip:: tooltip (message='<span id=\'patron.account.nric.bubble\'>We require your NRIC for verification in the case of lost of stolen tickets and cash refunds in case of cancelled shows.</span>')"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="clearfix"></div>

@@ -1,0 +1,19 @@
+{
+  "vpc_OrderInfo": "20170215-000018",
+  "vpc_TxnResponseCode": "7",
+  "vpc_AcqResponseCode": "0",
+  "vpc_TransactionNo": "0",
+  "vpc_ShopTransactionNo": null,
+  "vpc_Amount": "504",
+  "vpc_AuthorisedAmount": null,
+  "vpc_RefundedAmount": null,
+  "vpc_CapturedAmount": null,
+  "vpc_Message": "E5431-02161914%3A+Invalid+Field+%3A+Field+in+error%3A+%27transaction.merchantTransactionReference%27%2C++value+%2720170215-000018%27+-+reason%3A+Merchant+Transaction+Reference+must+be+set+to+a+unique+value",
+  "vpc_MerchTxnRef": null,
+  "vpc_AuthorizeId": null,
+  "vpc_BatchNo": null,
+  "vpc_CSCResultCode": null,
+  "vpc_AcqCSCRespCode": null,
+  "reqData": "vpc_AccessCode=E0FC60D7&vpc_Amount=504&vpc_CardExp=1705&vpc_CardNum=545301xxxxxx4154&vpc_Command=pay&vpc_MerchTxnRef=20170215-000018&vpc_Merchant=TEST001500059803&vpc_OrderInfo=20170215-000018&vpc_Version=1",
+  "resData": "vpc_Amount=504&vpc_BatchNo=0&vpc_Command=pay&vpc_Locale=en_SG&vpc_MerchTxnRef=20170215-000018&vpc_Merchant=TEST001500059803&vpc_Message=E5431-02161914%3A+Invalid+Field+%3A+Field+in+error%3A+%27transaction.merchantTransactionReference%27%2C++value+%2720170215-000018%27+-+reason%3A+Merchant+Transaction+Reference+must+be+set+to+a+unique+value&vpc_OrderInfo=20170215-000018&vpc_TransactionNo=0&vpc_TxnResponseCode=7&vpc_Version=1"
+}

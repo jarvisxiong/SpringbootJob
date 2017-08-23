@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.stixcloud</groupId>
+        <artifactId>stixcloud-api</artifactId>
+        <version>0.0.3-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <artifactId>stixcloud-paymentgateway</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <name>stixcloud-paymentgateway</name>
+    <description>Payment Gateway API for StixCloud</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.stixcloud</groupId>
+            <artifactId>stixcloud-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.stixcloud</groupId>
+            <artifactId>stixcloud-domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <dependency>
+			<groupId>com.stix</groupId>
+			<artifactId>stix-policy-agent</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+    </dependencies>
+
+    <build>
+        <finalName>stixcloud-paymentgateway</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.0.2</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.basedir}/src/main/docker</outputDirectory>
+                            <overwrite>true</overwrite>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}/src/main/resources</directory>
+                                    <includes>
+                                        <include>*.crt</include>
+                                        <!--<include>log4j2-spring.xml</include>-->
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <skip>false</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.13</version>
+                <configuration>
+                    <skipDocker>false</skipDocker>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>libs-release</id>
+            <name>STIX Cloud Repository-releases</name>
+            <url>http://alm.sistic.com:8081/artifactory/libs-release</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>libs-snapshot</id>
+            <name>STIX Cloud Repository-releases</name>
+            <url>http://alm.sistic.com:8081/artifactory/libs-snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>

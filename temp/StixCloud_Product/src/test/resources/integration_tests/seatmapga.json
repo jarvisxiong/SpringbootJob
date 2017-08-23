@@ -1,0 +1,16 @@
+{
+  "gaSeatSectionList": [
+    {
+      "seatSectionId": 356877,
+      "seatSectionAlias": "General Admission",
+      "seatSectionType": "GA",
+      "priceCategoryNum": 1,
+      "priceCategoryId": 12176,
+      "seatSectionAvailability": 19,
+      "price": {
+        "amount": 20.00,
+        "currency": "SGD"
+      }
+    }
+  ]
+}

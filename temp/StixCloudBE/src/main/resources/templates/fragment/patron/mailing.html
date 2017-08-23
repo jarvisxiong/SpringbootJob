@@ -1,0 +1,84 @@
+<div th:fragment="mailing" class="col-xs-12 wrapper" id="mailing">
+	<!-- Begin mailing group  -->
+    <div class="row">
+        <a href="#mailing-address" data-toggle="collapse" data-target="#mailing-address">
+        	<span>
+        		<h4 class="">Mailing address</h4>
+        	</span>                            	
+        	<span id="register.mailing.title">        		
+        		<i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+        	</span>        	        	
+        </a>
+        <div id="mailing-address" class="collapse">
+            <!--Begin form group  -->
+            <div class="row">
+                <div class="form-group">
+                    <label for="register.mailing.label.country" 
+                    		class="col-xs-12 col-sm-4 col-md-2 col-lg-2 control-label">
+                        <span id="register.mailing.label.country">country</span>
+                    </label>
+                    <div class="col-xs-12 col-sm-8 col-md-3 col-lg-3">
+                        <select id="country" th:field="*{mailingCountry}" name="title" class="form-control">
+                            <option value="1">Singapore</option>
+                            <option value="2">VietNam</option>
+                        </select>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 col-md-2 col-lg-2 control-label" for="register.mailing.label.blockno">                                    
+                        <span id="register.mailing.label.blockno">Block No. / Hse No. / Street Name</span>
+                    </label>
+                    <!--/ Hse No. / Street Name-->
+                    <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
+                        <input th:field="*{mailingBlockHouseStreet}" type="text" id="block" class="form-control input-xs" name="username" value=""
+                               required="" title="Please enter your email" placeholder="" />
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 col-md-2 col-lg-2 control-label" for="register.mailing.label.unitno">
+                        <span id="register.mailing.label.unitno">unit no</span>                                    
+                    </label>
+                    <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
+                        <input th:field="*{mailingUnitNo}" id="building" name="firstname" type="text" placeholder="" class="form-control input-xs"/>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 col-md-2 col-lg-2 control-label" for="register.billing.label.buildingno">                                    
+                        <span id="register.billing.label.buildingno">Building Name</span>
+                    </label>
+                    <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
+                        <input th:field="*{mailingBuildingName}" id="billing-buidingno" name="lastname" type="text" placeholder=""
+                               class="form-control input-xs"/>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <label class="col-xs-12 col-sm-4 col-md-2 col-lg-2 control-label" for="register.mailing.label.postalcode">
+                        <span id="register.mailing.label.postalcode">postal code</span>                                    
+                    </label>
+                    <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
+                        <input th:field="*{mailingPostalCode}" id="postal" name="lastname" type="text" placeholder=""
+                               class="form-control input-xs"/>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+            </div>            
+        </div>                 
+  	</div>
+  	<div class="row">
+   		<div class="modal-header"></div>
+    </div>
+    
+ 	<!--end mailing group  -->
+</div>

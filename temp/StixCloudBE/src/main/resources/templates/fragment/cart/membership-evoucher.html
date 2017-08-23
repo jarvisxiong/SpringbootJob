@@ -1,0 +1,34 @@
+<div class="col-xs-12 col-md-12 item" th:fragment="membership-evoucher" id="membership-evoucher" >
+	<div class="tp_wrapper  col-xs-12 membershipDiv" id="membershipEvoucher" th:if="${not #lists.isEmpty(membershipEvoucherList)}">
+		<div class="tp-title col-xs-12">
+			<span id="cart.tp.title">MEMBERSHIP EVOUCHER</span>
+		</div>
+		<div class="membership_content col-xs-12">
+			<table class="tbl_cls_block1" cellspacing="0" border="0">
+				<tr class="tr_cls_bg1">
+					<th style="width:30px">
+						No.
+					</th>
+					<th style="width:350px">
+						Membership E-Voucher Type
+					</th>
+					<th>
+						Redemption Value
+					</th>
+					<th>
+						Quantity
+					</th>
+				</tr>
+				<th:block th:each="membership,row : ${membershipEvoucherList}">	
+					<tr>										
+						<td class="td_cls_format1"><span th:text="${row.count}"></span></td>
+						<td class="td_cls_format1"><span th:id="${'membership.benefit.evoucher.' + membership.alias}"></span></td>
+						<td class="td_cls_format1"><span th:text="${membership.value}"></span></td>
+						<td class="td_cls_format1"><span th:text="${membership.quantity}"></span></td>
+					</tr>		
+				</th:block>						
+			</table>
+		</div>
+	</div>
+</div>
+

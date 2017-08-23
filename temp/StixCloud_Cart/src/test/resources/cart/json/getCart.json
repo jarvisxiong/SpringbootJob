@@ -1,0 +1,175 @@
+{
+  "lineItemList": [
+    {
+      "cartItemId": "71f19ed5-4dc2-4c39-a266-4fd6fc70096c",
+      "product": {
+        "productId": 245634,
+        "productName": "Lee Kong Chian Natural History Museum (Aug16) (Test)",
+        "productDate": "2016-12-01T16:00:00+08:00",
+        "level": "-",
+        "section": "General Admission",
+        "productType": "RS",
+        "venue": "Lee Kong Chian Natural History Museum"
+      },
+      "priceclass": {
+        "priceClassCode": "A1",
+        "priceClassName": "S'porean/ PR Adult"
+      },
+      "quantity": 1,
+      "unitPrice": {
+        "amount": 15,
+        "currency": "SGD"
+      },
+      "bookingFee": {
+        "amount": 1,
+        "currency": "SGD"
+      },
+      "subTotal": {
+        "amount": 16,
+        "currency": "SGD"
+      }
+    },
+    {
+      "cartItemId": "f39ce72a-cdfb-49e9-a902-13387d2725f1",
+      "product": {
+        "productId": 245634,
+        "productName": "Lee Kong Chian Natural History Museum (Aug16) (Test)",
+        "productDate": "2016-12-01T16:00:00+08:00",
+        "level": "-",
+        "section": "General Admission",
+        "productType": "RS",
+        "venue": "Lee Kong Chian Natural History Museum"
+      },
+      "priceclass": {
+        "priceClassCode": "A",
+        "priceClassName": "Standard Adult"
+      },
+      "quantity": 2,
+      "unitPrice": {
+        "amount": 20,
+        "currency": "SGD"
+      },
+      "bookingFee": {
+        "amount": 2,
+        "currency": "SGD"
+      },
+      "subTotal": {
+        "amount": 42,
+        "currency": "SGD"
+      }
+    }
+  ],
+  "lineItemTotal" : {
+    "amount" : 58,
+    "currency" : "SGD"
+  },
+  "commonPaymentMethod": {
+    "paymentMethodList": [
+      {
+        "code": "VISA"
+      },
+      {
+        "code": "MASTER"
+      },
+      {
+        "code": "AMEX"
+      },
+      {
+        "code": "DINERS"
+      },
+      {
+        "code": "JCB"
+      },
+      {
+        "code": "CUP"
+      },
+      {
+        "code": "SISTIC_E_VOUCHER"
+      },
+      {
+        "code": "OCBC_E_VOUCHER"
+      },
+      {
+        "code": "DBS_E_VOUCHER"
+      },
+      {
+        "code": "MASTER_E_VOUCHER"
+      }
+    ]
+  },
+  "commonDeliveryMethod": {
+    "deliveryMethodList": [
+      {
+        "code": "OUTLET_PICKUP",
+        "charge": {
+          "amount": 0.5,
+          "currency": "SGD"
+        },
+        "order": 0,
+        "addressRequired": false,
+        "feeWaived": false
+      },
+      {
+        "code": "MAIL_WORLD_ELITE_MASTERCARD",
+        "charge": {
+          "amount": 0,
+          "currency": "SGD"
+        },
+        "order": 1,
+        "addressRequired": true,
+        "feeWaived": true
+      },
+      {
+        "code": "REGISTERED_MAIL",
+        "charge": {
+          "amount": 3,
+          "currency": "SGD"
+        },
+        "order": 3,
+        "addressRequired": true,
+        "feeWaived": false
+      },
+      {
+        "code": "COURIER",
+        "charge": {
+          "amount": 15,
+          "currency": "SGD"
+        },
+        "order": 4,
+        "addressRequired": true,
+        "feeWaived": false
+      },
+      {
+        "code": "MASTERCARD_PICKUP",
+        "charge": {
+          "amount": 0,
+          "currency": "SGD"
+        },
+        "order": 6,
+        "addressRequired": false,
+        "feeWaived": true
+      },
+      {
+        "code": "E_TICKET",
+        "charge": {
+          "amount": 0,
+          "currency": "SGD"
+        },
+        "order": 7,
+        "addressRequired": false,
+        "feeWaived": false
+      },
+      {
+        "code": "NO_TICKETS_ISSUED",
+        "charge": {
+          "amount": 0,
+          "currency": "SGD"
+        },
+        "order": 8,
+        "addressRequired": false,
+        "feeWaived": false
+      }
+    ]
+  },
+  "currencyUnit": "SGD"
+}

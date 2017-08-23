@@ -1,0 +1,54 @@
+{
+  "solicitationList": [
+    {
+      "solicitationType": "Promoter",
+      "organizationID": 142,
+      "organizationName": "The Dream Academy Productions Pte Ltd",
+      "subscribed": false
+    },
+    {
+      "solicitationType": "Promoter",
+      "organizationID": 766,
+      "organizationName": "MediaCorp VizPro International Pte Ltd",
+      "organizationUrl": "http://www.vizpro.sg/",
+      "subscribed": false
+    },
+    {
+      "solicitationType": "Promoter",
+      "organizationID": 1243,
+      "organizationName": "Woohoo! Experience Pte Ltd",
+      "subscribed": false
+    },
+    {
+      "solicitationType": "Tenant",
+      "organizationID": 1,
+      "organizationName": "SISTIC.com Pte Ltd",
+      "subscribed": false
+    },
+    {
+      "solicitationType": "Venue",
+      "organizationID": 2,
+      "organizationName": "The Esplanade Co Ltd",
+      "organizationUrl": "https://www.esplanade.com/",
+      "subscribed": false
+    },
+    {
+      "solicitationType": "Venue",
+      "organizationID": 36,
+      "organizationName": "Raffles Hotel",
+      "subscribed": false
+    },
+    {
+      "solicitationType": "PromoterDirectMailLocal",
+      "organizationID": 1244,
+      "organizationName": "National Parks Board",
+      "subscribed": false
+    },
+    {
+      "solicitationType": "Venue",
+      "organizationID": 1244,
+      "organizationName": "National Parks Board",
+      "subscribed": false
+    }
+  ]
+}

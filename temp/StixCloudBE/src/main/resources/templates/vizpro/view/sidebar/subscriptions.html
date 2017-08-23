@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<object th:include="__${tenantTemplateCode}__/headerfooter/head-tag :: head-tag" th:remove="tag" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VIZPRO Subscriptions</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+	<link rel="shortcut icon" href="http://www.vizpro.sg/blob/6720030/3a6cc36ecc7e7ab93901c9ec678f98ac/vizpro-favicon.ico">
+<link href="/css/font.css" media="screen" rel="stylesheet" />
+<link href="/images/sistic/fb_logo.gif" rel="image_src" />
+<link href="/css/header_footer.css" media="screen"
+	rel="stylesheet" />
+<link type="text/css" rel="stylesheet"
+	href="/css/jquery.ui.datepicker.css" />
+<link id="main-css" type="text/css" rel="stylesheet" th:href="@{'/css/tenant/'+${tenantTemplateCode} + '/main.css'}" />
+<link type="text/css" rel="stylesheet"
+	href="/css/jquery-ui-slider.css" />
+<link th:href="@{'/css/tenant/' + ${tenantTemplateCode} + '/subscriptions.css'}" media="screen" rel="stylesheet" />
+
+</head>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body>
+	<div class="col-xs-12" th:include="@{ ${tenantTemplateCode} + '/headerfooter/header'} :: header"></div>
+
+	<div id="vizpro_page_wrapper">
+		<div class="col-xs-12 no-side-padding no-side-margin" th:include="fragment/login/loginbar :: login-bar"></div>
+		<div class="clearfix"></div>
+		<div class="display-message-manage-register-wrapper">
+			<div class="alert alert-warning changes-warning-manageuser-register" role="alert">
+			  <p>You have unsaved changes. Please click Update Account before leaving this page.</p>
+			</div>
+			<!--<div th:unless="${error == null} or ${error.isEmpty()}" class="alert alert-danger changes-warning-manageuser" role="alert">-->
+			  <!--<p th:text="${error}">This is error message returned from api</p>-->
+			<!--</div>-->
+			
+			<div class="alert alert-success changes-success-manageuser-register" role="alert" th:unless="${success == null} or ${success.isEmpty()}">
+			    <p th:text="${success}">Error to appear here</p>
+			</div>
+			
+			
+			<div class="alert alert-danger changes-error-manageuser-register" role="alert" th:unless="${error == null} or ${error.isEmpty()}">
+			    <p th:text="${error}">Error to appear here</p>
+			</div>
+		</div>	
+		<div id="app">
+			<div id="container"></div>
+			<div class="row">
+				<div th:include="fragment/patron/my-patron-account :: my-patron-account (isRegisterPage=false)"></div>
+			</div>
+			<div class="row my-account-content">
+				<div class="col-xs-3">
+					<div th:include="fragment/patron/sidebar :: sidebar"></div>
+				</div>
+				<div class="sidebar-seperate"></div>
+				<div class="col-xs-9 no-padding" id="subscriptions-page">
+					<form id="updateForm" th:action="@{/{tenant}/patron/subscriptions (tenant=${tenantContext}) }" th:object="${patronSubscriptionsForm}" method="POST" novalidate="true">
+						<th:block th:if="${(patronSolicitation == null) or patronSolicitation.values().isEmpty()}">
+							<div id="patron.subscriptions.nouser">There are no user subscriptions</div>
+						</th:block>
+						<th:block th:if="${patronSolicitation} != null" th:unless="${patronSolicitation.values().isEmpty()}">
+							<div class="sub-content col-xs-12 row">
+								<!-- <div class="sub-content-title">
+									<p class="image-title-manage-patron">
+										<span id="patron.subscriptions.header">Manage My Subscriptions</span>
+									</p>
+								</div> -->
+
+								<div th:each="solicitationList : ${patronSolicitation}">									
+									<div th:each="solicitation : ${solicitationList.value}">
+										<th:block th:if="${solicitation.solicitationType == 'Promoter' and solicitation.organizationID == tenantObject.organizationId}">
+											<div class="checker">
+												<input th:id="|solicitation-${solicitation.organizationID}|" th:name="solicitationList" th:value="${solicitation.organizationID}" th:checked="${solicitation.subscribed}" type="checkbox" class="checkbox-subscription-page" style="opacity: 1;" />
+												<label th:for="|solicitation-${solicitationList.value[0].organizationID}|">
+													<span id="patron.subscriptions.tenant.checkbox.label" style="font-family: Tahoma; font-weight: bold">MediaCorp VizPro</span>
+												</label>
+												<span class="terms-sistic" id="patron.subscriptions.tenant.content" style="display: block">
+		               							By signing up VizPro e-newsletter, I consent to the use of my personal data by MediaCorp and the MediaCorp group of companies (collectively "MediaCorp") to send me marketing and advertising materials in relation to goods and services of MediaCorp and its business partners, and for research and analysis.
+		             							</span>
+											</div>
+										</th:block>
+									</div>
+								</div>
+							</div>
+
+							<!--  end row -->
+							<div class="row col-xs-12">
+								<button id="patron.subscriptions.update.btn" class="enable-btt subscription-button">Update</button>
+							</div>
+						</th:block>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer th:include="@{ ${tenantTemplateCode} + '/headerfooter/footer'} :: footer"> </footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react.min.js"
+		charset="utf-8"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.0/react-dom.min.js"
+		charset="utf-8"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/flux/2.1.1/Flux.min.js"
+		charset="utf-8"></script>
+	<script	src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.1.0/EventEmitter.min.js"
+		charset="utf-8"></script>
+	<script src="/bin/subscription.js" charset="utf-8"></script>
+</body>
+</html>

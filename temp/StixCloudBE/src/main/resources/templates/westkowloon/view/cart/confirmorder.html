@@ -1,0 +1,58 @@
+<div th:fragment="confirm-cart" id="confirm-cart" class=" col-xs-12 col-lg-10" >
+    <h4 id="cart.tnc.title" class="condition-title text-uppercase">
+      Conditions of Sale, Use of Personal Data:
+    </h4>
+    <div class="row">				
+		<div class="col-xs-12 term-con-padding">			
+			<div class="row">
+                <div class="form-group col-xs-12 col-lg-12">
+                    <div class="checkbox col-xs-12">
+	                    <div class="confirm-term-accept">
+	                    	<div class="standardcheckbox">
+	                       	 <input type="checkbox" th:field="${confirmorderform.termsAccepted}" id="acceptcheck" value="true"/>
+	                       	 <label for="acceptcheck"></label>
+	                       	</div>
+	                        <span id="cart.tnc.accept.chk">
+	                        	I have read and accept SISTIC <a target="_blank" href="https://www.sistic.com.sg/terms-and-conditions">Terms &amp; Conditions of Sale</a> and consent to:
+	                        </span>
+	                    </div>
+                    </div>
+                                        
+                    <div class="col-xs-12 ">
+	                    <ol style="LIST-STYLE:decimal;margin-bottom: 10px;position: relative; float:left;">
+						  	<li id="cart.tnc.list.01" style="float:left;position:relative;width: 100%;list-style: decimal;margin-left: 20px;">
+						  	the collection of my personal data by SISTIC both in its own capacity, and as ticketing agent and data intermediary of the promoter(s) and venue manager(s) of the event(s) purchased; and </li>
+						  	<li id="cart.tnc.list.02" style="float: left;position: relative;width: 100%;list-style: decimal;margin-left: 20px;">the collection, use and disclosure of such personal data by SISTIC, its agents and the promoter(s) and venue manager(s) , </li>
+						</ol>
+                        <!-- <p>
+                        	<span id="cart.subscription.term.2">
+	                        1. the collection of my personal data by SISTIC both in its own capacity, 
+	                        and as ticketing agent and data intermediary of the promoter(s) and venue manager(s) of the 
+	                        event(s) purchased; and
+                        	</span>
+                        </p>
+                        <p>
+	                        <span id="cart.subscription.term.3">
+	                        	2. the collection, use and disclosure of such personal data by SISTIC, 
+	                        	its agents and the promoter(s) and venue manager(s),
+	                        </span>
+                        </p> -->
+                        <p><span id="cart.tnc.last.text">
+                        	in accordance with SISTIC's <a target="_blank" href="https://www.sistic.com.sg/privacy-policy">Privacy Policy</a>.
+                        	No refund or exchange of tickets is allowed once your booking is confirmed.
+                        </span></p>
+                        <!-- <span id="cart.subscription.text.venue">
+                        	Venue Manager(s) for the event(s) purchased
+                        </span> -->
+                    </div>                    
+                </div>
+            </div>										
+		</div>
+	</div>
+	<div class="row">
+		<!-- <span id="cart.button.confirmorder" class="col-xs-12 col-lg-3"> 
+		<button class="shopping-cart-button">Confirm Order</button></span> -->
+		 <div class="col-xs-6 col-sm-6 col-md-3" id="btt-validate"></div>
+	</div>
+</div>
+

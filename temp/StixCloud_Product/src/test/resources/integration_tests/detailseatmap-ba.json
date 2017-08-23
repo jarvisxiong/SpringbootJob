@@ -1,0 +1,57 @@
+{
+  "imageAvailable": 1,
+  "viewFromSeatAvailable": 0,
+  "seatSelectedType": "IO",
+  "imageURL": "/public/SISTIC/SeatmapMapping/643/Right_cat1.jpg",
+  "overlayImagePath": "/SisticWebApp/images",
+  "setsReservedList": [
+    {
+      "setsReserved": [
+        {
+          "inventoryId": 120848416,
+          "seatRowAlias": "A",
+          "seatAlias": "9",
+          "seatType": 1,
+          "topLeftCoordinates": "196,73",
+          "seatAngle": "0",
+          "coordinates": "196,73,213,91"
+        },
+        {
+          "inventoryId": 120848414,
+          "seatRowAlias": "A",
+          "seatAlias": "10",
+          "seatType": 1,
+          "topLeftCoordinates": "213,73",
+          "seatAngle": "0",
+          "coordinates": "213,73,230,91"
+        }
+      ]
+    },
+    {
+      "setsReserved": [
+        {
+          "inventoryId": 120848429,
+          "seatRowAlias": "B",
+          "seatAlias": "9",
+          "seatType": 1,
+          "topLeftCoordinates": "196,96",
+          "seatAngle": "0",
+          "coordinates": "196,96,213,114"
+        },
+        {
+          "inventoryId": 120848434,
+          "seatRowAlias": "B",
+          "seatAlias": "10",
+          "seatType": 1,
+          "topLeftCoordinates": "213,96",
+          "seatAngle": "0",
+          "coordinates": "213,96,230,114"
+        }
+      ]
+    }
+  ],
+  "seatsAvailableList": [],
+  "seatsUnavailableList": [],
+  "sectionAlias": "Right"
+}
+//http://localhost:8090/api/v0/SISTIC/products/235687/seatmap/availability?priceCatId=12079&seatSectionId=55247&quantity=2&mode=BA

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <object th:include="__${tenantTemplateCode}__/headerfooter/head-tag :: head-tag" th:remove="tag" />
+	<object th:include="fragment/general/head-tag :: head-tag" th:remove="tag" />
+  <title>Loading Animation</title>
+</head>
+<body>
+
+<div id="lang-light-box" class="show" th:fragment="lang-light-box">
+  <div class="lang-light-box-wall"></div>
+  <div class="cssload-container">
+    <div class="cssload-speeding-wheel"></div>
+  </div>
+  <div id="dalbulat">
+    Loading . . .
+  </div>
+</div>
+
+
+</body>
+</html>

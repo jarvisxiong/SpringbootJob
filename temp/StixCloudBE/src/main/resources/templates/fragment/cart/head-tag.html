@@ -1,0 +1,12 @@
+<thymeleaf xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" 
+    th:fragment="head" th:remove="tag">
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+	<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+	<th:block th:if="${tenantObject != null} and ${tenantObject.mobileResponsive != null} and ${tenantObject.mobileResponsive == false}">
+		<meta name="viewport" content="width=1024, initial-scale=1.0, maximum-scale=1.0"/>
+	</th:block>
+	<th:block th:unless="${tenantObject != null} and ${tenantObject.mobileResponsive != null} and ${tenantObject.mobileResponsive == false}">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	</th:block>
+	<link type="text/css" rel="stylesheet" href="/css/font-awesome.min.css"/>
+</thymeleaf>

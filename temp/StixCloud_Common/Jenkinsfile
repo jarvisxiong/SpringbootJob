@@ -1,0 +1,45 @@
+#!groovy
+node {
+    def server = Artifactory.server '-1839216902@1445919624309'
+    def rtMaven = Artifactory.newMavenBuild()
+    def buildInfo = Artifactory.newBuildInfo();
+
+    stage('Checkout') {
+        checkout([
+                $class                : 'SubversionSCM',
+                additionalCredentials : [
+                        [realm: '<http://alm.sistic.com:80> Subversion Authorization (BookingEngineRework)', credentialsId: 'SVN']],
+                excludedCommitMessages: '',
+                excludedRegions       : '',
+                excludedRevprop       : '',
+                excludedUsers         : '',
+                filterChangelog       : false,
+                ignoreDirPropChanges  : false,
+                includedRegions       : '',
+                locations             : [[credentialsId        : '96249a11-6b93-4ba0-8587-e80b307af27d',
+                                          depthOption          : 'infinity',
+                                          ignoreExternalsOption: true,
+                                          local                : '.',
+                                          remote               : scm.locations[0].getURL()]],
+                workspaceUpdater      : [$class: 'UpdateUpdater']])
+    }
+
+    stage("Artifactory configuration") {
+        rtMaven.tool = 'Maven 3' // Tool name from Jenkins configuration
+        rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server
+        rtMaven.resolver releaseRepo: 'libs-release', snapshotRepo: 'libs-snapshot', server: server
+    }
+
+    stage("Maven Build") {
+        rtMaven.run pom: 'pom.xml', goals: 'clean install -DskipTests', buildInfo: buildInfo
+        server.publishBuildInfo buildInfo
+    }
+
+    stage("Triggering other jobs") {
+        def jenkinsUrl = 'http://stixcloudciadmin:7164ddd9b77bc1a495fc4c3d8bb15668@localhost/jenkins/view/API/job/API%20-%20Build%20Branch//job/StixCloudAPI%252Fbranch%252F'
+        sh 'curl -X POST ' + jenkinsUrl + 'StixCloud_Cart/build'
+        sh 'curl -X POST ' + jenkinsUrl + 'StixCloud_Product/build'
+        sh 'curl -X POST ' + jenkinsUrl + 'StixCloud_PaymentGateway/build'
+        sh 'curl -X POST ' + jenkinsUrl + 'StixCloud_Patron/build'
+    }
+}

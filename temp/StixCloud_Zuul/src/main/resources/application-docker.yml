@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: stixcloud-zuul
+  cloud:
+    inetutils:
+      ignoredInterfaces=eth0,eth1,lo
+    kubernetes:
+      enabled: false
+      discovery:
+        enabled: false
+      zipkin:
+        discovery:
+          enabled: false
+      reload:
+        enabled: false
+  zipkin:
+    base-url: http://zipkin:9411
+#  boot:
+#    admin:
+#      url: http://localhost:8761/admin/
+eureka:
+  instance:
+    virtual-host-name: ${spring.application.name}
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${random.int}
+  client:
+    enabled: true
+    service-url:
+      defaultZone: http://eureka-peer1:8761/eureka/,http://eureka-peer2:8761/eureka/
+
+hystrix:
+  threadpool:
+    default:
+#      coreSize: 100
+      maxQueueSize: 10

@@ -1,0 +1,30 @@
+{
+  "flags": {
+    "receiveSistic": true,
+    "receivePromoter": true,
+    "receiveVenue": true,
+    "doNotSignUp": false
+  },
+  "solicitationList": [
+    {
+      "solicitationType": "Tenant",
+      "organizationID": 234234,
+      "organizationName": "SISTIC.com Pte Ltd",
+      "organizationUrl": "www.sistic.com.sg",
+      "subscribed": false
+    },
+    {
+      "solicitationType": "Venue",
+      "organizationID": 123123,
+      "organizationName": "SISTIC.com Pte Ltd for Pangdemonium Season Ticket",
+      "organizationUrl": "www.sistic.com.sg",
+      "subscribed": false
+    },
+    {
+      "solicitationType": "Promoter",
+      "organizationID": 142,
+      "organizationName": "The Dream Academy Productins Pte Ltd",
+      "subscribed": true
+    }
+  ]
+}

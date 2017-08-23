@@ -1,0 +1,18 @@
+{
+	"solicitationList": [
+		{
+			"solicitationType": "Promoter",
+			"organizationID": 152552,
+			"organizationName": "Esplanade",
+			"organizationUrl": "http://ghijk.com",
+			"subscribed": false
+		},
+		{
+			"solicitationType": "Tenant",
+			"organizationID": 152552,
+			"organizationName": "SISTIC",
+			"organizationUrl": "http://abcd.com",
+			"subscribed": true
+		}
+	]
+}

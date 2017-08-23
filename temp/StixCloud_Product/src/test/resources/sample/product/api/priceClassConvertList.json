@@ -1,0 +1,92 @@
+[
+  {
+    "priceClassCode": "D3",
+    "priceClassAlias": "Standard Senior Citizen (60 years and above)",
+    "priceValueAmount": {
+      "amount": 12.00,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "A1",
+    "priceClassAlias": "S'porean/ PR Adult",
+    "priceValueAmount": {
+      "amount": 15.00,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "D1",
+    "priceClassAlias": "S'porean/ PR Senior Citizen (60 years and above)",
+    "priceValueAmount": {
+      "amount": 8.00,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "D4",
+    "priceClassAlias": "Standard Student (with proof of student card)",
+    "priceValueAmount": {
+      "amount": 12.00,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "D5",
+    "priceClassAlias": "S'porean/ PR Person with physical disability",
+    "priceValueAmount": {
+      "amount": 8.00,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "D",
+    "priceClassAlias": "S'porean/ PR Student (with proof of Pri, Sec, JC, Tertiary student card)",
+    "priceValueAmount": {
+      "amount": 8.00,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "D9",
+    "priceClassAlias": "Standard Child (3 to 12 yrs old)",
+    "priceValueAmount": {
+      "amount": 12.00,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "DA",
+    "priceClassAlias": "S'porean/ PR Child (3 to 12 yrs old)",
+    "priceValueAmount": {
+      "amount": 8.00,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "D2",
+    "priceClassAlias": "Full Time NSF (with valid 11B card)",
+    "priceValueAmount": {
+      "amount": 8.00,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  },
+  {
+    "priceClassCode": "A",
+    "priceClassAlias": "Standard Adult",
+    "priceValueAmount": {
+      "amount": 20.00,
+      "currency": "SGD"
+    },
+    "availableQty": "1,2,3,4,5,6,7,8,9,10,11,12"
+  }
+]

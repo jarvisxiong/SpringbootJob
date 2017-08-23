@@ -1,0 +1,42 @@
+{
+  "email": "patronsynctstcloud01@test.com",
+  "title": "MR",
+  "firstName": "Than",
+  "lastName": "Do",
+  "contacts": [
+    {
+      "contactType": "MOBILE",
+      "country": {
+        "code": "SG",
+        "callingCode": 65
+      },
+      "phoneNumber": "126734"
+    }
+  ],
+  "yearOfBirth": 1995,
+  "nationality": "MM",
+  "countryOfResidence": "MM",
+  "identification": {
+    "type": "Passport",
+    "no": "C323984W"
+  },
+  "isBillingAddressSameAsMailing": false,
+  "addresses": [
+    {
+      "type": "Billing Address",
+      "countryCode": "MC",
+      "addressLineOne": "Cau Giay",
+      "addressLineTwo": "99",
+      "addressLineThree": "CMC",
+      "postalCode": "321"
+    },
+    {
+      "type": "Mailing Address",
+      "countryCode": "MC",
+      "addressLineOne": "Cau Giay",
+      "addressLineTwo": "99",
+      "addressLineThree": "CMC",
+      "postalCode": "321"
+    }
+  ]
+}

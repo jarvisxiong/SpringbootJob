@@ -1,0 +1,16 @@
+{
+	"addressid": 1,
+	"addresstype": "Mailing Address",
+	"lineone": "Cau Giay",
+	"linetwo": "99",
+	"linethree": "CMC",
+	"city": null,
+	"state": null,
+	"country": "VN",
+	"postcode": "99999",
+	"createdBy": 59,
+	"createddate": null,
+	"updatedBy": 59,
+	"updateddate": null
+}
+  

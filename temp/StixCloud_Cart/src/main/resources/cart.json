@@ -1,0 +1,116 @@
+{
+  "cartGuid": "7762fe9f-8940-48f1-8a29-549463641afb",
+  "cartItems": [
+    {
+      "cartItemId": "1",
+      "productId": 245640,
+      "priceCatId": 12176,
+      "seatSectionId": 356888,
+      "inventoryIdList": [
+        121561775
+      ],
+      "quantity": 1,
+      "priceClass": "A1",
+      "mode": "GA"
+    },
+    {
+      "cartItemId": "2",
+      "productId": 245640,
+      "priceCatId": 12176,
+      "seatSectionId": 356888,
+      "inventoryIdList": [
+        121561776
+      ],
+      "quantity": 1,
+      "priceClass": "D2",
+      "mode": "GA"
+    },
+    {
+      "cartItemId": "3",
+      "productId": 245640,
+      "priceCatId": 12176,
+      "seatSectionId": 356888,
+      "inventoryIdList": [
+        121561777
+      ],
+      "quantity": 1,
+      "priceClass": "F1",
+      "mode": "GA"
+    },
+    {
+      "cartItemId": "4",
+      "productId": 245640,
+      "priceCatId": 12176,
+      "seatSectionId": 356888,
+      "inventoryIdList": [
+        121561778
+      ],
+      "quantity": 1,
+      "priceClass": "FD",
+      "mode": "GA"
+    },
+    {
+      "cartItemId": "5",
+      "productId": 255027,
+      "priceCatId": 2139,
+      "seatSectionId": 359914,
+      "inventoryIdList": [
+        123050935,
+        123050936,
+        123050937
+      ],
+      "quantity": 3,
+      "priceClass": "A",
+      "mode": "SP"
+    },
+    {
+      "cartItemId": "6",
+      "productId": 255027,
+      "priceCatId": 2139,
+      "seatSectionId": 359914,
+      "inventoryIdList": [
+        123050938
+      ],
+      "quantity": 1,
+      "priceClass": "D4",
+      "mode": "SP"
+    },
+    {
+      "cartItemId": "7",
+      "productId": 251335,
+      "priceCatId": 10200,
+      "seatSectionId": 357987,
+      "inventoryIdList": [
+        122654002,
+        122654003
+      ],
+      "quantity": 2,
+      "priceClass": "A",
+      "mode": "BA"
+    },
+    {
+      "cartItemId": "8",
+      "productId": 251335,
+      "priceCatId": 10200,
+      "seatSectionId": 357987,
+      "inventoryIdList": [
+        122654004
+      ],
+      "quantity": 1,
+      "priceClass": "A",
+      "mode": "BA"
+    },
+    {
+      "cartItemId": "9",
+      "productId": 251335,
+      "priceCatId": 10200,
+      "seatSectionId": 357987,
+      "inventoryIdList": [
+        122654005
+      ],
+      "quantity": 1,
+      "priceClass": "KH",
+      "mode": "BA"
+    }
+  ]
+}

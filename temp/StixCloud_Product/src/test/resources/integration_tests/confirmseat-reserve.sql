@@ -1,0 +1,71 @@
+TRUNCATE TABLE sales_seat_inventory;
+INSERT INTO SALES_SEAT_INVENTORY (SALESSEATINVENTORYID, PRODUCT_ID, RANK, SEATSALESSTATUS, TICKETABLE, PRICE_CAT_ID, PRICE_CLASS_ID, PATRON_ID, RESERVEEXPIRYDATE, SYSTEM_SALE_CODE_ID, HOLD_BY, HOLDDATE, SOLD_BY, SOLDDATE, UPDATEDTIME, UPDATED_BY, HOLDREASON, HOLDEXPIRYNOTIFIED, SECTIONRANK, SPANKEY, VENUE_SEAT_LC_ID, VENUE_SECTION_LC_ID, SALESCYCLESTARTTIME, PACKAGE_ID, PACKAGEREQUIREMENT_ID, PRICEVALUE, SESSIONID, HOLDEXPIRYDATE)
+VALUES (120943457, 243851, 118, 0, 1, 18284, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                                                                           '2016-08-05 16:49:27',
+                                                                           1739, NULL, NULL, 0,
+                                                                           'Drama Centre TheatreStallStallD22',
+                                                                           2922855, 356153, NULL,
+        NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SALES_SEAT_INVENTORY (SALESSEATINVENTORYID, PRODUCT_ID, RANK, SEATSALESSTATUS, TICKETABLE, PRICE_CAT_ID, PRICE_CLASS_ID, PATRON_ID, RESERVEEXPIRYDATE, SYSTEM_SALE_CODE_ID, HOLD_BY, HOLDDATE, SOLD_BY, SOLDDATE, UPDATEDTIME, UPDATED_BY, HOLDREASON, HOLDEXPIRYNOTIFIED, SECTIONRANK, SPANKEY, VENUE_SEAT_LC_ID, VENUE_SECTION_LC_ID, SALESCYCLESTARTTIME, PACKAGE_ID, PACKAGEREQUIREMENT_ID, PRICEVALUE, SESSIONID, HOLDEXPIRYDATE)
+VALUES (120943458, 243851, 95, 0, 1, 18284, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                                                                          '2016-08-05 16:49:27',
+                                                                          1739, NULL, NULL, 0,
+                                                                          'Drama Centre TheatreStallStallD10',
+                                                                          2922856, 356153, NULL,
+        NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SALES_SEAT_INVENTORY (SALESSEATINVENTORYID, PRODUCT_ID, RANK, SEATSALESSTATUS, TICKETABLE, PRICE_CAT_ID, PRICE_CLASS_ID, PATRON_ID, RESERVEEXPIRYDATE, SYSTEM_SALE_CODE_ID, HOLD_BY, HOLDDATE, SOLD_BY, SOLDDATE, UPDATEDTIME, UPDATED_BY, HOLDREASON, HOLDEXPIRYNOTIFIED, SECTIONRANK, SPANKEY, VENUE_SEAT_LC_ID, VENUE_SECTION_LC_ID, SALESCYCLESTARTTIME, PACKAGE_ID, PACKAGEREQUIREMENT_ID, PRICEVALUE, SESSIONID, HOLDEXPIRYDATE)
+VALUES (120943459, 243851, 145, 0, 1, 18284, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                                                                           '2016-08-05 16:49:27',
+                                                                           1739, NULL, NULL, 0,
+                                                                           'Drama Centre TheatreStallStallD6',
+                                                                           2922857, 356153, NULL,
+        NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SALES_SEAT_INVENTORY (SALESSEATINVENTORYID, PRODUCT_ID, RANK, SEATSALESSTATUS, TICKETABLE, PRICE_CAT_ID, PRICE_CLASS_ID, PATRON_ID, RESERVEEXPIRYDATE, SYSTEM_SALE_CODE_ID, HOLD_BY, HOLDDATE, SOLD_BY, SOLDDATE, UPDATEDTIME, UPDATED_BY, HOLDREASON, HOLDEXPIRYNOTIFIED, SECTIONRANK, SPANKEY, VENUE_SEAT_LC_ID, VENUE_SECTION_LC_ID, SALESCYCLESTARTTIME, PACKAGE_ID, PACKAGEREQUIREMENT_ID, PRICEVALUE, SESSIONID, HOLDEXPIRYDATE)
+VALUES (120943460, 243851, 85, 0, 1, 18284, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                                                                          '2016-08-05 16:49:27',
+                                                                          1739, NULL, NULL, 0,
+                                                                          'Drama Centre TheatreStallStallD12',
+                                                                          2922858, 356153, NULL,
+        NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SALES_SEAT_INVENTORY (SALESSEATINVENTORYID, PRODUCT_ID, RANK, SEATSALESSTATUS, TICKETABLE, PRICE_CAT_ID, PRICE_CLASS_ID, PATRON_ID, RESERVEEXPIRYDATE, SYSTEM_SALE_CODE_ID, HOLD_BY, HOLDDATE, SOLD_BY, SOLDDATE, UPDATEDTIME, UPDATED_BY, HOLDREASON, HOLDEXPIRYNOTIFIED, SECTIONRANK, SPANKEY, VENUE_SEAT_LC_ID, VENUE_SECTION_LC_ID, SALESCYCLESTARTTIME, PACKAGE_ID, PACKAGEREQUIREMENT_ID, PRICEVALUE, SESSIONID, HOLDEXPIRYDATE)
+VALUES (120943461, 243851, 146, 0, 1, 18284, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                                                                           '2016-08-05 16:49:27',
+                                                                           1739, NULL, NULL, 0,
+                                                                           'Drama Centre TheatreStallStallD24',
+                                                                           2922859, 356153, NULL,
+        NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SALES_SEAT_INVENTORY (SALESSEATINVENTORYID, PRODUCT_ID, RANK, SEATSALESSTATUS, TICKETABLE, PRICE_CAT_ID, PRICE_CLASS_ID, PATRON_ID, RESERVEEXPIRYDATE, SYSTEM_SALE_CODE_ID, HOLD_BY, HOLDDATE, SOLD_BY, SOLDDATE, UPDATEDTIME, UPDATED_BY, HOLDREASON, HOLDEXPIRYNOTIFIED, SECTIONRANK, SPANKEY, VENUE_SEAT_LC_ID, VENUE_SECTION_LC_ID, SALESCYCLESTARTTIME, PACKAGE_ID, PACKAGEREQUIREMENT_ID, PRICEVALUE, SESSIONID, HOLDEXPIRYDATE)
+VALUES (120943462, 243851, 178, 0, 1, 18284, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                                                                           '2016-08-05 16:49:27',
+                                                                           1739, NULL, NULL, 0,
+                                                                           'Drama Centre TheatreStallStallD4',
+                                                                           2922860, 356153, NULL,
+        NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SALES_SEAT_INVENTORY (SALESSEATINVENTORYID, PRODUCT_ID, RANK, SEATSALESSTATUS, TICKETABLE, PRICE_CAT_ID, PRICE_CLASS_ID, PATRON_ID, RESERVEEXPIRYDATE, SYSTEM_SALE_CODE_ID, HOLD_BY, HOLDDATE, SOLD_BY, SOLDDATE, UPDATEDTIME, UPDATED_BY, HOLDREASON, HOLDEXPIRYNOTIFIED, SECTIONRANK, SPANKEY, VENUE_SEAT_LC_ID, VENUE_SECTION_LC_ID, SALESCYCLESTARTTIME, PACKAGE_ID, PACKAGEREQUIREMENT_ID, PRICEVALUE, SESSIONID, HOLDEXPIRYDATE)
+VALUES (120943463, 243851, 110, 0, 1, 18284, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                                                                           '2016-08-05 16:49:27',
+                                                                           1739, NULL, NULL, 0,
+                                                                           'Drama Centre TheatreStallStallD21',
+                                                                           2922861, 356153, NULL,
+        NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SALES_SEAT_INVENTORY (SALESSEATINVENTORYID, PRODUCT_ID, RANK, SEATSALESSTATUS, TICKETABLE, PRICE_CAT_ID, PRICE_CLASS_ID, PATRON_ID, RESERVEEXPIRYDATE, SYSTEM_SALE_CODE_ID, HOLD_BY, HOLDDATE, SOLD_BY, SOLDDATE, UPDATEDTIME, UPDATED_BY, HOLDREASON, HOLDEXPIRYNOTIFIED, SECTIONRANK, SPANKEY, VENUE_SEAT_LC_ID, VENUE_SECTION_LC_ID, SALESCYCLESTARTTIME, PACKAGE_ID, PACKAGEREQUIREMENT_ID, PRICEVALUE, SESSIONID, HOLDEXPIRYDATE)
+VALUES (120943464, 243851, 167, 0, 1, 18284, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                                                                           '2016-08-05 16:49:27',
+                                                                           1739, NULL, NULL, 0,
+                                                                           'Drama Centre TheatreStallStallD25',
+                                                                           2922862, 356153, NULL,
+        NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SALES_SEAT_INVENTORY (SALESSEATINVENTORYID, PRODUCT_ID, RANK, SEATSALESSTATUS, TICKETABLE, PRICE_CAT_ID, PRICE_CLASS_ID, PATRON_ID, RESERVEEXPIRYDATE, SYSTEM_SALE_CODE_ID, HOLD_BY, HOLDDATE, SOLD_BY, SOLDDATE, UPDATEDTIME, UPDATED_BY, HOLDREASON, HOLDEXPIRYNOTIFIED, SECTIONRANK, SPANKEY, VENUE_SEAT_LC_ID, VENUE_SECTION_LC_ID, SALESCYCLESTARTTIME, PACKAGE_ID, PACKAGEREQUIREMENT_ID, PRICEVALUE, SESSIONID, HOLDEXPIRYDATE)
+VALUES (120943465, 243851, 205, 0, 1, 18284, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                                                                           '2016-08-05 16:49:27',
+                                                                           1739, NULL, NULL, 0,
+                                                                           'Drama Centre TheatreStallStallD27',
+                                                                           2922863, 356153, NULL,
+        NULL, NULL, NULL, NULL, NULL);
+INSERT INTO SALES_SEAT_INVENTORY (SALESSEATINVENTORYID, PRODUCT_ID, RANK, SEATSALESSTATUS, TICKETABLE, PRICE_CAT_ID, PRICE_CLASS_ID, PATRON_ID, RESERVEEXPIRYDATE, SYSTEM_SALE_CODE_ID, HOLD_BY, HOLDDATE, SOLD_BY, SOLDDATE, UPDATEDTIME, UPDATED_BY, HOLDREASON, HOLDEXPIRYNOTIFIED, SECTIONRANK, SPANKEY, VENUE_SEAT_LC_ID, VENUE_SECTION_LC_ID, SALESCYCLESTARTTIME, PACKAGE_ID, PACKAGEREQUIREMENT_ID, PRICEVALUE, SESSIONID, HOLDEXPIRYDATE)
+VALUES (120943466, 243851, 78, 0, 1, 18284, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                                                                          '2016-08-05 16:49:27',
+                                                                          1739, NULL, NULL, 0,
+                                                                          'Drama Centre TheatreStallStallD13',
+                                                                          2922864, 356153, NULL,
+        NULL, NULL, NULL, NULL, NULL);
